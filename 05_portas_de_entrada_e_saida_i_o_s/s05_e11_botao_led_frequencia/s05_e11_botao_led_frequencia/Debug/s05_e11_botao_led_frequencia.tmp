@@ -1,0 +1,32 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Users\Mathe\Documents\Projetos\AVR\05_portas_de_entrada_e_saida_i_o_s\s05_e11_botao_led_frequencia\s05_e11_botao_led_frequencia\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\2.0.401\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\Mathe\Documents\Projetos\AVR\05_portas_de_entrada_e_saida_i_o_s\s05_e11_botao_led_frequencia\s05_e11_botao_led_frequencia\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\2.0.401\avrasm\inc\m328Pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\Mathe\Documents\Projetos\AVR\05_portas_de_entrada_e_saida_i_o_s\s05_e11_botao_led_frequencia\s05_e11_botao_led_frequencia\Debug\s05_e11_botao_led_frequencia.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>s05_e11_botao_led_frequencia.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>s05_e11_botao_led_frequencia.map</FILE>
+  <FILE>s05_e11_botao_led_frequencia.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <INICIO><FILE>C:\Users\Mathe\Documents\Projetos\AVR\05_portas_de_entrada_e_saida_i_o_s\s05_e11_botao_led_frequencia\s05_e11_botao_led_frequencia\main.asm</FILE><LINE>19</LINE></INICIO>
+  <PRINCIPAL><FILE>C:\Users\Mathe\Documents\Projetos\AVR\05_portas_de_entrada_e_saida_i_o_s\s05_e11_botao_led_frequencia\s05_e11_botao_led_frequencia\main.asm</FILE><LINE>25</LINE></PRINCIPAL>
+  <testa_botao><FILE>C:\Users\Mathe\Documents\Projetos\AVR\05_portas_de_entrada_e_saida_i_o_s\s05_e11_botao_led_frequencia\s05_e11_botao_led_frequencia\main.asm</FILE><LINE>27</LINE></testa_botao>
+  <ATRASO><FILE>C:\Users\Mathe\Documents\Projetos\AVR\05_portas_de_entrada_e_saida_i_o_s\s05_e11_botao_led_frequencia\s05_e11_botao_led_frequencia\main.asm</FILE><LINE>43</LINE></ATRASO>
+  <mantem_ligado><FILE>C:\Users\Mathe\Documents\Projetos\AVR\05_portas_de_entrada_e_saida_i_o_s\s05_e11_botao_led_frequencia\s05_e11_botao_led_frequencia\main.asm</FILE><LINE>38</LINE></mantem_ligado>
+  <volta><FILE>C:\Users\Mathe\Documents\Projetos\AVR\05_portas_de_entrada_e_saida_i_o_s\s05_e11_botao_led_frequencia\s05_e11_botao_led_frequencia\main.asm</FILE><LINE>45</LINE></volta>
+ </LABELS>
+</ASSEMBLER_INFO>

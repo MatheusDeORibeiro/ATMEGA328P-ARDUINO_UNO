@@ -1,0 +1,30 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Users\Mathe\Documents\Projetos\AVR\05_portas_de_entrada_e_saida_i_o_s\s05_e09_botao_led_debounce_10ms\s05_e09_botao_led_debounce_10ms\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\2.0.401\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\Mathe\Documents\Projetos\AVR\05_portas_de_entrada_e_saida_i_o_s\s05_e09_botao_led_debounce_10ms\s05_e09_botao_led_debounce_10ms\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\2.0.401\avrasm\inc\m328Pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\Mathe\Documents\Projetos\AVR\05_portas_de_entrada_e_saida_i_o_s\s05_e09_botao_led_debounce_10ms\s05_e09_botao_led_debounce_10ms\Debug\s05_e09_botao_led_debounce_10ms.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>s05_e09_botao_led_debounce_10ms.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>s05_e09_botao_led_debounce_10ms.map</FILE>
+  <FILE>s05_e09_botao_led_debounce_10ms.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <INICIO><FILE>C:\Users\Mathe\Documents\Projetos\AVR\05_portas_de_entrada_e_saida_i_o_s\s05_e09_botao_led_debounce_10ms\s05_e09_botao_led_debounce_10ms\main.asm</FILE><LINE>17</LINE></INICIO>
+  <PRINCIPAL><FILE>C:\Users\Mathe\Documents\Projetos\AVR\05_portas_de_entrada_e_saida_i_o_s\s05_e09_botao_led_debounce_10ms\s05_e09_botao_led_debounce_10ms\main.asm</FILE><LINE>23</LINE></PRINCIPAL>
+  <DEBOUNCE><FILE>C:\Users\Mathe\Documents\Projetos\AVR\05_portas_de_entrada_e_saida_i_o_s\s05_e09_botao_led_debounce_10ms\s05_e09_botao_led_debounce_10ms\main.asm</FILE><LINE>29</LINE></DEBOUNCE>
+  <volta><FILE>C:\Users\Mathe\Documents\Projetos\AVR\05_portas_de_entrada_e_saida_i_o_s\s05_e09_botao_led_debounce_10ms\s05_e09_botao_led_debounce_10ms\main.asm</FILE><LINE>31</LINE></volta>
+ </LABELS>
+</ASSEMBLER_INFO>
