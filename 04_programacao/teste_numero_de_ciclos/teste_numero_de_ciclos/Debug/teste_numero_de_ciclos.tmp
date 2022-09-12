@@ -1,0 +1,28 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Users\Mathe\Documents\Projetos\AVR\4_programacao\teste_numero_de_ciclos\teste_numero_de_ciclos\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\2.0.401\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\Mathe\Documents\Projetos\AVR\4_programacao\teste_numero_de_ciclos\teste_numero_de_ciclos\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\2.0.401\avrasm\inc\m328Pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\Mathe\Documents\Projetos\AVR\4_programacao\teste_numero_de_ciclos\teste_numero_de_ciclos\Debug\teste_numero_de_ciclos.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>teste_numero_de_ciclos.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>teste_numero_de_ciclos.map</FILE>
+  <FILE>teste_numero_de_ciclos.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <L1><FILE>C:\Users\Mathe\Documents\Projetos\AVR\4_programacao\teste_numero_de_ciclos\teste_numero_de_ciclos\main.asm</FILE><LINE>10</LINE></L1>
+  <L2><FILE>C:\Users\Mathe\Documents\Projetos\AVR\4_programacao\teste_numero_de_ciclos\teste_numero_de_ciclos\main.asm</FILE><LINE>12</LINE></L2>
+ </LABELS>
+</ASSEMBLER_INFO>
