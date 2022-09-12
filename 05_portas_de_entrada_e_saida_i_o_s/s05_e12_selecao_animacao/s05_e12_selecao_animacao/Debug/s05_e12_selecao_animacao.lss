@@ -1,0 +1,652 @@
+
+s05_e12_selecao_animacao.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  00800100  00000350  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000002fc  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      00000030  00000000  00000000  00000350  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000380  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000078  00000000  00000000  000003c0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000ebd  00000000  00000000  00000438  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000006d0  00000000  00000000  000012f5  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000005cd  00000000  00000000  000019c5  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  000000d4  00000000  00000000  00001f94  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000457  00000000  00000000  00002068  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    000007ed  00000000  00000000  000024bf  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000068  00000000  00000000  00002cac  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 34 00 	jmp	0x68	; 0x68 <__ctors_end>
+   4:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+   8:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+   c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  10:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  14:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  18:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  1c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  20:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  24:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  28:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  2c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  30:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  34:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  38:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  3c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  40:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  44:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  48:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  4c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  50:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  54:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  58:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  5c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  60:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  64:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+
+00000068 <__ctors_end>:
+  68:	11 24       	eor	r1, r1
+  6a:	1f be       	out	0x3f, r1	; 63
+  6c:	cf ef       	ldi	r28, 0xFF	; 255
+  6e:	d8 e0       	ldi	r29, 0x08	; 8
+  70:	de bf       	out	0x3e, r29	; 62
+  72:	cd bf       	out	0x3d, r28	; 61
+  74:	0e 94 2d 01 	call	0x25a	; 0x25a <main>
+  78:	0c 94 7c 01 	jmp	0x2f8	; 0x2f8 <_exit>
+
+0000007c <__bad_interrupt>:
+  7c:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000080 <animacao_1>:
+//funções de animações
+void animacao_1(void)
+{
+	//sequencial de leds deslocando da direita para a esquerda
+	unsigned char cont = 0x01;  //variável local inicializada
+	PORTD = cont;               //liga leds
+  80:	81 e0       	ldi	r24, 0x01	; 1
+  82:	8b b9       	out	0x0b, r24	; 11
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  84:	2f ef       	ldi	r18, 0xFF	; 255
+  86:	39 e6       	ldi	r19, 0x69	; 105
+  88:	48 e1       	ldi	r20, 0x18	; 24
+  8a:	21 50       	subi	r18, 0x01	; 1
+  8c:	30 40       	sbci	r19, 0x00	; 0
+  8e:	40 40       	sbci	r20, 0x00	; 0
+  90:	e1 f7       	brne	.-8      	; 0x8a <animacao_1+0xa>
+  92:	00 c0       	rjmp	.+0      	; 0x94 <animacao_1+0x14>
+  94:	00 00       	nop
+  96:	88 e0       	ldi	r24, 0x08	; 8
+  98:	90 e0       	ldi	r25, 0x00	; 0
+}
+//funções de animações
+void animacao_1(void)
+{
+	//sequencial de leds deslocando da direita para a esquerda
+	unsigned char cont = 0x01;  //variável local inicializada
+  9a:	21 e0       	ldi	r18, 0x01	; 1
+	PORTD = cont;               //liga leds
+	atraso_500ms();             //atraso de 500ms
+	while(1)
+	{
+		cont <<= 1;             //deslocamento lógico para a esquerda
+  9c:	22 0f       	add	r18, r18
+		PORTD = cont;           //liga leds
+  9e:	2b b9       	out	0x0b, r18	; 11
+  a0:	5f ef       	ldi	r21, 0xFF	; 255
+  a2:	39 e6       	ldi	r19, 0x69	; 105
+  a4:	48 e1       	ldi	r20, 0x18	; 24
+  a6:	51 50       	subi	r21, 0x01	; 1
+  a8:	30 40       	sbci	r19, 0x00	; 0
+  aa:	40 40       	sbci	r20, 0x00	; 0
+  ac:	e1 f7       	brne	.-8      	; 0xa6 <animacao_1+0x26>
+  ae:	00 c0       	rjmp	.+0      	; 0xb0 <animacao_1+0x30>
+  b0:	00 00       	nop
+  b2:	01 97       	sbiw	r24, 0x01	; 1
+		atraso_500ms();         //atraso de 500ms
+		if(cont == 0x00) break; //sai ao completar o deslocamento
+  b4:	99 f7       	brne	.-26     	; 0x9c <animacao_1+0x1c>
+	}
+}
+  b6:	08 95       	ret
+
+000000b8 <animacao_2>:
+void animacao_2(void)
+{
+	//sequencial de leds deslocando da esquerda para a direita
+	unsigned char cont = 0x80;  //variável local inicializada
+	PORTD = cont;               //liga ledas
+  b8:	80 e8       	ldi	r24, 0x80	; 128
+  ba:	8b b9       	out	0x0b, r24	; 11
+  bc:	2f ef       	ldi	r18, 0xFF	; 255
+  be:	39 e6       	ldi	r19, 0x69	; 105
+  c0:	48 e1       	ldi	r20, 0x18	; 24
+  c2:	21 50       	subi	r18, 0x01	; 1
+  c4:	30 40       	sbci	r19, 0x00	; 0
+  c6:	40 40       	sbci	r20, 0x00	; 0
+  c8:	e1 f7       	brne	.-8      	; 0xc2 <animacao_2+0xa>
+  ca:	00 c0       	rjmp	.+0      	; 0xcc <animacao_2+0x14>
+  cc:	00 00       	nop
+  ce:	88 e0       	ldi	r24, 0x08	; 8
+  d0:	90 e0       	ldi	r25, 0x00	; 0
+	}
+}
+void animacao_2(void)
+{
+	//sequencial de leds deslocando da esquerda para a direita
+	unsigned char cont = 0x80;  //variável local inicializada
+  d2:	20 e8       	ldi	r18, 0x80	; 128
+	PORTD = cont;               //liga ledas
+	atraso_500ms();             //atraso de 500ms
+	while(1)
+	{
+		PORTD = cont;           //liga ledas
+  d4:	2b b9       	out	0x0b, r18	; 11
+		cont >>= 1;             //deslocamento lógico para a direita
+  d6:	26 95       	lsr	r18
+  d8:	5f ef       	ldi	r21, 0xFF	; 255
+  da:	39 e6       	ldi	r19, 0x69	; 105
+  dc:	48 e1       	ldi	r20, 0x18	; 24
+  de:	51 50       	subi	r21, 0x01	; 1
+  e0:	30 40       	sbci	r19, 0x00	; 0
+  e2:	40 40       	sbci	r20, 0x00	; 0
+  e4:	e1 f7       	brne	.-8      	; 0xde <animacao_2+0x26>
+  e6:	00 c0       	rjmp	.+0      	; 0xe8 <animacao_2+0x30>
+  e8:	00 00       	nop
+  ea:	01 97       	sbiw	r24, 0x01	; 1
+		atraso_500ms();         //atraso de 500ms
+		if(cont == 0x00) break; //saí ao completar o deslocamento
+  ec:	99 f7       	brne	.-26     	; 0xd4 <animacao_2+0x1c>
+	}
+}
+  ee:	08 95       	ret
+
+000000f0 <animacao_3>:
+void animacao_3(void)
+{
+  f0:	88 e0       	ldi	r24, 0x08	; 8
+  f2:	90 e0       	ldi	r25, 0x00	; 0
+	//ligar os leds sequencialmente da esquerda para a direita (vai-e-volta)
+	unsigned char cont = 0x80;  //variável local inicializada
+  f4:	20 e8       	ldi	r18, 0x80	; 128
+	while(1)
+	{
+		PORTD = cont;           //liga leds
+  f6:	2b b9       	out	0x0b, r18	; 11
+  f8:	3f ef       	ldi	r19, 0xFF	; 255
+  fa:	49 e6       	ldi	r20, 0x69	; 105
+  fc:	58 e1       	ldi	r21, 0x18	; 24
+  fe:	31 50       	subi	r19, 0x01	; 1
+ 100:	40 40       	sbci	r20, 0x00	; 0
+ 102:	50 40       	sbci	r21, 0x00	; 0
+ 104:	e1 f7       	brne	.-8      	; 0xfe <animacao_3+0xe>
+ 106:	00 c0       	rjmp	.+0      	; 0x108 <animacao_3+0x18>
+ 108:	00 00       	nop
+		atraso_500ms();         //atraso de 500ms
+		cont >>= 1;             //deslocamento lógico para a direita
+ 10a:	26 95       	lsr	r18
+ 10c:	01 97       	sbiw	r24, 0x01	; 1
+		if(cont == 0x00) break; //sai ao completar o deslocamento
+ 10e:	99 f7       	brne	.-26     	; 0xf6 <animacao_3+0x6>
+ 110:	86 e0       	ldi	r24, 0x06	; 6
+ 112:	90 e0       	ldi	r25, 0x00	; 0
+ 114:	22 e0       	ldi	r18, 0x02	; 2
+	} //vai
+	cont = 0x02;
+	while(1)
+	{
+		PORTD = cont;           //liga leds
+ 116:	2b b9       	out	0x0b, r18	; 11
+ 118:	3f ef       	ldi	r19, 0xFF	; 255
+ 11a:	49 e6       	ldi	r20, 0x69	; 105
+ 11c:	58 e1       	ldi	r21, 0x18	; 24
+ 11e:	31 50       	subi	r19, 0x01	; 1
+ 120:	40 40       	sbci	r20, 0x00	; 0
+ 122:	50 40       	sbci	r21, 0x00	; 0
+ 124:	e1 f7       	brne	.-8      	; 0x11e <animacao_3+0x2e>
+ 126:	00 c0       	rjmp	.+0      	; 0x128 <animacao_3+0x38>
+ 128:	00 00       	nop
+		atraso_500ms();         //atraso de 500ms
+		cont <<= 1;             //deslocamento lógico para a esquerda
+ 12a:	22 0f       	add	r18, r18
+ 12c:	01 97       	sbiw	r24, 0x01	; 1
+		if(cont == 0x80) break; //sai ao completar o deslocamento
+ 12e:	99 f7       	brne	.-26     	; 0x116 <animacao_3+0x26>
+	} //volta
+	PORTD = cont;               //liga leds
+ 130:	80 e8       	ldi	r24, 0x80	; 128
+ 132:	8b b9       	out	0x0b, r24	; 11
+ 134:	8f ef       	ldi	r24, 0xFF	; 255
+ 136:	99 e6       	ldi	r25, 0x69	; 105
+ 138:	28 e1       	ldi	r18, 0x18	; 24
+ 13a:	81 50       	subi	r24, 0x01	; 1
+ 13c:	90 40       	sbci	r25, 0x00	; 0
+ 13e:	20 40       	sbci	r18, 0x00	; 0
+ 140:	e1 f7       	brne	.-8      	; 0x13a <animacao_3+0x4a>
+ 142:	00 c0       	rjmp	.+0      	; 0x144 <animacao_3+0x54>
+ 144:	00 00       	nop
+ 146:	08 95       	ret
+
+00000148 <animacao_4>:
+	atraso_500ms();             //atraso de 500ms
+}
+void animacao_4(void)
+{
+ 148:	88 e0       	ldi	r24, 0x08	; 8
+ 14a:	90 e0       	ldi	r25, 0x00	; 0
+	//ligar todos os leds e apagar sequencialmente da direita para a esquerda (vai-e-volta)
+	unsigned char cont = 0xFF;  //variável local inicializada
+ 14c:	2f ef       	ldi	r18, 0xFF	; 255
+	while(1)
+	{
+		PORTD = cont;           //liga leds
+ 14e:	2b b9       	out	0x0b, r18	; 11
+ 150:	3f ef       	ldi	r19, 0xFF	; 255
+ 152:	49 e6       	ldi	r20, 0x69	; 105
+ 154:	58 e1       	ldi	r21, 0x18	; 24
+ 156:	31 50       	subi	r19, 0x01	; 1
+ 158:	40 40       	sbci	r20, 0x00	; 0
+ 15a:	50 40       	sbci	r21, 0x00	; 0
+ 15c:	e1 f7       	brne	.-8      	; 0x156 <animacao_4+0xe>
+ 15e:	00 c0       	rjmp	.+0      	; 0x160 <animacao_4+0x18>
+ 160:	00 00       	nop
+		atraso_500ms();         //L de 500ms
+		cont <<= 1;             //deslocamento lógico para a esquerda
+ 162:	22 0f       	add	r18, r18
+ 164:	01 97       	sbiw	r24, 0x01	; 1
+		if(cont == 0x00) break; //sai ao apagar todos os leds
+ 166:	99 f7       	brne	.-26     	; 0x14e <animacao_4+0x6>
+	} //vai
+	PORTD = cont;
+ 168:	1b b8       	out	0x0b, r1	; 11
+ 16a:	8f ef       	ldi	r24, 0xFF	; 255
+ 16c:	99 e6       	ldi	r25, 0x69	; 105
+ 16e:	28 e1       	ldi	r18, 0x18	; 24
+ 170:	81 50       	subi	r24, 0x01	; 1
+ 172:	90 40       	sbci	r25, 0x00	; 0
+ 174:	20 40       	sbci	r18, 0x00	; 0
+ 176:	e1 f7       	brne	.-8      	; 0x170 <animacao_4+0x28>
+ 178:	00 c0       	rjmp	.+0      	; 0x17a <animacao_4+0x32>
+ 17a:	00 00       	nop
+ 17c:	88 e0       	ldi	r24, 0x08	; 8
+ 17e:	90 e0       	ldi	r25, 0x00	; 0
+	atraso_500ms();             //atraso de 500ms
+	cont = 0xFF;
+ 180:	2f ef       	ldi	r18, 0xFF	; 255
+	while(1)
+	{
+		PORTD = cont;           //liga leds
+ 182:	2b b9       	out	0x0b, r18	; 11
+ 184:	3f ef       	ldi	r19, 0xFF	; 255
+ 186:	49 e6       	ldi	r20, 0x69	; 105
+ 188:	58 e1       	ldi	r21, 0x18	; 24
+ 18a:	31 50       	subi	r19, 0x01	; 1
+ 18c:	40 40       	sbci	r20, 0x00	; 0
+ 18e:	50 40       	sbci	r21, 0x00	; 0
+ 190:	e1 f7       	brne	.-8      	; 0x18a <animacao_4+0x42>
+ 192:	00 c0       	rjmp	.+0      	; 0x194 <animacao_4+0x4c>
+ 194:	00 00       	nop
+		atraso_500ms();         //atraso de 500ms
+		cont >>= 1;             //deslocamento lógico para a direita
+ 196:	26 95       	lsr	r18
+ 198:	01 97       	sbiw	r24, 0x01	; 1
+		if(cont == 0x00) break; //sai ao apagar todos os leds
+ 19a:	99 f7       	brne	.-26     	; 0x182 <animacao_4+0x3a>
+	} //volta
+	PORTD = cont;               //liga leds
+ 19c:	1b b8       	out	0x0b, r1	; 11
+ 19e:	8f ef       	ldi	r24, 0xFF	; 255
+ 1a0:	99 e6       	ldi	r25, 0x69	; 105
+ 1a2:	28 e1       	ldi	r18, 0x18	; 24
+ 1a4:	81 50       	subi	r24, 0x01	; 1
+ 1a6:	90 40       	sbci	r25, 0x00	; 0
+ 1a8:	20 40       	sbci	r18, 0x00	; 0
+ 1aa:	e1 f7       	brne	.-8      	; 0x1a4 <animacao_4+0x5c>
+ 1ac:	00 c0       	rjmp	.+0      	; 0x1ae <animacao_4+0x66>
+ 1ae:	00 00       	nop
+ 1b0:	08 95       	ret
+
+000001b2 <animacao_5>:
+}
+void animacao_5(void)
+{
+	//ligar leds sequencialmente da direita para a esquerda um de cada vez mantendo o anterior aceso
+	unsigned char cont = 0x00;  //variável local inicializada
+	PORTD = cont;               //liga leds
+ 1b2:	1b b8       	out	0x0b, r1	; 11
+ 1b4:	2f ef       	ldi	r18, 0xFF	; 255
+ 1b6:	49 e6       	ldi	r20, 0x69	; 105
+ 1b8:	58 e1       	ldi	r21, 0x18	; 24
+ 1ba:	21 50       	subi	r18, 0x01	; 1
+ 1bc:	40 40       	sbci	r20, 0x00	; 0
+ 1be:	50 40       	sbci	r21, 0x00	; 0
+ 1c0:	e1 f7       	brne	.-8      	; 0x1ba <animacao_5+0x8>
+ 1c2:	00 c0       	rjmp	.+0      	; 0x1c4 <animacao_5+0x12>
+ 1c4:	00 00       	nop
+ 1c6:	28 e0       	ldi	r18, 0x08	; 8
+ 1c8:	30 e0       	ldi	r19, 0x00	; 0
+	atraso_500ms();             //atraso de 500ms
+}
+void animacao_5(void)
+{
+	//ligar leds sequencialmente da direita para a esquerda um de cada vez mantendo o anterior aceso
+	unsigned char cont = 0x00;  //variável local inicializada
+ 1ca:	80 e0       	ldi	r24, 0x00	; 0
+	PORTD = cont;               //liga leds
+	atraso_500ms();             //atraso de 500ms
+	while(1)
+	{
+		cont = (cont << 1) + 1; //deslocamento para a esquerda e incremento
+ 1cc:	88 0f       	add	r24, r24
+ 1ce:	8f 5f       	subi	r24, 0xFF	; 255
+		PORTD = cont;           //liga leds
+ 1d0:	8b b9       	out	0x0b, r24	; 11
+ 1d2:	9f ef       	ldi	r25, 0xFF	; 255
+ 1d4:	49 e6       	ldi	r20, 0x69	; 105
+ 1d6:	58 e1       	ldi	r21, 0x18	; 24
+ 1d8:	91 50       	subi	r25, 0x01	; 1
+ 1da:	40 40       	sbci	r20, 0x00	; 0
+ 1dc:	50 40       	sbci	r21, 0x00	; 0
+ 1de:	e1 f7       	brne	.-8      	; 0x1d8 <animacao_5+0x26>
+ 1e0:	00 c0       	rjmp	.+0      	; 0x1e2 <animacao_5+0x30>
+ 1e2:	00 00       	nop
+ 1e4:	21 50       	subi	r18, 0x01	; 1
+ 1e6:	31 09       	sbc	r19, r1
+		atraso_500ms();         //atraso de 500ms
+		if(cont == 0xFF) break; //sai se todos os led estiverem acesos
+ 1e8:	89 f7       	brne	.-30     	; 0x1cc <animacao_5+0x1a>
+	}
+}
+ 1ea:	08 95       	ret
+
+000001ec <animacao_6>:
+void animacao_6(void)
+{
+	//ligar leds sequencialmente da esquerda para a direita um de cada vez mantendo o anterior aceso
+	unsigned char cont = 0x00;  //variável local inicializada
+	PORTD = cont;               //liga leds
+ 1ec:	1b b8       	out	0x0b, r1	; 11
+ 1ee:	2f ef       	ldi	r18, 0xFF	; 255
+ 1f0:	49 e6       	ldi	r20, 0x69	; 105
+ 1f2:	58 e1       	ldi	r21, 0x18	; 24
+ 1f4:	21 50       	subi	r18, 0x01	; 1
+ 1f6:	40 40       	sbci	r20, 0x00	; 0
+ 1f8:	50 40       	sbci	r21, 0x00	; 0
+ 1fa:	e1 f7       	brne	.-8      	; 0x1f4 <animacao_6+0x8>
+ 1fc:	00 c0       	rjmp	.+0      	; 0x1fe <animacao_6+0x12>
+ 1fe:	00 00       	nop
+ 200:	28 e0       	ldi	r18, 0x08	; 8
+ 202:	30 e0       	ldi	r19, 0x00	; 0
+	}
+}
+void animacao_6(void)
+{
+	//ligar leds sequencialmente da esquerda para a direita um de cada vez mantendo o anterior aceso
+	unsigned char cont = 0x00;  //variável local inicializada
+ 204:	80 e0       	ldi	r24, 0x00	; 0
+	PORTD = cont;               //liga leds
+	atraso_500ms();             //atraso de 500ms
+	while(1)
+	{
+		cont = (cont >> 1) + 0x80; //deslocamento para a direita e incremento de 0x80
+ 206:	86 95       	lsr	r24
+ 208:	80 58       	subi	r24, 0x80	; 128
+		PORTD = cont;               //liga leds
+ 20a:	8b b9       	out	0x0b, r24	; 11
+ 20c:	9f ef       	ldi	r25, 0xFF	; 255
+ 20e:	49 e6       	ldi	r20, 0x69	; 105
+ 210:	58 e1       	ldi	r21, 0x18	; 24
+ 212:	91 50       	subi	r25, 0x01	; 1
+ 214:	40 40       	sbci	r20, 0x00	; 0
+ 216:	50 40       	sbci	r21, 0x00	; 0
+ 218:	e1 f7       	brne	.-8      	; 0x212 <animacao_6+0x26>
+ 21a:	00 c0       	rjmp	.+0      	; 0x21c <animacao_6+0x30>
+ 21c:	00 00       	nop
+ 21e:	21 50       	subi	r18, 0x01	; 1
+ 220:	31 09       	sbc	r19, r1
+		atraso_500ms();             //atraso de 500ms
+		if(cont == 0xFF) break; //sai se todos os led estiverem acesos
+ 222:	89 f7       	brne	.-30     	; 0x206 <animacao_6+0x1a>
+	}
+}
+ 224:	08 95       	ret
+
+00000226 <animacao_7>:
+void animacao_7(void)
+{
+	//contagem binária crescente de 0 - 255
+	unsigned char cont = 0; //variável local inicializada
+ 226:	80 e0       	ldi	r24, 0x00	; 0
+	while(cont < 256)
+	{
+		PORTD = cont;      //liga leds
+ 228:	8b b9       	out	0x0b, r24	; 11
+ 22a:	2f ef       	ldi	r18, 0xFF	; 255
+ 22c:	34 e3       	ldi	r19, 0x34	; 52
+ 22e:	9c e0       	ldi	r25, 0x0C	; 12
+ 230:	21 50       	subi	r18, 0x01	; 1
+ 232:	30 40       	sbci	r19, 0x00	; 0
+ 234:	90 40       	sbci	r25, 0x00	; 0
+ 236:	e1 f7       	brne	.-8      	; 0x230 <animacao_7+0xa>
+ 238:	00 c0       	rjmp	.+0      	; 0x23a <animacao_7+0x14>
+ 23a:	00 00       	nop
+		atraso_250ms();    //atraso de 250ms
+		cont++;            //incrementa contador
+ 23c:	8f 5f       	subi	r24, 0xFF	; 255
+ 23e:	f4 cf       	rjmp	.-24     	; 0x228 <animacao_7+0x2>
+
+00000240 <animacao_8>:
+	}
+}
+void animacao_8(void)
+{
+	//contagem binária decrescente de 255 - 0
+	unsigned char cont = 255; //variável local inicializada
+ 240:	8f ef       	ldi	r24, 0xFF	; 255
+	while(cont >= 0)
+	{
+		PORTD = cont;         //liga leds
+ 242:	8b b9       	out	0x0b, r24	; 11
+ 244:	2f ef       	ldi	r18, 0xFF	; 255
+ 246:	34 e3       	ldi	r19, 0x34	; 52
+ 248:	9c e0       	ldi	r25, 0x0C	; 12
+ 24a:	21 50       	subi	r18, 0x01	; 1
+ 24c:	30 40       	sbci	r19, 0x00	; 0
+ 24e:	90 40       	sbci	r25, 0x00	; 0
+ 250:	e1 f7       	brne	.-8      	; 0x24a <animacao_8+0xa>
+ 252:	00 c0       	rjmp	.+0      	; 0x254 <animacao_8+0x14>
+ 254:	00 00       	nop
+		atraso_250ms();       //atraso de 250ms
+		cont--;               //decrementa variável
+ 256:	81 50       	subi	r24, 0x01	; 1
+ 258:	f4 cf       	rjmp	.-24     	; 0x242 <animacao_8+0x2>
+
+0000025a <main>:
+void animacao_7(void);
+void animacao_8(void);
+
+int main()
+{
+	DDRD = 0xFF;        //todo o PORTD é configurado como saída
+ 25a:	8f ef       	ldi	r24, 0xFF	; 255
+ 25c:	8a b9       	out	0x0a, r24	; 10
+	DDRB = 0b11111100;  //os pinos PB0 e PB1 do PORTB são configurados como entrada e os demais como saída
+ 25e:	8c ef       	ldi	r24, 0xFC	; 252
+ 260:	84 b9       	out	0x04, r24	; 4
+	PORTB = 0b00000011; //habilita os resistores pull-up das entradas
+ 262:	83 e0       	ldi	r24, 0x03	; 3
+ 264:	85 b9       	out	0x05, r24	; 5
+	UCSR0B = 0x00;      //desabilita RXD e TXD
+ 266:	10 92 c1 00 	sts	0x00C1, r1	; 0x8000c1 <__TEXT_REGION_LENGTH__+0x7f80c1>
+			default:
+			PORTD = 0x00;    //caso nenhuma animação esteja selecionada, desliga todos os leds
+			break;
+		} //teste animação
+		PORTD = 0x00;       //desliga todos os leds
+		animacao = 0;       //atribui novo valor à variável animacao
+ 26a:	80 e0       	ldi	r24, 0x00	; 0
+
+	unsigned char animacao = 0; //variável local inicializada
+
+	while(1)
+	{
+		while(!tst_bit(PINB, AJUSTE))      //verifica se o botão AJUSTE foi pressionado
+ 26c:	18 99       	sbic	0x03, 0	; 3
+ 26e:	0f c0       	rjmp	.+30     	; 0x28e <main+0x34>
+		{
+			PORTD = animacao;           //acende led correspondente a animação selecionada
+ 270:	8b b9       	out	0x0b, r24	; 11
+			if(!tst_bit(PINB, SELECAO)) //verifica se o botão SELECAO foi pressionado
+ 272:	19 99       	sbic	0x03, 1	; 3
+ 274:	fb cf       	rjmp	.-10     	; 0x26c <main+0x12>
+			{
+				while(!tst_bit(PINB, SELECAO)); //verifica se o botão SELECAO foi solto
+ 276:	19 9b       	sbis	0x03, 1	; 3
+ 278:	fe cf       	rjmp	.-4      	; 0x276 <main+0x1c>
+ 27a:	ef e3       	ldi	r30, 0x3F	; 63
+ 27c:	fc e9       	ldi	r31, 0x9C	; 156
+ 27e:	31 97       	sbiw	r30, 0x01	; 1
+ 280:	f1 f7       	brne	.-4      	; 0x27e <main+0x24>
+ 282:	00 c0       	rjmp	.+0      	; 0x284 <main+0x2a>
+ 284:	00 00       	nop
+				atraso_10ms();                  //atraso de 10ms para eliminar ruído do botão
+				animacao <<= 1;                 //seleciona a próxima animação
+ 286:	88 0f       	add	r24, r24
+				if(animacao == 0) animacao = 1;
+ 288:	89 f7       	brne	.-30     	; 0x26c <main+0x12>
+ 28a:	81 e0       	ldi	r24, 0x01	; 1
+ 28c:	ef cf       	rjmp	.-34     	; 0x26c <main+0x12>
+			} //teste do botão SELECAO
+		} //teste do botão AJUSTE
+		PORTD = 0x00;        //desliga todos os leds
+ 28e:	1b b8       	out	0x0b, r1	; 11
+ 290:	ff ef       	ldi	r31, 0xFF	; 255
+ 292:	29 e6       	ldi	r18, 0x69	; 105
+ 294:	38 e1       	ldi	r19, 0x18	; 24
+ 296:	f1 50       	subi	r31, 0x01	; 1
+ 298:	20 40       	sbci	r18, 0x00	; 0
+ 29a:	30 40       	sbci	r19, 0x00	; 0
+ 29c:	e1 f7       	brne	.-8      	; 0x296 <main+0x3c>
+ 29e:	00 c0       	rjmp	.+0      	; 0x2a0 <main+0x46>
+ 2a0:	00 00       	nop
+		atraso_500ms();      //atraso de 500ms
+		switch (animacao)    //verifica qual animação foi selecionada
+ 2a2:	88 30       	cpi	r24, 0x08	; 8
+ 2a4:	f1 f0       	breq	.+60     	; 0x2e2 <main+0x88>
+ 2a6:	48 f4       	brcc	.+18     	; 0x2ba <main+0x60>
+ 2a8:	82 30       	cpi	r24, 0x02	; 2
+ 2aa:	a9 f0       	breq	.+42     	; 0x2d6 <main+0x7c>
+ 2ac:	84 30       	cpi	r24, 0x04	; 4
+ 2ae:	b1 f0       	breq	.+44     	; 0x2dc <main+0x82>
+ 2b0:	81 30       	cpi	r24, 0x01	; 1
+ 2b2:	f9 f4       	brne	.+62     	; 0x2f2 <main+0x98>
+		{
+			case 0x01:
+			animacao_1();    //animação 1
+ 2b4:	0e 94 40 00 	call	0x80	; 0x80 <animacao_1>
+			break;
+ 2b8:	1d c0       	rjmp	.+58     	; 0x2f4 <main+0x9a>
+				if(animacao == 0) animacao = 1;
+			} //teste do botão SELECAO
+		} //teste do botão AJUSTE
+		PORTD = 0x00;        //desliga todos os leds
+		atraso_500ms();      //atraso de 500ms
+		switch (animacao)    //verifica qual animação foi selecionada
+ 2ba:	80 32       	cpi	r24, 0x20	; 32
+ 2bc:	a9 f0       	breq	.+42     	; 0x2e8 <main+0x8e>
+ 2be:	28 f4       	brcc	.+10     	; 0x2ca <main+0x70>
+ 2c0:	80 31       	cpi	r24, 0x10	; 16
+ 2c2:	b9 f4       	brne	.+46     	; 0x2f2 <main+0x98>
+			break;
+			case 0x08:
+			animacao_4();    //animação 4
+			break;
+			case 0x10:
+			animacao_5();    //animação 5
+ 2c4:	0e 94 d9 00 	call	0x1b2	; 0x1b2 <animacao_5>
+			break;
+ 2c8:	15 c0       	rjmp	.+42     	; 0x2f4 <main+0x9a>
+				if(animacao == 0) animacao = 1;
+			} //teste do botão SELECAO
+		} //teste do botão AJUSTE
+		PORTD = 0x00;        //desliga todos os leds
+		atraso_500ms();      //atraso de 500ms
+		switch (animacao)    //verifica qual animação foi selecionada
+ 2ca:	80 34       	cpi	r24, 0x40	; 64
+ 2cc:	81 f0       	breq	.+32     	; 0x2ee <main+0x94>
+ 2ce:	80 38       	cpi	r24, 0x80	; 128
+ 2d0:	81 f4       	brne	.+32     	; 0x2f2 <main+0x98>
+			break;
+			case 0x40:
+			animacao_7();    //animação 7
+			break;
+			case 0x80:
+			animacao_8();    //animação 8
+ 2d2:	0e 94 20 01 	call	0x240	; 0x240 <animacao_8>
+		{
+			case 0x01:
+			animacao_1();    //animação 1
+			break;
+			case 0x02:
+			animacao_2();    //animação 2
+ 2d6:	0e 94 5c 00 	call	0xb8	; 0xb8 <animacao_2>
+			break;
+ 2da:	0c c0       	rjmp	.+24     	; 0x2f4 <main+0x9a>
+			case 0x04:
+			animacao_3();    //animação 3
+ 2dc:	0e 94 78 00 	call	0xf0	; 0xf0 <animacao_3>
+			break;
+ 2e0:	09 c0       	rjmp	.+18     	; 0x2f4 <main+0x9a>
+			case 0x08:
+			animacao_4();    //animação 4
+ 2e2:	0e 94 a4 00 	call	0x148	; 0x148 <animacao_4>
+			break;
+ 2e6:	06 c0       	rjmp	.+12     	; 0x2f4 <main+0x9a>
+			case 0x10:
+			animacao_5();    //animação 5
+			break;
+			case 0x20:
+			animacao_6();    //animação 6
+ 2e8:	0e 94 f6 00 	call	0x1ec	; 0x1ec <animacao_6>
+			break;
+ 2ec:	03 c0       	rjmp	.+6      	; 0x2f4 <main+0x9a>
+			case 0x40:
+			animacao_7();    //animação 7
+ 2ee:	0e 94 13 01 	call	0x226	; 0x226 <animacao_7>
+			break;
+			case 0x80:
+			animacao_8();    //animação 8
+			break;
+			default:
+			PORTD = 0x00;    //caso nenhuma animação esteja selecionada, desliga todos os leds
+ 2f2:	1b b8       	out	0x0b, r1	; 11
+			break;
+		} //teste animação
+		PORTD = 0x00;       //desliga todos os leds
+ 2f4:	1b b8       	out	0x0b, r1	; 11
+ 2f6:	b9 cf       	rjmp	.-142    	; 0x26a <main+0x10>
+
+000002f8 <_exit>:
+ 2f8:	f8 94       	cli
+
+000002fa <__stop_program>:
+ 2fa:	ff cf       	rjmp	.-2      	; 0x2fa <__stop_program>
