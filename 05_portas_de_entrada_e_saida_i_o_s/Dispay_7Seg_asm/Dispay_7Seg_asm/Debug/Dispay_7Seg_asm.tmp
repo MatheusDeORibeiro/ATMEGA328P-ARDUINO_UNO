@@ -1,0 +1,35 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Users\Mathe\Documents\Projetos\AVR\05_portas_de_entrada_e_saida_i_o_s\Dispay_7Seg_asm\Dispay_7Seg_asm\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\2.0.401\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\Mathe\Documents\Projetos\AVR\05_portas_de_entrada_e_saida_i_o_s\Dispay_7Seg_asm\Dispay_7Seg_asm\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\2.0.401\avrasm\inc\m328Pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\Mathe\Documents\Projetos\AVR\05_portas_de_entrada_e_saida_i_o_s\Dispay_7Seg_asm\Dispay_7Seg_asm\Debug\Dispay_7Seg_asm.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>Dispay_7Seg_asm.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>Dispay_7Seg_asm.map</FILE>
+  <FILE>Dispay_7Seg_asm.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <Inicializacoes><FILE>C:\Users\Mathe\Documents\Projetos\AVR\05_portas_de_entrada_e_saida_i_o_s\Dispay_7Seg_asm\Dispay_7Seg_asm\main.asm</FILE><LINE>12</LINE></Inicializacoes>
+  <Principal><FILE>C:\Users\Mathe\Documents\Projetos\AVR\05_portas_de_entrada_e_saida_i_o_s\Dispay_7Seg_asm\Dispay_7Seg_asm\main.asm</FILE><LINE>25</LINE></Principal>
+  <Incr><FILE>C:\Users\Mathe\Documents\Projetos\AVR\05_portas_de_entrada_e_saida_i_o_s\Dispay_7Seg_asm\Dispay_7Seg_asm\main.asm</FILE><LINE>32</LINE></Incr>
+  <Decod><FILE>C:\Users\Mathe\Documents\Projetos\AVR\05_portas_de_entrada_e_saida_i_o_s\Dispay_7Seg_asm\Dispay_7Seg_asm\main.asm</FILE><LINE>34</LINE></Decod>
+  <Decodifica><FILE>C:\Users\Mathe\Documents\Projetos\AVR\05_portas_de_entrada_e_saida_i_o_s\Dispay_7Seg_asm\Dispay_7Seg_asm\main.asm</FILE><LINE>54</LINE></Decodifica>
+  <Atraso><FILE>C:\Users\Mathe\Documents\Projetos\AVR\05_portas_de_entrada_e_saida_i_o_s\Dispay_7Seg_asm\Dispay_7Seg_asm\main.asm</FILE><LINE>41</LINE></Atraso>
+  <volta><FILE>C:\Users\Mathe\Documents\Projetos\AVR\05_portas_de_entrada_e_saida_i_o_s\Dispay_7Seg_asm\Dispay_7Seg_asm\main.asm</FILE><LINE>43</LINE></volta>
+  <Tabela><FILE>C:\Users\Mathe\Documents\Projetos\AVR\05_portas_de_entrada_e_saida_i_o_s\Dispay_7Seg_asm\Dispay_7Seg_asm\main.asm</FILE><LINE>72</LINE></Tabela>
+  <le_tab><FILE>C:\Users\Mathe\Documents\Projetos\AVR\05_portas_de_entrada_e_saida_i_o_s\Dispay_7Seg_asm\Dispay_7Seg_asm\main.asm</FILE><LINE>64</LINE></le_tab>
+ </LABELS>
+</ASSEMBLER_INFO>
