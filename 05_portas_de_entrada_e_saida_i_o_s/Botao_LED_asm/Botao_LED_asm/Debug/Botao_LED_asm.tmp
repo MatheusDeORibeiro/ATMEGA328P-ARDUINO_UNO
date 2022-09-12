@@ -1,0 +1,31 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Users\Mathe\Documents\Projetos\AVR\05_portas_de_entrada_e_saida_i_o_s\Botao_LED_asm\Botao_LED_asm\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\2.0.401\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\Mathe\Documents\Projetos\AVR\05_portas_de_entrada_e_saida_i_o_s\Botao_LED_asm\Botao_LED_asm\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\2.0.401\avrasm\inc\m328Pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\Mathe\Documents\Projetos\AVR\05_portas_de_entrada_e_saida_i_o_s\Botao_LED_asm\Botao_LED_asm\Debug\Botao_LED_asm.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>Botao_LED_asm.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>Botao_LED_asm.map</FILE>
+  <FILE>Botao_LED_asm.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <Inicializacoes><FILE>C:\Users\Mathe\Documents\Projetos\AVR\05_portas_de_entrada_e_saida_i_o_s\Botao_LED_asm\Botao_LED_asm\main.asm</FILE><LINE>20</LINE></Inicializacoes>
+  <Principal><FILE>C:\Users\Mathe\Documents\Projetos\AVR\05_portas_de_entrada_e_saida_i_o_s\Botao_LED_asm\Botao_LED_asm\main.asm</FILE><LINE>31</LINE></Principal>
+  <Esp_Soltar><FILE>C:\Users\Mathe\Documents\Projetos\AVR\05_portas_de_entrada_e_saida_i_o_s\Botao_LED_asm\Botao_LED_asm\main.asm</FILE><LINE>34</LINE></Esp_Soltar>
+  <Atraso><FILE>C:\Users\Mathe\Documents\Projetos\AVR\05_portas_de_entrada_e_saida_i_o_s\Botao_LED_asm\Botao_LED_asm\main.asm</FILE><LINE>49</LINE></Atraso>
+  <Liga><FILE>C:\Users\Mathe\Documents\Projetos\AVR\05_portas_de_entrada_e_saida_i_o_s\Botao_LED_asm\Botao_LED_asm\main.asm</FILE><LINE>43</LINE></Liga>
+ </LABELS>
+</ASSEMBLER_INFO>
