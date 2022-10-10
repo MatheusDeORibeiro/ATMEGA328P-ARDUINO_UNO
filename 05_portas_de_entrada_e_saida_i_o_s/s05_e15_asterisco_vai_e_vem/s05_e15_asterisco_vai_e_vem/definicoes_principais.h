@@ -24,7 +24,7 @@
 
 #define set_bit(PORTY, bit_x) (PORTY |= (1 << bit_x))  //seta o bit_x do PORTY
 #define clr_bit(PORTY, bit_x) (PORTY &= ~(1 << bit_x)) //limpa o bit_x do PORTY
-#define clp_bit(PORTY, bit_x) (PORTY ^= (1 << bit_x))  //complementa o bit_x do PORTY
+#define cpl_bit(PORTY, bit_x) (PORTY ^= (1 << bit_x))  //complementa o bit_x do PORTY
 #define tst_bit(PORTY, bit_x) (PORTY & (1 << bit_x))   //testa o estado do bit_x do PORTY
 
 #endif /* DEFINICOES_PRINCIPAIS_H_ */

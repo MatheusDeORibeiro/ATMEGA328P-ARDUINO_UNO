@@ -14,14 +14,12 @@
 #include "LCD_4bits.h"             //adiciona a biblioteca de funções do display LCD
 
 
-int main() //função principal
+int main(void) //função principal
 {
 	unsigned char i; //variável auxiliar
 
 	DDRD = 0xFF;   //define todo o PORTD como saída
 	DDRB = 0xFF;   //define todo o PORTD como saída
-	
-	UCSR0B = 0x00; //desabilita os pinos RX e Tx do Arduino UNO
 
 	Inicializa_LCD(LCD_2_N);                  //inicializa display com interface de 4 bits e duas linhas
 	Display_Cursor_ON_OFF(LCD_DSP_ON_CS_OFF); //mantém o display ligado e desliga o cursor

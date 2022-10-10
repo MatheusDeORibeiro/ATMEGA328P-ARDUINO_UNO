@@ -25,7 +25,7 @@
 const unsigned char Dado_Eletronico[] PROGMEM = {0x06, 0x5B, 0x4F, 0x66, 0x6D, 0x7C};
 //                                                  1     2     3     4     5     6
 
-int main()
+int main(void)
 {
 	unsigned char dado = 1;
 	DDRC = 0xFE;   //configura o pino PB0 como entrada e o restante do PORTB como saída

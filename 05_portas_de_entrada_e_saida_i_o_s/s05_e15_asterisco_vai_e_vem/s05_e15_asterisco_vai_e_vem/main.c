@@ -23,8 +23,6 @@ int main(void) //função principal
 	PORTD = 0x00;  //PORTD em nível baixo
 	PORTB = 0x00;  //PORTB em nível baixo
 	
-	UCSR0B = 0x00; //desabilita os pinos RX e Tx do Arduino UNO
-	
 	Inicializa_LCD(LCD_1_N);                //inicializa o display com uma linha
 	Display_Cursor_ON_OFF(LCD_DSP_ON_CS_OFF);  //mantém o display ligado e desliga o cursor
 	Limpa_Display();                           //limpa o diplay

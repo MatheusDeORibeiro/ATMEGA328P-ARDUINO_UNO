@@ -26,7 +26,7 @@
 const unsigned char Dado_Eletronico[] PROGMEM = {0x40, 0x12, 0x52, 0x36, 0x76, 0x3F};
 //                                                  1     2     3     4     5     6
 
-int main()
+int main(void)
 {
 	unsigned char dado = 1; //declaração de variável local inicializada
 	DDRC = 0xFE;   //configura o pino RC0 como entrada e o restante do PORTC como saída
