@@ -1,0 +1,893 @@
+
+s08_e02_teclado_celular.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         0000000e  00800100  00000516  000005aa  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000516  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000001  0080010e  0080010e  000005b8  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  000005b8  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  000005e8  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 000000e0  00000000  00000000  00000628  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   000015a9  00000000  00000000  00000708  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000a07  00000000  00000000  00001cb1  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000c70  00000000  00000000  000026b8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  0000021c  00000000  00000000  00003328  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    000005e7  00000000  00000000  00003544  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000f5f  00000000  00000000  00003b2b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 000000c8  00000000  00000000  00004a8a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 34 00 	jmp	0x68	; 0x68 <__ctors_end>
+   4:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+   8:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+   c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  10:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  14:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  18:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  1c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  20:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  24:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  28:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  2c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  30:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  34:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  38:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  3c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  40:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  44:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  48:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  4c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  50:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  54:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  58:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  5c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  60:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  64:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+
+00000068 <__ctors_end>:
+  68:	11 24       	eor	r1, r1
+  6a:	1f be       	out	0x3f, r1	; 63
+  6c:	cf ef       	ldi	r28, 0xFF	; 255
+  6e:	d8 e0       	ldi	r29, 0x08	; 8
+  70:	de bf       	out	0x3e, r29	; 62
+  72:	cd bf       	out	0x3d, r28	; 61
+
+00000074 <__do_copy_data>:
+  74:	11 e0       	ldi	r17, 0x01	; 1
+  76:	a0 e0       	ldi	r26, 0x00	; 0
+  78:	b1 e0       	ldi	r27, 0x01	; 1
+  7a:	e6 e1       	ldi	r30, 0x16	; 22
+  7c:	f5 e0       	ldi	r31, 0x05	; 5
+  7e:	02 c0       	rjmp	.+4      	; 0x84 <__do_copy_data+0x10>
+  80:	05 90       	lpm	r0, Z+
+  82:	0d 92       	st	X+, r0
+  84:	ae 30       	cpi	r26, 0x0E	; 14
+  86:	b1 07       	cpc	r27, r17
+  88:	d9 f7       	brne	.-10     	; 0x80 <__do_copy_data+0xc>
+
+0000008a <__do_clear_bss>:
+  8a:	21 e0       	ldi	r18, 0x01	; 1
+  8c:	ae e0       	ldi	r26, 0x0E	; 14
+  8e:	b1 e0       	ldi	r27, 0x01	; 1
+  90:	01 c0       	rjmp	.+2      	; 0x94 <.do_clear_bss_start>
+
+00000092 <.do_clear_bss_loop>:
+  92:	1d 92       	st	X+, r1
+
+00000094 <.do_clear_bss_start>:
+  94:	af 30       	cpi	r26, 0x0F	; 15
+  96:	b2 07       	cpc	r27, r18
+  98:	e1 f7       	brne	.-8      	; 0x92 <.do_clear_bss_loop>
+  9a:	0e 94 5a 01 	call	0x2b4	; 0x2b4 <main>
+  9e:	0c 94 89 02 	jmp	0x512	; 0x512 <_exit>
+
+000000a2 <__bad_interrupt>:
+  a2:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000a6 <Status_BF>:
+		{
+			while(Status_BF());
+			Escreve_Dado(0xFF);
+		}
+	}
+}
+  a6:	2a 98       	cbi	0x05, 2	; 5
+  a8:	29 9a       	sbi	0x05, 1	; 5
+  aa:	85 e0       	ldi	r24, 0x05	; 5
+  ac:	8a 95       	dec	r24
+  ae:	f1 f7       	brne	.-4      	; 0xac <Status_BF+0x6>
+  b0:	00 00       	nop
+  b2:	28 9a       	sbi	0x05, 0	; 5
+  b4:	95 e0       	ldi	r25, 0x05	; 5
+  b6:	9a 95       	dec	r25
+  b8:	f1 f7       	brne	.-4      	; 0xb6 <Status_BF+0x10>
+  ba:	00 00       	nop
+  bc:	86 b1       	in	r24, 0x06	; 6
+  be:	28 98       	cbi	0x05, 0	; 5
+  c0:	95 e0       	ldi	r25, 0x05	; 5
+  c2:	9a 95       	dec	r25
+  c4:	f1 f7       	brne	.-4      	; 0xc2 <Status_BF+0x1c>
+  c6:	00 00       	nop
+  c8:	28 9a       	sbi	0x05, 0	; 5
+  ca:	95 e0       	ldi	r25, 0x05	; 5
+  cc:	9a 95       	dec	r25
+  ce:	f1 f7       	brne	.-4      	; 0xcc <Status_BF+0x26>
+  d0:	00 00       	nop
+  d2:	28 98       	cbi	0x05, 0	; 5
+  d4:	29 98       	cbi	0x05, 1	; 5
+  d6:	83 ff       	sbrs	r24, 3
+  d8:	02 c0       	rjmp	.+4      	; 0xde <Status_BF+0x38>
+  da:	81 e0       	ldi	r24, 0x01	; 1
+  dc:	08 95       	ret
+  de:	80 e0       	ldi	r24, 0x00	; 0
+  e0:	08 95       	ret
+
+000000e2 <Pulso_Enable>:
+  e2:	8a e0       	ldi	r24, 0x0A	; 10
+  e4:	8a 95       	dec	r24
+  e6:	f1 f7       	brne	.-4      	; 0xe4 <Pulso_Enable+0x2>
+  e8:	00 c0       	rjmp	.+0      	; 0xea <Pulso_Enable+0x8>
+  ea:	28 9a       	sbi	0x05, 0	; 5
+  ec:	8a e0       	ldi	r24, 0x0A	; 10
+  ee:	8a 95       	dec	r24
+  f0:	f1 f7       	brne	.-4      	; 0xee <Pulso_Enable+0xc>
+  f2:	00 c0       	rjmp	.+0      	; 0xf4 <Pulso_Enable+0x12>
+  f4:	28 98       	cbi	0x05, 0	; 5
+  f6:	08 95       	ret
+
+000000f8 <Escreve_CMD>:
+  f8:	cf 93       	push	r28
+  fa:	c8 2f       	mov	r28, r24
+  fc:	88 b1       	in	r24, 0x08	; 8
+  fe:	80 7f       	andi	r24, 0xF0	; 240
+ 100:	9c 2f       	mov	r25, r28
+ 102:	92 95       	swap	r25
+ 104:	9f 70       	andi	r25, 0x0F	; 15
+ 106:	89 2b       	or	r24, r25
+ 108:	88 b9       	out	0x08, r24	; 8
+ 10a:	0e 94 71 00 	call	0xe2	; 0xe2 <Pulso_Enable>
+ 10e:	88 b1       	in	r24, 0x08	; 8
+ 110:	80 7f       	andi	r24, 0xF0	; 240
+ 112:	cf 70       	andi	r28, 0x0F	; 15
+ 114:	c8 2b       	or	r28, r24
+ 116:	c8 b9       	out	0x08, r28	; 8
+ 118:	cf 91       	pop	r28
+ 11a:	0c 94 71 00 	jmp	0xe2	; 0xe2 <Pulso_Enable>
+
+0000011e <Escreve_Instrucao>:
+ 11e:	97 b1       	in	r25, 0x07	; 7
+ 120:	9f 60       	ori	r25, 0x0F	; 15
+ 122:	97 b9       	out	0x07, r25	; 7
+ 124:	2a 98       	cbi	0x05, 2	; 5
+ 126:	29 98       	cbi	0x05, 1	; 5
+ 128:	0e 94 7c 00 	call	0xf8	; 0xf8 <Escreve_CMD>
+ 12c:	80 ef       	ldi	r24, 0xF0	; 240
+ 12e:	8a 95       	dec	r24
+ 130:	f1 f7       	brne	.-4      	; 0x12e <Escreve_Instrucao+0x10>
+ 132:	29 98       	cbi	0x05, 1	; 5
+ 134:	87 b1       	in	r24, 0x07	; 7
+ 136:	80 7f       	andi	r24, 0xF0	; 240
+ 138:	87 b9       	out	0x07, r24	; 7
+ 13a:	08 95       	ret
+
+0000013c <Escreve_Dado>:
+ 13c:	97 b1       	in	r25, 0x07	; 7
+ 13e:	9f 60       	ori	r25, 0x0F	; 15
+ 140:	97 b9       	out	0x07, r25	; 7
+ 142:	2a 9a       	sbi	0x05, 2	; 5
+ 144:	29 98       	cbi	0x05, 1	; 5
+ 146:	0e 94 7c 00 	call	0xf8	; 0xf8 <Escreve_CMD>
+ 14a:	2a 98       	cbi	0x05, 2	; 5
+ 14c:	80 ef       	ldi	r24, 0xF0	; 240
+ 14e:	8a 95       	dec	r24
+ 150:	f1 f7       	brne	.-4      	; 0x14e <Escreve_Dado+0x12>
+ 152:	87 b1       	in	r24, 0x07	; 7
+ 154:	80 7f       	andi	r24, 0xF0	; 240
+ 156:	87 b9       	out	0x07, r24	; 7
+ 158:	08 95       	ret
+
+0000015a <Inicializa_LCD>:
+ 15a:	ef 92       	push	r14
+ 15c:	ff 92       	push	r15
+ 15e:	0f 93       	push	r16
+ 160:	1f 93       	push	r17
+ 162:	cf 93       	push	r28
+ 164:	df 93       	push	r29
+ 166:	00 d0       	rcall	.+0      	; 0x168 <Inicializa_LCD+0xe>
+ 168:	1f 92       	push	r1
+ 16a:	cd b7       	in	r28, 0x3d	; 61
+ 16c:	de b7       	in	r29, 0x3e	; 62
+ 16e:	08 2f       	mov	r16, r24
+ 170:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 174:	90 91 01 01 	lds	r25, 0x0101	; 0x800101 <__DATA_REGION_ORIGIN__+0x1>
+ 178:	a0 91 02 01 	lds	r26, 0x0102	; 0x800102 <__DATA_REGION_ORIGIN__+0x2>
+ 17c:	89 83       	std	Y+1, r24	; 0x01
+ 17e:	9a 83       	std	Y+2, r25	; 0x02
+ 180:	ab 83       	std	Y+3, r26	; 0x03
+ 182:	2a 98       	cbi	0x05, 2	; 5
+ 184:	29 98       	cbi	0x05, 1	; 5
+ 186:	28 98       	cbi	0x05, 0	; 5
+ 188:	87 b1       	in	r24, 0x07	; 7
+ 18a:	8f 60       	ori	r24, 0x0F	; 15
+ 18c:	87 b9       	out	0x07, r24	; 7
+ 18e:	84 b1       	in	r24, 0x04	; 4
+ 190:	87 60       	ori	r24, 0x07	; 7
+ 192:	84 b9       	out	0x04, r24	; 4
+ 194:	8f e5       	ldi	r24, 0x5F	; 95
+ 196:	9a ee       	ldi	r25, 0xEA	; 234
+ 198:	01 97       	sbiw	r24, 0x01	; 1
+ 19a:	f1 f7       	brne	.-4      	; 0x198 <Inicializa_LCD+0x3e>
+ 19c:	00 c0       	rjmp	.+0      	; 0x19e <Inicializa_LCD+0x44>
+ 19e:	00 00       	nop
+ 1a0:	13 e0       	ldi	r17, 0x03	; 3
+ 1a2:	88 b1       	in	r24, 0x08	; 8
+ 1a4:	80 7f       	andi	r24, 0xF0	; 240
+ 1a6:	83 60       	ori	r24, 0x03	; 3
+ 1a8:	88 b9       	out	0x08, r24	; 8
+ 1aa:	0e 94 71 00 	call	0xe2	; 0xe2 <Pulso_Enable>
+ 1ae:	ef e1       	ldi	r30, 0x1F	; 31
+ 1b0:	fe e4       	ldi	r31, 0x4E	; 78
+ 1b2:	31 97       	sbiw	r30, 0x01	; 1
+ 1b4:	f1 f7       	brne	.-4      	; 0x1b2 <Inicializa_LCD+0x58>
+ 1b6:	00 c0       	rjmp	.+0      	; 0x1b8 <Inicializa_LCD+0x5e>
+ 1b8:	00 00       	nop
+ 1ba:	11 50       	subi	r17, 0x01	; 1
+ 1bc:	91 f7       	brne	.-28     	; 0x1a2 <Inicializa_LCD+0x48>
+ 1be:	88 b1       	in	r24, 0x08	; 8
+ 1c0:	80 7f       	andi	r24, 0xF0	; 240
+ 1c2:	82 60       	ori	r24, 0x02	; 2
+ 1c4:	88 b9       	out	0x08, r24	; 8
+ 1c6:	0e 94 71 00 	call	0xe2	; 0xe2 <Pulso_Enable>
+ 1ca:	f5 ed       	ldi	r31, 0xD5	; 213
+ 1cc:	fa 95       	dec	r31
+ 1ce:	f1 f7       	brne	.-4      	; 0x1cc <Inicializa_LCD+0x72>
+ 1d0:	00 00       	nop
+ 1d2:	00 23       	and	r16, r16
+ 1d4:	11 f0       	breq	.+4      	; 0x1da <Inicializa_LCD+0x80>
+ 1d6:	88 e2       	ldi	r24, 0x28	; 40
+ 1d8:	01 c0       	rjmp	.+2      	; 0x1dc <Inicializa_LCD+0x82>
+ 1da:	80 e2       	ldi	r24, 0x20	; 32
+ 1dc:	0e 94 7c 00 	call	0xf8	; 0xf8 <Escreve_CMD>
+ 1e0:	8f e1       	ldi	r24, 0x1F	; 31
+ 1e2:	9e e4       	ldi	r25, 0x4E	; 78
+ 1e4:	01 97       	sbiw	r24, 0x01	; 1
+ 1e6:	f1 f7       	brne	.-4      	; 0x1e4 <Inicializa_LCD+0x8a>
+ 1e8:	00 c0       	rjmp	.+0      	; 0x1ea <Inicializa_LCD+0x90>
+ 1ea:	00 00       	nop
+ 1ec:	8e 01       	movw	r16, r28
+ 1ee:	0f 5f       	subi	r16, 0xFF	; 255
+ 1f0:	1f 4f       	sbci	r17, 0xFF	; 255
+ 1f2:	7e 01       	movw	r14, r28
+ 1f4:	94 e0       	ldi	r25, 0x04	; 4
+ 1f6:	e9 0e       	add	r14, r25
+ 1f8:	f1 1c       	adc	r15, r1
+ 1fa:	f8 01       	movw	r30, r16
+ 1fc:	81 91       	ld	r24, Z+
+ 1fe:	8f 01       	movw	r16, r30
+ 200:	0e 94 7c 00 	call	0xf8	; 0xf8 <Escreve_CMD>
+ 204:	28 98       	cbi	0x05, 0	; 5
+ 206:	8f e3       	ldi	r24, 0x3F	; 63
+ 208:	9f e1       	ldi	r25, 0x1F	; 31
+ 20a:	01 97       	sbiw	r24, 0x01	; 1
+ 20c:	f1 f7       	brne	.-4      	; 0x20a <Inicializa_LCD+0xb0>
+ 20e:	00 c0       	rjmp	.+0      	; 0x210 <Inicializa_LCD+0xb6>
+ 210:	00 00       	nop
+ 212:	0e 15       	cp	r16, r14
+ 214:	1f 05       	cpc	r17, r15
+ 216:	89 f7       	brne	.-30     	; 0x1fa <Inicializa_LCD+0xa0>
+ 218:	87 b1       	in	r24, 0x07	; 7
+ 21a:	80 7f       	andi	r24, 0xF0	; 240
+ 21c:	87 b9       	out	0x07, r24	; 7
+ 21e:	0f 90       	pop	r0
+ 220:	0f 90       	pop	r0
+ 222:	0f 90       	pop	r0
+ 224:	df 91       	pop	r29
+ 226:	cf 91       	pop	r28
+ 228:	1f 91       	pop	r17
+ 22a:	0f 91       	pop	r16
+ 22c:	ff 90       	pop	r15
+ 22e:	ef 90       	pop	r14
+ 230:	08 95       	ret
+
+00000232 <Limpa_Display>:
+ 232:	81 e0       	ldi	r24, 0x01	; 1
+ 234:	0e 94 8f 00 	call	0x11e	; 0x11e <Escreve_Instrucao>
+ 238:	0e 94 53 00 	call	0xa6	; 0xa6 <Status_BF>
+ 23c:	81 11       	cpse	r24, r1
+ 23e:	fc cf       	rjmp	.-8      	; 0x238 <Limpa_Display+0x6>
+ 240:	08 95       	ret
+
+00000242 <Cursor_Home>:
+ 242:	82 e0       	ldi	r24, 0x02	; 2
+ 244:	0e 94 8f 00 	call	0x11e	; 0x11e <Escreve_Instrucao>
+ 248:	8f e3       	ldi	r24, 0x3F	; 63
+ 24a:	9f e1       	ldi	r25, 0x1F	; 31
+ 24c:	01 97       	sbiw	r24, 0x01	; 1
+ 24e:	f1 f7       	brne	.-4      	; 0x24c <Cursor_Home+0xa>
+ 250:	00 c0       	rjmp	.+0      	; 0x252 <Cursor_Home+0x10>
+ 252:	00 00       	nop
+ 254:	08 95       	ret
+
+00000256 <Desloca_Mensagem>:
+ 256:	0e 94 8f 00 	call	0x11e	; 0x11e <Escreve_Instrucao>
+ 25a:	0e 94 53 00 	call	0xa6	; 0xa6 <Status_BF>
+ 25e:	81 11       	cpse	r24, r1
+ 260:	fc cf       	rjmp	.-8      	; 0x25a <Desloca_Mensagem+0x4>
+ 262:	08 95       	ret
+
+00000264 <Display_Cursor_ON_OFF>:
+ 264:	0c 94 2b 01 	jmp	0x256	; 0x256 <Desloca_Mensagem>
+
+00000268 <Posiciona_Cursor>:
+ 268:	81 30       	cpi	r24, 0x01	; 1
+ 26a:	19 f0       	breq	.+6      	; 0x272 <Posiciona_Cursor+0xa>
+ 26c:	82 30       	cpi	r24, 0x02	; 2
+ 26e:	29 f0       	breq	.+10     	; 0x27a <Posiciona_Cursor+0x12>
+ 270:	08 95       	ret
+ 272:	8f ef       	ldi	r24, 0xFF	; 255
+ 274:	86 0f       	add	r24, r22
+ 276:	80 68       	ori	r24, 0x80	; 128
+ 278:	03 c0       	rjmp	.+6      	; 0x280 <Posiciona_Cursor+0x18>
+ 27a:	8f ef       	ldi	r24, 0xFF	; 255
+ 27c:	86 0f       	add	r24, r22
+ 27e:	80 6c       	ori	r24, 0xC0	; 192
+ 280:	0c 94 8f 00 	jmp	0x11e	; 0x11e <Escreve_Instrucao>
+
+00000284 <Escreve_S_memdados>:
+
+/* Esta função escreve uma string da memória de dados */
+void Escreve_S_memdados(char *string)
+{
+ 284:	0f 93       	push	r16
+ 286:	1f 93       	push	r17
+ 288:	cf 93       	push	r28
+ 28a:	df 93       	push	r29
+ 28c:	ec 01       	movw	r28, r24
+ 28e:	8e 01       	movw	r16, r28
+	while(*string) //percorre a string até encontrar o cractere nulo
+ 290:	88 81       	ld	r24, Y
+ 292:	88 23       	and	r24, r24
+ 294:	51 f0       	breq	.+20     	; 0x2aa <Escreve_S_memdados+0x26>
+	{
+		while(Status_BF());
+ 296:	0e 94 53 00 	call	0xa6	; 0xa6 <Status_BF>
+ 29a:	81 11       	cpse	r24, r1
+ 29c:	fc cf       	rjmp	.-8      	; 0x296 <Escreve_S_memdados+0x12>
+ 29e:	21 96       	adiw	r28, 0x01	; 1
+		Escreve_Dado(*string++); //envia caractere
+ 2a0:	f8 01       	movw	r30, r16
+ 2a2:	80 81       	ld	r24, Z
+ 2a4:	0e 94 9e 00 	call	0x13c	; 0x13c <Escreve_Dado>
+ 2a8:	f2 cf       	rjmp	.-28     	; 0x28e <Escreve_S_memdados+0xa>
+	}
+}
+ 2aa:	df 91       	pop	r29
+ 2ac:	cf 91       	pop	r28
+ 2ae:	1f 91       	pop	r17
+ 2b0:	0f 91       	pop	r16
+ 2b2:	08 95       	ret
+
+000002b4 <main>:
+
+int main(void) //função principal
+{
+	unsigned char tecla;   //declaração de variável local não inicializada
+	unsigned char digitos; //declaração de variável local não inicializada
+	DDRD = 0x0F;  //configura PD3:0 como saídas e PD7:4 como entradas
+ 2b4:	8f e0       	ldi	r24, 0x0F	; 15
+ 2b6:	8a b9       	out	0x0a, r24	; 10
+	DDRB = 0xFF;  //configura todo o PORTB como saída
+ 2b8:	8f ef       	ldi	r24, 0xFF	; 255
+ 2ba:	84 b9       	out	0x04, r24	; 4
+	DDRC = 0xFF;  //conifgura todo o PORTC como saída
+ 2bc:	87 b9       	out	0x07, r24	; 7
+	PORTD = 0xF0; //habilita os resultados pull-up das entradas e coloca as saída em nível baixo
+ 2be:	80 ef       	ldi	r24, 0xF0	; 240
+ 2c0:	8b b9       	out	0x0b, r24	; 11
+	PORTB = 0x00; //coloca todo o PORTB em nível baixo
+ 2c2:	15 b8       	out	0x05, r1	; 5
+	PORTC = 0x00; //coloca todo o PORTC em nível baixo
+ 2c4:	18 b8       	out	0x08, r1	; 8
+
+	UCSR0B = 0x00; //desabilita as funções de RX e TX dos pinos PD0 e PD1
+ 2c6:	10 92 c1 00 	sts	0x00C1, r1	; 0x8000c1 <__TEXT_REGION_LENGTH__+0x7f80c1>
+
+	Inicializa_LCD(LCD_1_N);                 //inicializa o display com uma linha
+ 2ca:	80 e0       	ldi	r24, 0x00	; 0
+ 2cc:	0e 94 ad 00 	call	0x15a	; 0x15a <Inicializa_LCD>
+	Display_Cursor_ON_OFF(LCD_DSP_ON_CS_ON); //mantém a tela do display ligada e o cursor não piscante
+ 2d0:	8e e0       	ldi	r24, 0x0E	; 14
+ 2d2:	0e 94 32 01 	call	0x264	; 0x264 <Display_Cursor_ON_OFF>
+	Limpa_Display(); //limpa a tela do display
+ 2d6:	0e 94 19 01 	call	0x232	; 0x232 <Limpa_Display>
+	Cursor_Home();   //posiciona o cursor na primeira coluna da primeira linha
+ 2da:	0e 94 21 01 	call	0x242	; 0x242 <Cursor_Home>
+
+	while(1) //loop infinito
+	{
+		digitos = 1;
+		Limpa_Display();
+ 2de:	0e 94 19 01 	call	0x232	; 0x232 <Limpa_Display>
+		Cursor_Home();
+ 2e2:	0e 94 21 01 	call	0x242	; 0x242 <Cursor_Home>
+	Limpa_Display(); //limpa a tela do display
+	Cursor_Home();   //posiciona o cursor na primeira coluna da primeira linha
+
+	while(1) //loop infinito
+	{
+		digitos = 1;
+ 2e6:	c1 e0       	ldi	r28, 0x01	; 1
+		Limpa_Display();
+		Cursor_Home();
+		while(digitos < 10)
+		{
+			tecla = Leitura_Teclado();
+ 2e8:	0e 94 b0 01 	call	0x360	; 0x360 <Leitura_Teclado>
+ 2ec:	d8 2f       	mov	r29, r24
+			if(tecla != '\0' && tecla != 'L' && tecla != 'A' && tecla != 'U' && tecla != 'D')
+ 2ee:	88 23       	and	r24, r24
+ 2f0:	e9 f0       	breq	.+58     	; 0x32c <main+0x78>
+ 2f2:	8c 34       	cpi	r24, 0x4C	; 76
+ 2f4:	f1 f0       	breq	.+60     	; 0x332 <main+0x7e>
+ 2f6:	81 34       	cpi	r24, 0x41	; 65
+ 2f8:	69 f1       	breq	.+90     	; 0x354 <main+0xa0>
+ 2fa:	85 35       	cpi	r24, 0x55	; 85
+ 2fc:	39 f0       	breq	.+14     	; 0x30c <main+0x58>
+ 2fe:	84 34       	cpi	r24, 0x44	; 68
+ 300:	a9 f0       	breq	.+42     	; 0x32c <main+0x78>
+			{
+				Escreve_Dado(tecla);
+ 302:	0e 94 9e 00 	call	0x13c	; 0x13c <Escreve_Dado>
+				digitos++;
+ 306:	cf 5f       	subi	r28, 0xFF	; 255
+			{
+				Limpa_Display();
+				Cursor_Home();
+				digitos = 0;
+			}
+			if(tecla == 'U') //apaga o último caractere
+ 308:	d5 35       	cpi	r29, 0x55	; 85
+ 30a:	81 f4       	brne	.+32     	; 0x32c <main+0x78>
+			{
+				if(digitos > 1)
+ 30c:	c2 30       	cpi	r28, 0x02	; 2
+ 30e:	60 f3       	brcs	.-40     	; 0x2e8 <main+0x34>
+				{
+					digitos--;
+ 310:	c1 50       	subi	r28, 0x01	; 1
+					Posiciona_Cursor(1, digitos);
+ 312:	0c 2f       	mov	r16, r28
+ 314:	10 e0       	ldi	r17, 0x00	; 0
+ 316:	b8 01       	movw	r22, r16
+ 318:	81 e0       	ldi	r24, 0x01	; 1
+ 31a:	0e 94 34 01 	call	0x268	; 0x268 <Posiciona_Cursor>
+					Escreve_Dado(' ');
+ 31e:	80 e2       	ldi	r24, 0x20	; 32
+ 320:	0e 94 9e 00 	call	0x13c	; 0x13c <Escreve_Dado>
+					Posiciona_Cursor(1, digitos);
+ 324:	b8 01       	movw	r22, r16
+ 326:	81 e0       	ldi	r24, 0x01	; 1
+ 328:	0e 94 34 01 	call	0x268	; 0x268 <Posiciona_Cursor>
+	while(1) //loop infinito
+	{
+		digitos = 1;
+		Limpa_Display();
+		Cursor_Home();
+		while(digitos < 10)
+ 32c:	ca 30       	cpi	r28, 0x0A	; 10
+ 32e:	e0 f2       	brcs	.-72     	; 0x2e8 <main+0x34>
+ 330:	d6 cf       	rjmp	.-84     	; 0x2de <main+0x2a>
+				Escreve_Dado(tecla);
+				digitos++;
+			}
+			if(tecla == 'L') //faz ligação
+			{
+				Limpa_Display();
+ 332:	0e 94 19 01 	call	0x232	; 0x232 <Limpa_Display>
+				Cursor_Home();
+ 336:	0e 94 21 01 	call	0x242	; 0x242 <Cursor_Home>
+				Escreve_S_memdados("Ligando...");
+ 33a:	83 e0       	ldi	r24, 0x03	; 3
+ 33c:	91 e0       	ldi	r25, 0x01	; 1
+ 33e:	0e 94 42 01 	call	0x284	; 0x284 <Escreve_S_memdados>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 342:	2f ef       	ldi	r18, 0xFF	; 255
+ 344:	83 ed       	ldi	r24, 0xD3	; 211
+ 346:	90 e3       	ldi	r25, 0x30	; 48
+ 348:	21 50       	subi	r18, 0x01	; 1
+ 34a:	80 40       	sbci	r24, 0x00	; 0
+ 34c:	90 40       	sbci	r25, 0x00	; 0
+ 34e:	e1 f7       	brne	.-8      	; 0x348 <main+0x94>
+ 350:	00 c0       	rjmp	.+0      	; 0x352 <main+0x9e>
+ 352:	00 00       	nop
+				Cursor_Home();
+				digitos = 0;
+			}
+			if(tecla == 'A') //limpa tela
+			{
+				Limpa_Display();
+ 354:	0e 94 19 01 	call	0x232	; 0x232 <Limpa_Display>
+				Cursor_Home();
+ 358:	0e 94 21 01 	call	0x242	; 0x242 <Cursor_Home>
+				digitos = 0;
+ 35c:	c0 e0       	ldi	r28, 0x00	; 0
+ 35e:	c4 cf       	rjmp	.-120    	; 0x2e8 <main+0x34>
+
+00000360 <Leitura_Teclado>:
+/* Esta função retorna o caractere correspondente à tecla pressionada */
+unsigned char Leitura_Teclado(void)
+{
+	//declaração de variável auxiliar
+	static char tecla_ant = 0;       //armazena o status da tecla	
+    DIR_TECLADO = 0x0F;  //configura as linhas como entradas e as colunas como saída
+ 360:	8f e0       	ldi	r24, 0x0F	; 15
+ 362:	8a b9       	out	0x0a, r24	; 10
+	PORT_TECLADO = 0xFF; //habilita pull-ups das entrada e coloca saídas em nível alto
+ 364:	8f ef       	ldi	r24, 0xFF	; 255
+ 366:	8b b9       	out	0x0b, r24	; 11
+	clr_bit(PORT_TECLADO, _C1); //seleciona a coluna 1(PD4)
+ 368:	58 98       	cbi	0x0b, 0	; 11
+ 36a:	8f e3       	ldi	r24, 0x3F	; 63
+ 36c:	9c e9       	ldi	r25, 0x9C	; 156
+ 36e:	01 97       	sbiw	r24, 0x01	; 1
+ 370:	f1 f7       	brne	.-4      	; 0x36e <Leitura_Teclado+0xe>
+ 372:	00 c0       	rjmp	.+0      	; 0x374 <Leitura_Teclado+0x14>
+ 374:	00 00       	nop
+	_delay_ms(10);
+	if(!tst_bit(LE_TECLADO, _L1))
+ 376:	4c 99       	sbic	0x09, 4	; 9
+ 378:	09 c0       	rjmp	.+18     	; 0x38c <Leitura_Teclado+0x2c>
+	{
+		if(tecla_ant) return '\0';
+ 37a:	80 91 0e 01 	lds	r24, 0x010E	; 0x80010e <__data_end>
+ 37e:	81 11       	cpse	r24, r1
+ 380:	c6 c0       	rjmp	.+396    	; 0x50e <__EEPROM_REGION_LENGTH__+0x10e>
+		else
+		{
+			tecla_ant = 1;
+ 382:	81 e0       	ldi	r24, 0x01	; 1
+ 384:	80 93 0e 01 	sts	0x010E, r24	; 0x80010e <__data_end>
+			return '1';
+ 388:	81 e3       	ldi	r24, 0x31	; 49
+ 38a:	08 95       	ret
+		}
+	}
+	if(!tst_bit(LE_TECLADO, _L2))
+ 38c:	4d 99       	sbic	0x09, 5	; 9
+ 38e:	09 c0       	rjmp	.+18     	; 0x3a2 <Leitura_Teclado+0x42>
+	{
+		if(tecla_ant) return '\0';
+ 390:	80 91 0e 01 	lds	r24, 0x010E	; 0x80010e <__data_end>
+ 394:	81 11       	cpse	r24, r1
+ 396:	bb c0       	rjmp	.+374    	; 0x50e <__EEPROM_REGION_LENGTH__+0x10e>
+		else
+		{
+			tecla_ant = 1;
+ 398:	81 e0       	ldi	r24, 0x01	; 1
+ 39a:	80 93 0e 01 	sts	0x010E, r24	; 0x80010e <__data_end>
+			return '4';
+ 39e:	84 e3       	ldi	r24, 0x34	; 52
+ 3a0:	08 95       	ret
+		}
+	}
+	if(!tst_bit(LE_TECLADO, _L3))
+ 3a2:	4e 99       	sbic	0x09, 6	; 9
+ 3a4:	09 c0       	rjmp	.+18     	; 0x3b8 <Leitura_Teclado+0x58>
+	{
+		if(tecla_ant) return '\0';
+ 3a6:	80 91 0e 01 	lds	r24, 0x010E	; 0x80010e <__data_end>
+ 3aa:	81 11       	cpse	r24, r1
+ 3ac:	b0 c0       	rjmp	.+352    	; 0x50e <__EEPROM_REGION_LENGTH__+0x10e>
+		else
+		{
+			tecla_ant = 1;
+ 3ae:	81 e0       	ldi	r24, 0x01	; 1
+ 3b0:	80 93 0e 01 	sts	0x010E, r24	; 0x80010e <__data_end>
+			return '7';
+ 3b4:	87 e3       	ldi	r24, 0x37	; 55
+ 3b6:	08 95       	ret
+		}
+	}
+	if(!tst_bit(LE_TECLADO, _L4))
+ 3b8:	4f 99       	sbic	0x09, 7	; 9
+ 3ba:	09 c0       	rjmp	.+18     	; 0x3ce <Leitura_Teclado+0x6e>
+	{
+		if(tecla_ant) return '\0';
+ 3bc:	80 91 0e 01 	lds	r24, 0x010E	; 0x80010e <__data_end>
+ 3c0:	81 11       	cpse	r24, r1
+ 3c2:	a5 c0       	rjmp	.+330    	; 0x50e <__EEPROM_REGION_LENGTH__+0x10e>
+		else
+		{
+			tecla_ant = 1;
+ 3c4:	81 e0       	ldi	r24, 0x01	; 1
+ 3c6:	80 93 0e 01 	sts	0x010E, r24	; 0x80010e <__data_end>
+			return '*';
+ 3ca:	8a e2       	ldi	r24, 0x2A	; 42
+ 3cc:	08 95       	ret
+		}
+	}
+	set_bit(PORT_TECLADO, _C1);
+ 3ce:	58 9a       	sbi	0x0b, 0	; 11
+	clr_bit(PORT_TECLADO, _C2); //seleciona a coluna 2(PD5)
+ 3d0:	59 98       	cbi	0x0b, 1	; 11
+ 3d2:	8f e3       	ldi	r24, 0x3F	; 63
+ 3d4:	9c e9       	ldi	r25, 0x9C	; 156
+ 3d6:	01 97       	sbiw	r24, 0x01	; 1
+ 3d8:	f1 f7       	brne	.-4      	; 0x3d6 <Leitura_Teclado+0x76>
+ 3da:	00 c0       	rjmp	.+0      	; 0x3dc <Leitura_Teclado+0x7c>
+ 3dc:	00 00       	nop
+	_delay_ms(10);
+	if(!tst_bit(LE_TECLADO, _L1))
+ 3de:	4c 99       	sbic	0x09, 4	; 9
+ 3e0:	09 c0       	rjmp	.+18     	; 0x3f4 <Leitura_Teclado+0x94>
+	{
+		if(tecla_ant) return '\0';
+ 3e2:	80 91 0e 01 	lds	r24, 0x010E	; 0x80010e <__data_end>
+ 3e6:	81 11       	cpse	r24, r1
+ 3e8:	92 c0       	rjmp	.+292    	; 0x50e <__EEPROM_REGION_LENGTH__+0x10e>
+		else
+		{
+			tecla_ant = 1;
+ 3ea:	81 e0       	ldi	r24, 0x01	; 1
+ 3ec:	80 93 0e 01 	sts	0x010E, r24	; 0x80010e <__data_end>
+			return '2';
+ 3f0:	82 e3       	ldi	r24, 0x32	; 50
+ 3f2:	08 95       	ret
+		}
+	}
+	if(!tst_bit(LE_TECLADO, _L2))
+ 3f4:	4d 99       	sbic	0x09, 5	; 9
+ 3f6:	09 c0       	rjmp	.+18     	; 0x40a <__EEPROM_REGION_LENGTH__+0xa>
+	{
+		if(tecla_ant) return '\0';
+ 3f8:	80 91 0e 01 	lds	r24, 0x010E	; 0x80010e <__data_end>
+ 3fc:	81 11       	cpse	r24, r1
+ 3fe:	87 c0       	rjmp	.+270    	; 0x50e <__EEPROM_REGION_LENGTH__+0x10e>
+		else
+		{
+			tecla_ant = 1;
+ 400:	81 e0       	ldi	r24, 0x01	; 1
+ 402:	80 93 0e 01 	sts	0x010E, r24	; 0x80010e <__data_end>
+			return '5';
+ 406:	85 e3       	ldi	r24, 0x35	; 53
+ 408:	08 95       	ret
+		}
+	}
+	if(!tst_bit(LE_TECLADO, _L3))
+ 40a:	4e 99       	sbic	0x09, 6	; 9
+ 40c:	09 c0       	rjmp	.+18     	; 0x420 <__EEPROM_REGION_LENGTH__+0x20>
+	{
+		if(tecla_ant) return '\0';
+ 40e:	80 91 0e 01 	lds	r24, 0x010E	; 0x80010e <__data_end>
+ 412:	81 11       	cpse	r24, r1
+ 414:	7c c0       	rjmp	.+248    	; 0x50e <__EEPROM_REGION_LENGTH__+0x10e>
+		else
+		{
+			tecla_ant = 1;
+ 416:	81 e0       	ldi	r24, 0x01	; 1
+ 418:	80 93 0e 01 	sts	0x010E, r24	; 0x80010e <__data_end>
+			return '8';
+ 41c:	88 e3       	ldi	r24, 0x38	; 56
+ 41e:	08 95       	ret
+		}
+	}
+	if(!tst_bit(LE_TECLADO, _L4))
+ 420:	4f 99       	sbic	0x09, 7	; 9
+ 422:	09 c0       	rjmp	.+18     	; 0x436 <__EEPROM_REGION_LENGTH__+0x36>
+	{
+		if(tecla_ant) return '\0';
+ 424:	80 91 0e 01 	lds	r24, 0x010E	; 0x80010e <__data_end>
+ 428:	81 11       	cpse	r24, r1
+ 42a:	71 c0       	rjmp	.+226    	; 0x50e <__EEPROM_REGION_LENGTH__+0x10e>
+		else
+		{
+			tecla_ant = 1;
+ 42c:	81 e0       	ldi	r24, 0x01	; 1
+ 42e:	80 93 0e 01 	sts	0x010E, r24	; 0x80010e <__data_end>
+			return '0';
+ 432:	80 e3       	ldi	r24, 0x30	; 48
+ 434:	08 95       	ret
+		}
+	}
+	set_bit(PORT_TECLADO, _C2);
+ 436:	59 9a       	sbi	0x0b, 1	; 11
+	clr_bit(PORT_TECLADO, _C3); //seleciona a coluna 3(PD6)
+ 438:	5a 98       	cbi	0x0b, 2	; 11
+ 43a:	8f e3       	ldi	r24, 0x3F	; 63
+ 43c:	9c e9       	ldi	r25, 0x9C	; 156
+ 43e:	01 97       	sbiw	r24, 0x01	; 1
+ 440:	f1 f7       	brne	.-4      	; 0x43e <__EEPROM_REGION_LENGTH__+0x3e>
+ 442:	00 c0       	rjmp	.+0      	; 0x444 <__EEPROM_REGION_LENGTH__+0x44>
+ 444:	00 00       	nop
+	_delay_ms(10);
+	if(!tst_bit(LE_TECLADO, _L1))
+ 446:	4c 99       	sbic	0x09, 4	; 9
+ 448:	09 c0       	rjmp	.+18     	; 0x45c <__EEPROM_REGION_LENGTH__+0x5c>
+	{
+		if(tecla_ant) return '\0';
+ 44a:	80 91 0e 01 	lds	r24, 0x010E	; 0x80010e <__data_end>
+ 44e:	81 11       	cpse	r24, r1
+ 450:	5e c0       	rjmp	.+188    	; 0x50e <__EEPROM_REGION_LENGTH__+0x10e>
+		else
+		{
+			tecla_ant = 1;
+ 452:	81 e0       	ldi	r24, 0x01	; 1
+ 454:	80 93 0e 01 	sts	0x010E, r24	; 0x80010e <__data_end>
+			return '3';
+ 458:	83 e3       	ldi	r24, 0x33	; 51
+ 45a:	08 95       	ret
+		}
+	}
+	if(!tst_bit(LE_TECLADO, _L2))
+ 45c:	4d 99       	sbic	0x09, 5	; 9
+ 45e:	09 c0       	rjmp	.+18     	; 0x472 <__EEPROM_REGION_LENGTH__+0x72>
+	{
+		if(tecla_ant) return '\0';
+ 460:	80 91 0e 01 	lds	r24, 0x010E	; 0x80010e <__data_end>
+ 464:	81 11       	cpse	r24, r1
+ 466:	53 c0       	rjmp	.+166    	; 0x50e <__EEPROM_REGION_LENGTH__+0x10e>
+		else
+		{
+			tecla_ant = 1;
+ 468:	81 e0       	ldi	r24, 0x01	; 1
+ 46a:	80 93 0e 01 	sts	0x010E, r24	; 0x80010e <__data_end>
+			return '6';
+ 46e:	86 e3       	ldi	r24, 0x36	; 54
+ 470:	08 95       	ret
+		}
+	}
+	if(!tst_bit(LE_TECLADO, _L3))
+ 472:	4e 99       	sbic	0x09, 6	; 9
+ 474:	09 c0       	rjmp	.+18     	; 0x488 <__EEPROM_REGION_LENGTH__+0x88>
+	{
+		if(tecla_ant) return '\0';
+ 476:	80 91 0e 01 	lds	r24, 0x010E	; 0x80010e <__data_end>
+ 47a:	81 11       	cpse	r24, r1
+ 47c:	48 c0       	rjmp	.+144    	; 0x50e <__EEPROM_REGION_LENGTH__+0x10e>
+		else
+		{
+			tecla_ant = 1;
+ 47e:	81 e0       	ldi	r24, 0x01	; 1
+ 480:	80 93 0e 01 	sts	0x010E, r24	; 0x80010e <__data_end>
+			return '9';
+ 484:	89 e3       	ldi	r24, 0x39	; 57
+ 486:	08 95       	ret
+		}
+	}
+	if(!tst_bit(LE_TECLADO, _L4))
+ 488:	4f 99       	sbic	0x09, 7	; 9
+ 48a:	09 c0       	rjmp	.+18     	; 0x49e <__EEPROM_REGION_LENGTH__+0x9e>
+	{
+		if(tecla_ant) return '\0';
+ 48c:	80 91 0e 01 	lds	r24, 0x010E	; 0x80010e <__data_end>
+ 490:	81 11       	cpse	r24, r1
+ 492:	3d c0       	rjmp	.+122    	; 0x50e <__EEPROM_REGION_LENGTH__+0x10e>
+		else
+		{
+			tecla_ant = 1;
+ 494:	81 e0       	ldi	r24, 0x01	; 1
+ 496:	80 93 0e 01 	sts	0x010E, r24	; 0x80010e <__data_end>
+			return '#';
+ 49a:	83 e2       	ldi	r24, 0x23	; 35
+ 49c:	08 95       	ret
+		}
+	}
+	set_bit(PORT_TECLADO, _C3);
+ 49e:	5a 9a       	sbi	0x0b, 2	; 11
+	clr_bit(PORT_TECLADO, _C4); //seleciona a coluna 4(PD7)
+ 4a0:	5b 98       	cbi	0x0b, 3	; 11
+ 4a2:	8f e3       	ldi	r24, 0x3F	; 63
+ 4a4:	9c e9       	ldi	r25, 0x9C	; 156
+ 4a6:	01 97       	sbiw	r24, 0x01	; 1
+ 4a8:	f1 f7       	brne	.-4      	; 0x4a6 <__EEPROM_REGION_LENGTH__+0xa6>
+ 4aa:	00 c0       	rjmp	.+0      	; 0x4ac <__EEPROM_REGION_LENGTH__+0xac>
+ 4ac:	00 00       	nop
+	_delay_ms(10);
+	if(!tst_bit(LE_TECLADO, _L1))
+ 4ae:	4c 99       	sbic	0x09, 4	; 9
+ 4b0:	09 c0       	rjmp	.+18     	; 0x4c4 <__EEPROM_REGION_LENGTH__+0xc4>
+	{
+		if(tecla_ant) return '\0';
+ 4b2:	80 91 0e 01 	lds	r24, 0x010E	; 0x80010e <__data_end>
+ 4b6:	81 11       	cpse	r24, r1
+ 4b8:	2a c0       	rjmp	.+84     	; 0x50e <__EEPROM_REGION_LENGTH__+0x10e>
+		else
+		{
+			tecla_ant = 1;
+ 4ba:	81 e0       	ldi	r24, 0x01	; 1
+ 4bc:	80 93 0e 01 	sts	0x010E, r24	; 0x80010e <__data_end>
+			return 'L';
+ 4c0:	8c e4       	ldi	r24, 0x4C	; 76
+ 4c2:	08 95       	ret
+		}
+	}
+	if(!tst_bit(LE_TECLADO, _L2))
+ 4c4:	4d 99       	sbic	0x09, 5	; 9
+ 4c6:	09 c0       	rjmp	.+18     	; 0x4da <__EEPROM_REGION_LENGTH__+0xda>
+	{
+		if(tecla_ant) return '\0';
+ 4c8:	80 91 0e 01 	lds	r24, 0x010E	; 0x80010e <__data_end>
+ 4cc:	81 11       	cpse	r24, r1
+ 4ce:	1f c0       	rjmp	.+62     	; 0x50e <__EEPROM_REGION_LENGTH__+0x10e>
+		else
+		{
+			tecla_ant = 1;
+ 4d0:	81 e0       	ldi	r24, 0x01	; 1
+ 4d2:	80 93 0e 01 	sts	0x010E, r24	; 0x80010e <__data_end>
+			return 'A';
+ 4d6:	81 e4       	ldi	r24, 0x41	; 65
+ 4d8:	08 95       	ret
+		}
+	}
+	if(!tst_bit(LE_TECLADO, _L3))
+ 4da:	4e 99       	sbic	0x09, 6	; 9
+ 4dc:	09 c0       	rjmp	.+18     	; 0x4f0 <__EEPROM_REGION_LENGTH__+0xf0>
+	{
+		if(tecla_ant) return '\0';
+ 4de:	80 91 0e 01 	lds	r24, 0x010E	; 0x80010e <__data_end>
+ 4e2:	81 11       	cpse	r24, r1
+ 4e4:	14 c0       	rjmp	.+40     	; 0x50e <__EEPROM_REGION_LENGTH__+0x10e>
+		else
+		{
+			tecla_ant = 1;
+ 4e6:	81 e0       	ldi	r24, 0x01	; 1
+ 4e8:	80 93 0e 01 	sts	0x010E, r24	; 0x80010e <__data_end>
+			return 'U';
+ 4ec:	85 e5       	ldi	r24, 0x55	; 85
+ 4ee:	08 95       	ret
+		}
+	}
+	if(!tst_bit(LE_TECLADO, _L4))
+ 4f0:	4f 99       	sbic	0x09, 7	; 9
+ 4f2:	09 c0       	rjmp	.+18     	; 0x506 <__EEPROM_REGION_LENGTH__+0x106>
+	{
+		if(tecla_ant) return '\0';
+ 4f4:	80 91 0e 01 	lds	r24, 0x010E	; 0x80010e <__data_end>
+ 4f8:	81 11       	cpse	r24, r1
+ 4fa:	09 c0       	rjmp	.+18     	; 0x50e <__EEPROM_REGION_LENGTH__+0x10e>
+		else
+		{
+			tecla_ant = 1;
+ 4fc:	81 e0       	ldi	r24, 0x01	; 1
+ 4fe:	80 93 0e 01 	sts	0x010E, r24	; 0x80010e <__data_end>
+			return 'D';
+ 502:	84 e4       	ldi	r24, 0x44	; 68
+ 504:	08 95       	ret
+		}
+	}
+	DIR_TECLADO = 0xFF; //configura todo o barramento do teclado como saída
+ 506:	8f ef       	ldi	r24, 0xFF	; 255
+ 508:	8a b9       	out	0x0a, r24	; 10
+	tecla_ant = 0;      //nenhuma tecla foi pressionada	
+ 50a:	10 92 0e 01 	sts	0x010E, r1	; 0x80010e <__data_end>
+	return '\0';
+ 50e:	80 e0       	ldi	r24, 0x00	; 0
+}
+ 510:	08 95       	ret
+
+00000512 <_exit>:
+ 512:	f8 94       	cli
+
+00000514 <__stop_program>:
+ 514:	ff cf       	rjmp	.-2      	; 0x514 <__stop_program>
