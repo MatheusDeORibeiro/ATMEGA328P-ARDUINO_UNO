@@ -1,0 +1,1057 @@
+
+teste_LCD_4bits.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000032  00800100  00000552  000005c6  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000552  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      00000030  00000000  00000000  000005f8  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000628  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 000000a0  00000000  00000000  00000668  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00001506  00000000  00000000  00000708  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000936  00000000  00000000  00001c0e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000008ed  00000000  00000000  00002544  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000188  00000000  00000000  00002e34  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    0000053b  00000000  00000000  00002fbc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000c46  00000000  00000000  000034f7  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000098  00000000  00000000  0000413d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 3d 00 	jmp	0x7a	; 0x7a <__ctors_end>
+   4:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+   8:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+   c:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  10:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  14:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  18:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  1c:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  20:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  24:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  28:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  2c:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  30:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  34:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  38:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  3c:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  40:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  44:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  48:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  4c:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  50:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  54:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  58:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  5c:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  60:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  64:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+
+00000068 <__trampolines_end>:
+  68:	41 42       	sbci	r20, 0x21	; 33
+  6a:	43 44       	sbci	r20, 0x43	; 67
+  6c:	45 46       	sbci	r20, 0x65	; 101
+  6e:	47 48       	sbci	r20, 0x87	; 135
+  70:	49 4a       	sbci	r20, 0xA9	; 169
+  72:	4b 4c       	sbci	r20, 0xCB	; 203
+  74:	4d 4e       	sbci	r20, 0xED	; 237
+  76:	4f 50       	subi	r20, 0x0F	; 15
+	...
+
+0000007a <__ctors_end>:
+  7a:	11 24       	eor	r1, r1
+  7c:	1f be       	out	0x3f, r1	; 63
+  7e:	cf ef       	ldi	r28, 0xFF	; 255
+  80:	d8 e0       	ldi	r29, 0x08	; 8
+  82:	de bf       	out	0x3e, r29	; 62
+  84:	cd bf       	out	0x3d, r28	; 61
+
+00000086 <__do_copy_data>:
+  86:	11 e0       	ldi	r17, 0x01	; 1
+  88:	a0 e0       	ldi	r26, 0x00	; 0
+  8a:	b1 e0       	ldi	r27, 0x01	; 1
+  8c:	e2 e5       	ldi	r30, 0x52	; 82
+  8e:	f5 e0       	ldi	r31, 0x05	; 5
+  90:	02 c0       	rjmp	.+4      	; 0x96 <__do_copy_data+0x10>
+  92:	05 90       	lpm	r0, Z+
+  94:	0d 92       	st	X+, r0
+  96:	a2 33       	cpi	r26, 0x32	; 50
+  98:	b1 07       	cpc	r27, r17
+  9a:	d9 f7       	brne	.-10     	; 0x92 <__do_copy_data+0xc>
+  9c:	0e 94 00 02 	call	0x400	; 0x400 <main>
+  a0:	0c 94 a7 02 	jmp	0x54e	; 0x54e <_exit>
+
+000000a4 <__bad_interrupt>:
+  a4:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000a8 <Status_BF>:
+
+/* Esta função retorna o status do busy flag: 1 - ocupado e 0 - livre */
+unsigned char Status_BF(void)
+{
+	unsigned char leitura_bf;    //variável auxiliar
+	clr_bit(PORT_CONT, _RS);
+  a8:	2a 98       	cbi	0x05, 2	; 5
+	set_bit(PORT_CONT, _RW);
+  aa:	29 9a       	sbi	0x05, 1	; 5
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  ac:	85 e0       	ldi	r24, 0x05	; 5
+  ae:	8a 95       	dec	r24
+  b0:	f1 f7       	brne	.-4      	; 0xae <Status_BF+0x6>
+  b2:	00 00       	nop
+	_delay_us(1);
+	set_bit(PORT_CONT, _EN);
+  b4:	28 9a       	sbi	0x05, 0	; 5
+  b6:	95 e0       	ldi	r25, 0x05	; 5
+  b8:	9a 95       	dec	r25
+  ba:	f1 f7       	brne	.-4      	; 0xb8 <Status_BF+0x10>
+  bc:	00 00       	nop
+	_delay_us(1);
+	leitura_bf = PIND & 0xF0;    //carrega o nibble mais significativo
+  be:	89 b1       	in	r24, 0x09	; 9
+	clr_bit(PORT_CONT, _EN);
+  c0:	28 98       	cbi	0x05, 0	; 5
+  c2:	95 e0       	ldi	r25, 0x05	; 5
+  c4:	9a 95       	dec	r25
+  c6:	f1 f7       	brne	.-4      	; 0xc4 <Status_BF+0x1c>
+  c8:	00 00       	nop
+	_delay_us(1);
+	set_bit(PORT_CONT, _EN);
+  ca:	28 9a       	sbi	0x05, 0	; 5
+  cc:	95 e0       	ldi	r25, 0x05	; 5
+  ce:	9a 95       	dec	r25
+  d0:	f1 f7       	brne	.-4      	; 0xce <Status_BF+0x26>
+  d2:	00 00       	nop
+	_delay_us(1);
+	//leitura_bf =(leitura_bf << 4) | (PIND & 0xF0); //carrega o nibble menos significativo
+	if(leitura_bf & 0x80)        //se o bit 7 for igual a 1, o display está ocupado
+	{
+		clr_bit(PORT_CONT, _EN);
+  d4:	28 98       	cbi	0x05, 0	; 5
+		clr_bit(PORT_CONT, _RW);
+  d6:	29 98       	cbi	0x05, 1	; 5
+	clr_bit(PORT_CONT, _EN);
+	_delay_us(1);
+	set_bit(PORT_CONT, _EN);
+	_delay_us(1);
+	//leitura_bf =(leitura_bf << 4) | (PIND & 0xF0); //carrega o nibble menos significativo
+	if(leitura_bf & 0x80)        //se o bit 7 for igual a 1, o display está ocupado
+  d8:	87 ff       	sbrs	r24, 7
+  da:	02 c0       	rjmp	.+4      	; 0xe0 <Status_BF+0x38>
+	{
+		clr_bit(PORT_CONT, _EN);
+		clr_bit(PORT_CONT, _RW);
+  dc:	81 e0       	ldi	r24, 0x01	; 1
+  de:	08 95       	ret
+	}
+	else                         //se não, o display está livre
+	{
+		clr_bit(PORT_CONT, _EN);
+		clr_bit(PORT_CONT, _RW);
+		return 0;                //livre
+  e0:	80 e0       	ldi	r24, 0x00	; 0
+	}
+}
+  e2:	08 95       	ret
+
+000000e4 <Leitura_Dado>:
+
+/* Esta função lê um dado do display */
+unsigned char Leitura_Dado(void)
+{
+	unsigned char leitura;                    //variável auxiliar
+	set_bit(PORT_CONT, _RS);                  //dado
+  e4:	2a 9a       	sbi	0x05, 2	; 5
+	set_bit(PORT_CONT, _RW);                  //instrução
+  e6:	29 9a       	sbi	0x05, 1	; 5
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  e8:	8f e9       	ldi	r24, 0x9F	; 159
+  ea:	9f e0       	ldi	r25, 0x0F	; 15
+  ec:	01 97       	sbiw	r24, 0x01	; 1
+  ee:	f1 f7       	brne	.-4      	; 0xec <Leitura_Dado+0x8>
+  f0:	00 c0       	rjmp	.+0      	; 0xf2 <Leitura_Dado+0xe>
+  f2:	00 00       	nop
+	_delay_ms(1);
+	set_bit(PORT_CONT, _EN);
+  f4:	28 9a       	sbi	0x05, 0	; 5
+  f6:	ef e9       	ldi	r30, 0x9F	; 159
+  f8:	ff e0       	ldi	r31, 0x0F	; 15
+  fa:	31 97       	sbiw	r30, 0x01	; 1
+  fc:	f1 f7       	brne	.-4      	; 0xfa <Leitura_Dado+0x16>
+  fe:	00 c0       	rjmp	.+0      	; 0x100 <Leitura_Dado+0x1c>
+ 100:	00 00       	nop
+	_delay_ms(1);
+	leitura = PIND & 0xF0;                    //carrega nibble mais significativo
+ 102:	99 b1       	in	r25, 0x09	; 9
+ 104:	90 7f       	andi	r25, 0xF0	; 240
+	clr_bit(PORT_CONT, _EN);
+ 106:	28 98       	cbi	0x05, 0	; 5
+ 108:	ef e9       	ldi	r30, 0x9F	; 159
+ 10a:	ff e0       	ldi	r31, 0x0F	; 15
+ 10c:	31 97       	sbiw	r30, 0x01	; 1
+ 10e:	f1 f7       	brne	.-4      	; 0x10c <Leitura_Dado+0x28>
+ 110:	00 c0       	rjmp	.+0      	; 0x112 <Leitura_Dado+0x2e>
+ 112:	00 00       	nop
+	_delay_ms(1);
+	set_bit(PORT_CONT, _EN);
+ 114:	28 9a       	sbi	0x05, 0	; 5
+ 116:	ef e9       	ldi	r30, 0x9F	; 159
+ 118:	ff e0       	ldi	r31, 0x0F	; 15
+ 11a:	31 97       	sbiw	r30, 0x01	; 1
+ 11c:	f1 f7       	brne	.-4      	; 0x11a <Leitura_Dado+0x36>
+ 11e:	00 c0       	rjmp	.+0      	; 0x120 <Leitura_Dado+0x3c>
+ 120:	00 00       	nop
+	_delay_ms(1);
+	leitura = leitura | ((PIND & 0xF0) >> 4); //carrega nibble menos significativo
+ 122:	89 b1       	in	r24, 0x09	; 9
+	clr_bit(PORT_CONT, _EN);
+ 124:	28 98       	cbi	0x05, 0	; 5
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 126:	f0 ef       	ldi	r31, 0xF0	; 240
+ 128:	fa 95       	dec	r31
+ 12a:	f1 f7       	brne	.-4      	; 0x128 <Leitura_Dado+0x44>
+	_delay_us(45);                            //aguarda tempo de execução da isntrução
+	clr_bit(PORT_CONT, _RS);
+ 12c:	2a 98       	cbi	0x05, 2	; 5
+	clr_bit(PORT_CONT, _RW);
+ 12e:	29 98       	cbi	0x05, 1	; 5
+	return leitura;                           //retorna o dado lido
+ 130:	82 95       	swap	r24
+ 132:	8f 70       	andi	r24, 0x0F	; 15
+}
+ 134:	89 2b       	or	r24, r25
+ 136:	08 95       	ret
+
+00000138 <Pulso_Enable>:
+ 138:	8a e0       	ldi	r24, 0x0A	; 10
+ 13a:	8a 95       	dec	r24
+ 13c:	f1 f7       	brne	.-4      	; 0x13a <Pulso_Enable+0x2>
+ 13e:	00 c0       	rjmp	.+0      	; 0x140 <Pulso_Enable+0x8>
+
+/* Esta função envia um pulso para o pino Enable */
+void Pulso_Enable(void)
+{
+	_delay_us(2);
+	set_bit(PORT_CONT, _EN);
+ 140:	28 9a       	sbi	0x05, 0	; 5
+ 142:	8a e0       	ldi	r24, 0x0A	; 10
+ 144:	8a 95       	dec	r24
+ 146:	f1 f7       	brne	.-4      	; 0x144 <Pulso_Enable+0xc>
+ 148:	00 c0       	rjmp	.+0      	; 0x14a <Pulso_Enable+0x12>
+	_delay_us(2);
+	clr_bit(PORT_CONT, _EN);
+ 14a:	28 98       	cbi	0x05, 0	; 5
+ 14c:	08 95       	ret
+
+0000014e <Escreve_Instrucao>:
+
+//implementação das funções
+
+/* Esta escreve uma instrução para o display */
+void Escreve_Instrucao(unsigned char instrucao)
+{
+ 14e:	cf 93       	push	r28
+ 150:	c8 2f       	mov	r28, r24
+    DIR_DADOS |= 0xFF;       //configura o barramento de dados como saída
+ 152:	8a b1       	in	r24, 0x0a	; 10
+ 154:	8f ef       	ldi	r24, 0xFF	; 255
+ 156:	8a b9       	out	0x0a, r24	; 10
+	//seleciona operação
+	clr_bit(PORT_CONT, _RS); //instrução
+ 158:	2a 98       	cbi	0x05, 2	; 5
+	clr_bit(PORT_CONT, _RW); //escrita
+ 15a:	29 98       	cbi	0x05, 1	; 5
+	PORT_DADOS = ((PORT_DADOS & 0x0F) | (instrucao & 0xF0)); //não altera o valor do nibble menos significativo do PORTD
+ 15c:	8b b1       	in	r24, 0x0b	; 11
+ 15e:	8f 70       	andi	r24, 0x0F	; 15
+ 160:	9c 2f       	mov	r25, r28
+ 162:	90 7f       	andi	r25, 0xF0	; 240
+ 164:	89 2b       	or	r24, r25
+ 166:	8b b9       	out	0x0b, r24	; 11
+	                         //carrega o nibble mais significativo
+	Pulso_Enable();          //envia o nibble mais significativo
+ 168:	0e 94 9c 00 	call	0x138	; 0x138 <Pulso_Enable>
+	PORT_DADOS = ((PORT_DADOS & 0x0F) | ((instrucao << 4) & 0xF0));
+ 16c:	8b b1       	in	r24, 0x0b	; 11
+ 16e:	28 2f       	mov	r18, r24
+ 170:	2f 70       	andi	r18, 0x0F	; 15
+ 172:	30 e1       	ldi	r19, 0x10	; 16
+ 174:	c3 9f       	mul	r28, r19
+ 176:	c0 01       	movw	r24, r0
+ 178:	11 24       	eor	r1, r1
+ 17a:	82 2b       	or	r24, r18
+ 17c:	8b b9       	out	0x0b, r24	; 11
+	                         //carrega o nibble menos significativo
+	Pulso_Enable();          //envia o nibble mais significativo
+ 17e:	0e 94 9c 00 	call	0x138	; 0x138 <Pulso_Enable>
+ 182:	80 ef       	ldi	r24, 0xF0	; 240
+ 184:	8a 95       	dec	r24
+ 186:	f1 f7       	brne	.-4      	; 0x184 <Escreve_Instrucao+0x36>
+	_delay_us(45);           //aguarda o tempo de execução da instrução
+	clr_bit(PORT_CONT, _RW);          
+ 188:	29 98       	cbi	0x05, 1	; 5
+	//configura o barramento de dados como entrada
+	clr_bit(DIR_DADOS, _DB7);
+ 18a:	57 98       	cbi	0x0a, 7	; 10
+	clr_bit(DIR_DADOS, _DB6);
+ 18c:	56 98       	cbi	0x0a, 6	; 10
+	clr_bit(DIR_DADOS, _DB5);
+ 18e:	55 98       	cbi	0x0a, 5	; 10
+	clr_bit(DIR_DADOS, _DB4);
+ 190:	54 98       	cbi	0x0a, 4	; 10
+}
+ 192:	cf 91       	pop	r28
+ 194:	08 95       	ret
+
+00000196 <Escreve_Dado>:
+	}
+}
+
+/* Esta função escreve um dado no display */
+void Escreve_Dado(unsigned char dado)
+{
+ 196:	cf 93       	push	r28
+ 198:	c8 2f       	mov	r28, r24
+	DIR_DADOS |= 0xF0;         //configura o barramento de dados como saída
+ 19a:	8a b1       	in	r24, 0x0a	; 10
+ 19c:	80 6f       	ori	r24, 0xF0	; 240
+ 19e:	8a b9       	out	0x0a, r24	; 10
+	//seleciiona operação
+	set_bit(PORT_CONT, _RS);   //dado
+ 1a0:	2a 9a       	sbi	0x05, 2	; 5
+	clr_bit(PORT_CONT, _RW);   //escrita
+ 1a2:	29 98       	cbi	0x05, 1	; 5
+	PORT_DADOS = ((PORT_DADOS & 0x0F) | (dado & 0xF0));
+ 1a4:	8b b1       	in	r24, 0x0b	; 11
+ 1a6:	8f 70       	andi	r24, 0x0F	; 15
+ 1a8:	9c 2f       	mov	r25, r28
+ 1aa:	90 7f       	andi	r25, 0xF0	; 240
+ 1ac:	89 2b       	or	r24, r25
+ 1ae:	8b b9       	out	0x0b, r24	; 11
+	                           //carrega o nibble mais significativo no barramento de dados
+	Pulso_Enable();            //envia o nibble mais significativo
+ 1b0:	0e 94 9c 00 	call	0x138	; 0x138 <Pulso_Enable>
+	PORT_DADOS = ((PORT_DADOS & 0x0F) | ((dado << 4) & 0xF0));
+ 1b4:	8b b1       	in	r24, 0x0b	; 11
+ 1b6:	28 2f       	mov	r18, r24
+ 1b8:	2f 70       	andi	r18, 0x0F	; 15
+ 1ba:	30 e1       	ldi	r19, 0x10	; 16
+ 1bc:	c3 9f       	mul	r28, r19
+ 1be:	c0 01       	movw	r24, r0
+ 1c0:	11 24       	eor	r1, r1
+ 1c2:	82 2b       	or	r24, r18
+ 1c4:	8b b9       	out	0x0b, r24	; 11
+	                           //carrega o nibbe menos significativo no barramento de dados
+	Pulso_Enable();            //envia o nibble menos significativo
+ 1c6:	0e 94 9c 00 	call	0x138	; 0x138 <Pulso_Enable>
+	clr_bit(PORT_CONT, _RS);
+ 1ca:	2a 98       	cbi	0x05, 2	; 5
+ 1cc:	80 ef       	ldi	r24, 0xF0	; 240
+ 1ce:	8a 95       	dec	r24
+ 1d0:	f1 f7       	brne	.-4      	; 0x1ce <Escreve_Dado+0x38>
+	_delay_us(45);             //aguarda o tempo de execução da instrução
+	//configura o barramento de dados como entrada
+	clr_bit(DIR_DADOS, _DB7);
+ 1d2:	57 98       	cbi	0x0a, 7	; 10
+	clr_bit(DIR_DADOS, _DB6);
+ 1d4:	56 98       	cbi	0x0a, 6	; 10
+	clr_bit(DIR_DADOS, _DB5);
+ 1d6:	55 98       	cbi	0x0a, 5	; 10
+	clr_bit(DIR_DADOS, _DB4);
+ 1d8:	54 98       	cbi	0x0a, 4	; 10
+}
+ 1da:	cf 91       	pop	r28
+ 1dc:	08 95       	ret
+
+000001de <Inicializa_LCD>:
+	clr_bit(PORT_CONT, _EN);
+}
+
+/* Esta função inicializa o display com a interface de 4 bits */
+void Inicializa_LCD(unsigned char numero_linhas)
+{
+ 1de:	cf 92       	push	r12
+ 1e0:	df 92       	push	r13
+ 1e2:	ef 92       	push	r14
+ 1e4:	ff 92       	push	r15
+ 1e6:	0f 93       	push	r16
+ 1e8:	1f 93       	push	r17
+ 1ea:	cf 93       	push	r28
+ 1ec:	df 93       	push	r29
+ 1ee:	00 d0       	rcall	.+0      	; 0x1f0 <Inicializa_LCD+0x12>
+ 1f0:	1f 92       	push	r1
+ 1f2:	cd b7       	in	r28, 0x3d	; 61
+ 1f4:	de b7       	in	r29, 0x3e	; 62
+ 1f6:	08 2f       	mov	r16, r24
+	unsigned char i;
+	unsigned char ajuste[3] = {0x0F, 0x01, 0x06};
+ 1f8:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 1fc:	90 91 01 01 	lds	r25, 0x0101	; 0x800101 <__DATA_REGION_ORIGIN__+0x1>
+ 200:	a0 91 02 01 	lds	r26, 0x0102	; 0x800102 <__DATA_REGION_ORIGIN__+0x2>
+ 204:	89 83       	std	Y+1, r24	; 0x01
+ 206:	9a 83       	std	Y+2, r25	; 0x02
+ 208:	ab 83       	std	Y+3, r26	; 0x03
+                  //display ON e cursor piscante, limpa display e deslocamento para a direita
+	
+	//configuração de hardware
+	clr_bit(PORT_CONT, _RS);
+ 20a:	2a 98       	cbi	0x05, 2	; 5
+	clr_bit(PORT_CONT, _RW);
+ 20c:	29 98       	cbi	0x05, 1	; 5
+	clr_bit(PORT_CONT, _EN);
+ 20e:	28 98       	cbi	0x05, 0	; 5
+	DIR_DADOS |= 0xF0;       //configura o barramento de dados como saída
+ 210:	8a b1       	in	r24, 0x0a	; 10
+ 212:	80 6f       	ori	r24, 0xF0	; 240
+ 214:	8a b9       	out	0x0a, r24	; 10
+	DIR_CONT  |= 0x07;       //configura o barramento de controle como saída
+ 216:	84 b1       	in	r24, 0x04	; 4
+ 218:	87 60       	ori	r24, 0x07	; 7
+ 21a:	84 b9       	out	0x04, r24	; 4
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 21c:	8f e5       	ldi	r24, 0x5F	; 95
+ 21e:	9a ee       	ldi	r25, 0xEA	; 234
+ 220:	01 97       	sbiw	r24, 0x01	; 1
+ 222:	f1 f7       	brne	.-4      	; 0x220 <Inicializa_LCD+0x42>
+ 224:	00 c0       	rjmp	.+0      	; 0x226 <Inicializa_LCD+0x48>
+ 226:	00 00       	nop
+ 228:	13 e0       	ldi	r17, 0x03	; 3
+	_delay_ms(15);           //aguarda 15ms após Vcc atingir no mínimo 4,5V
+	
+	//ajuste de função
+	for(i = 0; i < 3; i++)
+	{
+		PORT_DADOS = ((PORT_DADOS & 0x0F) | (0x30 & 0xF0));
+ 22a:	8b b1       	in	r24, 0x0b	; 11
+ 22c:	8f 70       	andi	r24, 0x0F	; 15
+ 22e:	80 63       	ori	r24, 0x30	; 48
+ 230:	8b b9       	out	0x0b, r24	; 11
+		Pulso_Enable();
+ 232:	0e 94 9c 00 	call	0x138	; 0x138 <Pulso_Enable>
+ 236:	ef e1       	ldi	r30, 0x1F	; 31
+ 238:	fe e4       	ldi	r31, 0x4E	; 78
+ 23a:	31 97       	sbiw	r30, 0x01	; 1
+ 23c:	f1 f7       	brne	.-4      	; 0x23a <Inicializa_LCD+0x5c>
+ 23e:	00 c0       	rjmp	.+0      	; 0x240 <Inicializa_LCD+0x62>
+ 240:	00 00       	nop
+ 242:	11 50       	subi	r17, 0x01	; 1
+	DIR_CONT  |= 0x07;       //configura o barramento de controle como saída
+	
+	_delay_ms(15);           //aguarda 15ms após Vcc atingir no mínimo 4,5V
+	
+	//ajuste de função
+	for(i = 0; i < 3; i++)
+ 244:	91 f7       	brne	.-28     	; 0x22a <Inicializa_LCD+0x4c>
+		Pulso_Enable();
+		_delay_ms(5);
+	}
+	
+	//ajuste de função
+	PORT_DADOS = ((PORT_DADOS & 0x0F) | (0x20 & 0xF0));
+ 246:	8b b1       	in	r24, 0x0b	; 11
+ 248:	8f 70       	andi	r24, 0x0F	; 15
+ 24a:	80 62       	ori	r24, 0x20	; 32
+ 24c:	8b b9       	out	0x0b, r24	; 11
+	Pulso_Enable();
+ 24e:	0e 94 9c 00 	call	0x138	; 0x138 <Pulso_Enable>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 252:	f5 ed       	ldi	r31, 0xD5	; 213
+ 254:	fa 95       	dec	r31
+ 256:	f1 f7       	brne	.-4      	; 0x254 <Inicializa_LCD+0x76>
+ 258:	00 00       	nop
+	_delay_us(40);
+	
+	//ajuste de função - 4bits e 5x8 pontos
+	if(numero_linhas) 
+	{
+		PORT_DADOS = ((PORT_DADOS & 0x0F) | (0x28 & 0xF0));
+ 25a:	8b b1       	in	r24, 0x0b	; 11
+ 25c:	8f 70       	andi	r24, 0x0F	; 15
+ 25e:	80 62       	ori	r24, 0x20	; 32
+ 260:	8b b9       	out	0x0b, r24	; 11
+	PORT_DADOS = ((PORT_DADOS & 0x0F) | (0x20 & 0xF0));
+	Pulso_Enable();
+	_delay_us(40);
+	
+	//ajuste de função - 4bits e 5x8 pontos
+	if(numero_linhas) 
+ 262:	00 23       	and	r16, r16
+ 264:	31 f0       	breq	.+12     	; 0x272 <Inicializa_LCD+0x94>
+	{
+		PORT_DADOS = ((PORT_DADOS & 0x0F) | (0x28 & 0xF0));
+		Pulso_Enable();
+ 266:	0e 94 9c 00 	call	0x138	; 0x138 <Pulso_Enable>
+		PORT_DADOS = ((PORT_DADOS & 0x0F) | ((0x28 << 4) & 0xF0));
+ 26a:	8b b1       	in	r24, 0x0b	; 11
+ 26c:	8f 70       	andi	r24, 0x0F	; 15
+ 26e:	80 68       	ori	r24, 0x80	; 128
+ 270:	04 c0       	rjmp	.+8      	; 0x27a <Inicializa_LCD+0x9c>
+		Pulso_Enable();
+	}
+	else
+	{
+		PORT_DADOS = ((PORT_DADOS & 0x0F) | (0x20 & 0xF0));
+		Pulso_Enable();
+ 272:	0e 94 9c 00 	call	0x138	; 0x138 <Pulso_Enable>
+		PORT_DADOS = ((PORT_DADOS & 0x0F) | ((0x20 << 4) & 0xF0));
+ 276:	8b b1       	in	r24, 0x0b	; 11
+ 278:	8f 70       	andi	r24, 0x0F	; 15
+ 27a:	8b b9       	out	0x0b, r24	; 11
+		Pulso_Enable();
+ 27c:	0e 94 9c 00 	call	0x138	; 0x138 <Pulso_Enable>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 280:	8f e1       	ldi	r24, 0x1F	; 31
+ 282:	9e e4       	ldi	r25, 0x4E	; 78
+ 284:	01 97       	sbiw	r24, 0x01	; 1
+ 286:	f1 f7       	brne	.-4      	; 0x284 <Inicializa_LCD+0xa6>
+ 288:	00 c0       	rjmp	.+0      	; 0x28a <Inicializa_LCD+0xac>
+ 28a:	00 00       	nop
+ 28c:	fe 01       	movw	r30, r28
+ 28e:	31 96       	adiw	r30, 0x01	; 1
+ 290:	7f 01       	movw	r14, r30
+ 292:	8e 01       	movw	r16, r28
+ 294:	0c 5f       	subi	r16, 0xFC	; 252
+ 296:	1f 4f       	sbci	r17, 0xFF	; 255
+	_delay_ms(5);
+	
+	//configurações do vetor ajustes
+	for(i = 0; i < 3; i++)
+	{
+		PORT_DADOS = ((PORT_DADOS & 0x0F) | (ajuste[i] & 0xF0));
+ 298:	8b b1       	in	r24, 0x0b	; 11
+ 29a:	67 01       	movw	r12, r14
+ 29c:	f7 01       	movw	r30, r14
+ 29e:	91 91       	ld	r25, Z+
+ 2a0:	7f 01       	movw	r14, r30
+ 2a2:	90 7f       	andi	r25, 0xF0	; 240
+ 2a4:	8f 70       	andi	r24, 0x0F	; 15
+ 2a6:	89 2b       	or	r24, r25
+ 2a8:	8b b9       	out	0x0b, r24	; 11
+		Pulso_Enable();
+ 2aa:	0e 94 9c 00 	call	0x138	; 0x138 <Pulso_Enable>
+		PORT_DADOS = ((PORT_DADOS & 0x0F) | ((ajuste[i] << 4) & 0xF0));
+ 2ae:	2b b1       	in	r18, 0x0b	; 11
+ 2b0:	f6 01       	movw	r30, r12
+ 2b2:	90 81       	ld	r25, Z
+ 2b4:	f0 e1       	ldi	r31, 0x10	; 16
+ 2b6:	9f 9f       	mul	r25, r31
+ 2b8:	c0 01       	movw	r24, r0
+ 2ba:	11 24       	eor	r1, r1
+ 2bc:	92 2f       	mov	r25, r18
+ 2be:	9f 70       	andi	r25, 0x0F	; 15
+ 2c0:	89 2b       	or	r24, r25
+ 2c2:	8b b9       	out	0x0b, r24	; 11
+		Pulso_Enable();
+ 2c4:	0e 94 9c 00 	call	0x138	; 0x138 <Pulso_Enable>
+		clr_bit(PORT_CONT, _EN);
+ 2c8:	28 98       	cbi	0x05, 0	; 5
+ 2ca:	8f e3       	ldi	r24, 0x3F	; 63
+ 2cc:	9f e1       	ldi	r25, 0x1F	; 31
+ 2ce:	01 97       	sbiw	r24, 0x01	; 1
+ 2d0:	f1 f7       	brne	.-4      	; 0x2ce <Inicializa_LCD+0xf0>
+ 2d2:	00 c0       	rjmp	.+0      	; 0x2d4 <Inicializa_LCD+0xf6>
+ 2d4:	00 00       	nop
+		Pulso_Enable();
+	}
+	_delay_ms(5);
+	
+	//configurações do vetor ajustes
+	for(i = 0; i < 3; i++)
+ 2d6:	e0 16       	cp	r14, r16
+ 2d8:	f1 06       	cpc	r15, r17
+ 2da:	f1 f6       	brne	.-68     	; 0x298 <Inicializa_LCD+0xba>
+		clr_bit(PORT_CONT, _EN);
+		_delay_ms(2);
+	}
+	
+	//configura o barramento de dados como entrada
+	clr_bit(DIR_DADOS, _DB7);
+ 2dc:	57 98       	cbi	0x0a, 7	; 10
+	clr_bit(DIR_DADOS, _DB6);
+ 2de:	56 98       	cbi	0x0a, 6	; 10
+	clr_bit(DIR_DADOS, _DB5);
+ 2e0:	55 98       	cbi	0x0a, 5	; 10
+	clr_bit(DIR_DADOS, _DB4);
+ 2e2:	54 98       	cbi	0x0a, 4	; 10
+}
+ 2e4:	0f 90       	pop	r0
+ 2e6:	0f 90       	pop	r0
+ 2e8:	0f 90       	pop	r0
+ 2ea:	df 91       	pop	r29
+ 2ec:	cf 91       	pop	r28
+ 2ee:	1f 91       	pop	r17
+ 2f0:	0f 91       	pop	r16
+ 2f2:	ff 90       	pop	r15
+ 2f4:	ef 90       	pop	r14
+ 2f6:	df 90       	pop	r13
+ 2f8:	cf 90       	pop	r12
+ 2fa:	08 95       	ret
+
+000002fc <Limpa_Display>:
+
+/* Esta função limpa a tela do display */
+void Limpa_Display(void)
+{
+	Escreve_Instrucao(0x01);
+ 2fc:	81 e0       	ldi	r24, 0x01	; 1
+ 2fe:	0e 94 a7 00 	call	0x14e	; 0x14e <Escreve_Instrucao>
+	//_delay_ms(2);
+	while(Status_BF());
+ 302:	0e 94 54 00 	call	0xa8	; 0xa8 <Status_BF>
+ 306:	81 11       	cpse	r24, r1
+ 308:	fc cf       	rjmp	.-8      	; 0x302 <Limpa_Display+0x6>
+}
+ 30a:	08 95       	ret
+
+0000030c <Cursor_Home>:
+
+/* Esta função posiciona o cursor na primeira coluna da primeira linha */
+void Cursor_Home(void)
+{
+	Escreve_Instrucao(0x02);
+ 30c:	82 e0       	ldi	r24, 0x02	; 2
+ 30e:	0e 94 a7 00 	call	0x14e	; 0x14e <Escreve_Instrucao>
+ 312:	8f e3       	ldi	r24, 0x3F	; 63
+ 314:	9f e1       	ldi	r25, 0x1F	; 31
+ 316:	01 97       	sbiw	r24, 0x01	; 1
+ 318:	f1 f7       	brne	.-4      	; 0x316 <Cursor_Home+0xa>
+ 31a:	00 c0       	rjmp	.+0      	; 0x31c <Cursor_Home+0x10>
+ 31c:	00 00       	nop
+ 31e:	08 95       	ret
+
+00000320 <Desloca_Mensagem>:
+}
+
+/* Esta função desloca o display/cursor */
+void Desloca_Mensagem(unsigned char deslocamento)
+{
+	Escreve_Instrucao(deslocamento);
+ 320:	0e 94 a7 00 	call	0x14e	; 0x14e <Escreve_Instrucao>
+	while(Status_BF());
+ 324:	0e 94 54 00 	call	0xa8	; 0xa8 <Status_BF>
+ 328:	81 11       	cpse	r24, r1
+ 32a:	fc cf       	rjmp	.-8      	; 0x324 <Desloca_Mensagem+0x4>
+}
+ 32c:	08 95       	ret
+
+0000032e <Display_Cursor_ON_OFF>:
+ 32e:	0c 94 90 01 	jmp	0x320	; 0x320 <Desloca_Mensagem>
+
+00000332 <Posiciona_Cursor>:
+
+/* Esta função posiciona o cursor em uma determinda coluna de determinada linha */
+void Posiciona_Cursor(unsigned char linha, unsigned coluna)
+{
+	switch(linha)
+ 332:	81 30       	cpi	r24, 0x01	; 1
+ 334:	19 f0       	breq	.+6      	; 0x33c <Posiciona_Cursor+0xa>
+ 336:	82 30       	cpi	r24, 0x02	; 2
+ 338:	29 f0       	breq	.+10     	; 0x344 <Posiciona_Cursor+0x12>
+ 33a:	08 95       	ret
+	{
+		case 1:                                     //posiciona na primeira linha
+		    Escreve_Instrucao(0x80 | (coluna - 1));
+ 33c:	8f ef       	ldi	r24, 0xFF	; 255
+ 33e:	86 0f       	add	r24, r22
+ 340:	80 68       	ori	r24, 0x80	; 128
+ 342:	03 c0       	rjmp	.+6      	; 0x34a <Posiciona_Cursor+0x18>
+			break;
+		case 2:			                            //posiciona na segunda linha
+			Escreve_Instrucao(0xC0 | (coluna - 1));
+ 344:	8f ef       	ldi	r24, 0xFF	; 255
+ 346:	86 0f       	add	r24, r22
+ 348:	80 6c       	ori	r24, 0xC0	; 192
+ 34a:	0c 94 a7 00 	jmp	0x14e	; 0x14e <Escreve_Instrucao>
+
+0000034e <Testa_Dispay>:
+	}
+}
+
+/* Esta função testa o display ligando todos os seus pixels */
+void Testa_Dispay(void)
+{
+ 34e:	cf 93       	push	r28
+	unsigned char i; //variável auxiliar
+	
+	Cursor_Home();
+ 350:	0e 94 86 01 	call	0x30c	; 0x30c <Cursor_Home>
+	while(Status_BF());
+ 354:	0e 94 54 00 	call	0xa8	; 0xa8 <Status_BF>
+ 358:	81 11       	cpse	r24, r1
+ 35a:	fc cf       	rjmp	.-8      	; 0x354 <Testa_Dispay+0x6>
+ 35c:	c0 e0       	ldi	r28, 0x00	; 0
+	
+	for(i = 0; i < 32; i++)
+	{
+		if(i < 16)  //preenche a primeira linha
+ 35e:	c0 31       	cpi	r28, 0x10	; 16
+ 360:	40 f4       	brcc	.+16     	; 0x372 <Testa_Dispay+0x24>
+		{
+			while(Status_BF());
+ 362:	0e 94 54 00 	call	0xa8	; 0xa8 <Status_BF>
+ 366:	81 11       	cpse	r24, r1
+ 368:	fc cf       	rjmp	.-8      	; 0x362 <Testa_Dispay+0x14>
+			Escreve_Dado(0xFF);
+ 36a:	8f ef       	ldi	r24, 0xFF	; 255
+ 36c:	0e 94 cb 00 	call	0x196	; 0x196 <Escreve_Dado>
+ 370:	0a c0       	rjmp	.+20     	; 0x386 <Testa_Dispay+0x38>
+		}
+		if(i == 16) //posiciona o cursor na primeira coluna da segunda linha
+ 372:	c0 31       	cpi	r28, 0x10	; 16
+ 374:	41 f4       	brne	.+16     	; 0x386 <Testa_Dispay+0x38>
+		{
+			while(Status_BF());
+ 376:	0e 94 54 00 	call	0xa8	; 0xa8 <Status_BF>
+ 37a:	81 11       	cpse	r24, r1
+ 37c:	fc cf       	rjmp	.-8      	; 0x376 <Testa_Dispay+0x28>
+	{
+		case 1:                                     //posiciona na primeira linha
+		    Escreve_Instrucao(0x80 | (coluna - 1));
+			break;
+		case 2:			                            //posiciona na segunda linha
+			Escreve_Instrucao(0xC0 | (coluna - 1));
+ 37e:	80 ec       	ldi	r24, 0xC0	; 192
+ 380:	0e 94 a7 00 	call	0x14e	; 0x14e <Escreve_Instrucao>
+ 384:	04 c0       	rjmp	.+8      	; 0x38e <Testa_Dispay+0x40>
+			Posiciona_Cursor(2, 1);
+			Escreve_Dado(0xFF);
+		}
+		else       //preenche a segunda linha
+		{
+			while(Status_BF());
+ 386:	0e 94 54 00 	call	0xa8	; 0xa8 <Status_BF>
+ 38a:	81 11       	cpse	r24, r1
+ 38c:	fc cf       	rjmp	.-8      	; 0x386 <Testa_Dispay+0x38>
+			Escreve_Dado(0xFF);
+ 38e:	8f ef       	ldi	r24, 0xFF	; 255
+ 390:	0e 94 cb 00 	call	0x196	; 0x196 <Escreve_Dado>
+	unsigned char i; //variável auxiliar
+	
+	Cursor_Home();
+	while(Status_BF());
+	
+	for(i = 0; i < 32; i++)
+ 394:	cf 5f       	subi	r28, 0xFF	; 255
+ 396:	c0 32       	cpi	r28, 0x20	; 32
+ 398:	11 f7       	brne	.-60     	; 0x35e <Testa_Dispay+0x10>
+		{
+			while(Status_BF());
+			Escreve_Dado(0xFF);
+		}
+	}
+}
+ 39a:	cf 91       	pop	r28
+ 39c:	08 95       	ret
+
+0000039e <Escreve_S_memdados>:
+
+/* Esta função escreve uma string da memória de dados */
+void Escreve_S_memdados(char *string)
+{
+ 39e:	0f 93       	push	r16
+ 3a0:	1f 93       	push	r17
+ 3a2:	cf 93       	push	r28
+ 3a4:	df 93       	push	r29
+ 3a6:	ec 01       	movw	r28, r24
+ 3a8:	8e 01       	movw	r16, r28
+	while(*string) //percorre a string até encontrar o cractere nulo
+ 3aa:	88 81       	ld	r24, Y
+ 3ac:	88 23       	and	r24, r24
+ 3ae:	51 f0       	breq	.+20     	; 0x3c4 <Escreve_S_memdados+0x26>
+	{
+		while(Status_BF());
+ 3b0:	0e 94 54 00 	call	0xa8	; 0xa8 <Status_BF>
+ 3b4:	81 11       	cpse	r24, r1
+ 3b6:	fc cf       	rjmp	.-8      	; 0x3b0 <Escreve_S_memdados+0x12>
+ 3b8:	21 96       	adiw	r28, 0x01	; 1
+		Escreve_Dado(*string++); //envia caractere
+ 3ba:	f8 01       	movw	r30, r16
+ 3bc:	80 81       	ld	r24, Z
+ 3be:	0e 94 cb 00 	call	0x196	; 0x196 <Escreve_Dado>
+ 3c2:	f2 cf       	rjmp	.-28     	; 0x3a8 <Escreve_S_memdados+0xa>
+	}
+}
+ 3c4:	df 91       	pop	r29
+ 3c6:	cf 91       	pop	r28
+ 3c8:	1f 91       	pop	r17
+ 3ca:	0f 91       	pop	r16
+ 3cc:	08 95       	ret
+
+000003ce <Escreve_S_memprogm>:
+
+/* Esta função escreve uma string da memória de programa */
+void Escreve_S_memprogm(const unsigned char *string)
+{
+ 3ce:	0f 93       	push	r16
+ 3d0:	1f 93       	push	r17
+ 3d2:	cf 93       	push	r28
+ 3d4:	df 93       	push	r29
+ 3d6:	ec 01       	movw	r28, r24
+	while(pgm_read_byte(&(*string))) //percorre a string até encontrar o cractere nulo
+ 3d8:	8e 01       	movw	r16, r28
+ 3da:	fe 01       	movw	r30, r28
+ 3dc:	84 91       	lpm	r24, Z
+ 3de:	88 23       	and	r24, r24
+ 3e0:	51 f0       	breq	.+20     	; 0x3f6 <Escreve_S_memprogm+0x28>
+	{
+		while(Status_BF());
+ 3e2:	0e 94 54 00 	call	0xa8	; 0xa8 <Status_BF>
+ 3e6:	81 11       	cpse	r24, r1
+ 3e8:	fc cf       	rjmp	.-8      	; 0x3e2 <Escreve_S_memprogm+0x14>
+		Escreve_Dado(pgm_read_byte(&(*string++))); //envia um caractere
+ 3ea:	21 96       	adiw	r28, 0x01	; 1
+ 3ec:	f8 01       	movw	r30, r16
+ 3ee:	84 91       	lpm	r24, Z
+ 3f0:	0e 94 cb 00 	call	0x196	; 0x196 <Escreve_Dado>
+ 3f4:	f1 cf       	rjmp	.-30     	; 0x3d8 <Escreve_S_memprogm+0xa>
+	}
+}
+ 3f6:	df 91       	pop	r29
+ 3f8:	cf 91       	pop	r28
+ 3fa:	1f 91       	pop	r17
+ 3fc:	0f 91       	pop	r16
+ 3fe:	08 95       	ret
+
+00000400 <main>:
+
+const unsigned char mensagem[] PROGMEM = "ABCDEFGHIJKLMNOP";
+
+int main(void)
+{
+	UCSR0B = 0x00;
+ 400:	10 92 c1 00 	sts	0x00C1, r1	; 0x8000c1 <__TEXT_REGION_LENGTH__+0x7f80c1>
+	DDRD = 0xFF;
+ 404:	8f ef       	ldi	r24, 0xFF	; 255
+ 406:	8a b9       	out	0x0a, r24	; 10
+	DDRB = 0xFF;
+ 408:	84 b9       	out	0x04, r24	; 4
+	
+    Inicializa_LCD(LCD_2_N);
+ 40a:	81 e0       	ldi	r24, 0x01	; 1
+ 40c:	0e 94 ef 00 	call	0x1de	; 0x1de <Inicializa_LCD>
+	Testa_Dispay();
+ 410:	0e 94 a7 01 	call	0x34e	; 0x34e <Testa_Dispay>
+ 414:	2f ef       	ldi	r18, 0xFF	; 255
+ 416:	89 e6       	ldi	r24, 0x69	; 105
+ 418:	98 e1       	ldi	r25, 0x18	; 24
+ 41a:	21 50       	subi	r18, 0x01	; 1
+ 41c:	80 40       	sbci	r24, 0x00	; 0
+ 41e:	90 40       	sbci	r25, 0x00	; 0
+ 420:	e1 f7       	brne	.-8      	; 0x41a <main+0x1a>
+ 422:	00 c0       	rjmp	.+0      	; 0x424 <main+0x24>
+ 424:	00 00       	nop
+	_delay_ms(500);
+	Limpa_Display();
+ 426:	0e 94 7e 01 	call	0x2fc	; 0x2fc <Limpa_Display>
+	Escreve_Dado('A');
+ 42a:	81 e4       	ldi	r24, 0x41	; 65
+ 42c:	0e 94 cb 00 	call	0x196	; 0x196 <Escreve_Dado>
+	Escreve_Dado('B');
+ 430:	82 e4       	ldi	r24, 0x42	; 66
+ 432:	0e 94 cb 00 	call	0x196	; 0x196 <Escreve_Dado>
+	Escreve_Dado('C');
+ 436:	83 e4       	ldi	r24, 0x43	; 67
+ 438:	0e 94 cb 00 	call	0x196	; 0x196 <Escreve_Dado>
+	Posiciona_Cursor(2, 1);
+ 43c:	61 e0       	ldi	r22, 0x01	; 1
+ 43e:	70 e0       	ldi	r23, 0x00	; 0
+ 440:	82 e0       	ldi	r24, 0x02	; 2
+ 442:	0e 94 99 01 	call	0x332	; 0x332 <Posiciona_Cursor>
+	Escreve_Dado('1');
+ 446:	81 e3       	ldi	r24, 0x31	; 49
+ 448:	0e 94 cb 00 	call	0x196	; 0x196 <Escreve_Dado>
+	Escreve_Dado('2');
+ 44c:	82 e3       	ldi	r24, 0x32	; 50
+ 44e:	0e 94 cb 00 	call	0x196	; 0x196 <Escreve_Dado>
+	Escreve_Dado('3');
+ 452:	83 e3       	ldi	r24, 0x33	; 51
+ 454:	0e 94 cb 00 	call	0x196	; 0x196 <Escreve_Dado>
+ 458:	2f ef       	ldi	r18, 0xFF	; 255
+ 45a:	89 e6       	ldi	r24, 0x69	; 105
+ 45c:	98 e1       	ldi	r25, 0x18	; 24
+ 45e:	21 50       	subi	r18, 0x01	; 1
+ 460:	80 40       	sbci	r24, 0x00	; 0
+ 462:	90 40       	sbci	r25, 0x00	; 0
+ 464:	e1 f7       	brne	.-8      	; 0x45e <main+0x5e>
+ 466:	00 c0       	rjmp	.+0      	; 0x468 <main+0x68>
+ 468:	00 00       	nop
+	_delay_ms(500);
+	Desloca_Mensagem(LCD_DSL_CS_RG);
+ 46a:	84 e1       	ldi	r24, 0x14	; 20
+ 46c:	0e 94 90 01 	call	0x320	; 0x320 <Desloca_Mensagem>
+ 470:	2f ef       	ldi	r18, 0xFF	; 255
+ 472:	89 e6       	ldi	r24, 0x69	; 105
+ 474:	98 e1       	ldi	r25, 0x18	; 24
+ 476:	21 50       	subi	r18, 0x01	; 1
+ 478:	80 40       	sbci	r24, 0x00	; 0
+ 47a:	90 40       	sbci	r25, 0x00	; 0
+ 47c:	e1 f7       	brne	.-8      	; 0x476 <main+0x76>
+ 47e:	00 c0       	rjmp	.+0      	; 0x480 <main+0x80>
+ 480:	00 00       	nop
+	_delay_ms(500);
+	Desloca_Mensagem(LCD_DSL_CS_LF);
+ 482:	80 e1       	ldi	r24, 0x10	; 16
+ 484:	0e 94 90 01 	call	0x320	; 0x320 <Desloca_Mensagem>
+ 488:	2f ef       	ldi	r18, 0xFF	; 255
+ 48a:	89 e6       	ldi	r24, 0x69	; 105
+ 48c:	98 e1       	ldi	r25, 0x18	; 24
+ 48e:	21 50       	subi	r18, 0x01	; 1
+ 490:	80 40       	sbci	r24, 0x00	; 0
+ 492:	90 40       	sbci	r25, 0x00	; 0
+ 494:	e1 f7       	brne	.-8      	; 0x48e <main+0x8e>
+ 496:	00 c0       	rjmp	.+0      	; 0x498 <main+0x98>
+ 498:	00 00       	nop
+	_delay_ms(500);
+	Display_Cursor_ON_OFF(LCD_DSP_ON_CS_ON);
+ 49a:	8e e0       	ldi	r24, 0x0E	; 14
+ 49c:	0e 94 97 01 	call	0x32e	; 0x32e <Display_Cursor_ON_OFF>
+ 4a0:	2f ef       	ldi	r18, 0xFF	; 255
+ 4a2:	89 e6       	ldi	r24, 0x69	; 105
+ 4a4:	98 e1       	ldi	r25, 0x18	; 24
+ 4a6:	21 50       	subi	r18, 0x01	; 1
+ 4a8:	80 40       	sbci	r24, 0x00	; 0
+ 4aa:	90 40       	sbci	r25, 0x00	; 0
+ 4ac:	e1 f7       	brne	.-8      	; 0x4a6 <main+0xa6>
+ 4ae:	00 c0       	rjmp	.+0      	; 0x4b0 <main+0xb0>
+ 4b0:	00 00       	nop
+	_delay_ms(500);
+	Display_Cursor_ON_OFF(LCD_DSP_ON_CS_OFF);
+ 4b2:	8c e0       	ldi	r24, 0x0C	; 12
+ 4b4:	0e 94 97 01 	call	0x32e	; 0x32e <Display_Cursor_ON_OFF>
+	Limpa_Display();
+ 4b8:	0e 94 7e 01 	call	0x2fc	; 0x2fc <Limpa_Display>
+	Cursor_Home();
+ 4bc:	0e 94 86 01 	call	0x30c	; 0x30c <Cursor_Home>
+	Posiciona_Cursor(1, 1);
+ 4c0:	61 e0       	ldi	r22, 0x01	; 1
+ 4c2:	70 e0       	ldi	r23, 0x00	; 0
+ 4c4:	81 e0       	ldi	r24, 0x01	; 1
+ 4c6:	0e 94 99 01 	call	0x332	; 0x332 <Posiciona_Cursor>
+	Escreve_S_memprogm(mensagem);
+ 4ca:	88 e6       	ldi	r24, 0x68	; 104
+ 4cc:	90 e0       	ldi	r25, 0x00	; 0
+ 4ce:	0e 94 e7 01 	call	0x3ce	; 0x3ce <Escreve_S_memprogm>
+	Posiciona_Cursor(2, 1);
+ 4d2:	61 e0       	ldi	r22, 0x01	; 1
+ 4d4:	70 e0       	ldi	r23, 0x00	; 0
+ 4d6:	82 e0       	ldi	r24, 0x02	; 2
+ 4d8:	0e 94 99 01 	call	0x332	; 0x332 <Posiciona_Cursor>
+	Escreve_S_memdados("QRSTUVWXYZ012345");
+ 4dc:	83 e0       	ldi	r24, 0x03	; 3
+ 4de:	91 e0       	ldi	r25, 0x01	; 1
+ 4e0:	0e 94 cf 01 	call	0x39e	; 0x39e <Escreve_S_memdados>
+ 4e4:	c8 e2       	ldi	r28, 0x28	; 40
+	unsigned char i = 40;
+	while(i)
+	{
+		Desloca_Mensagem(LCD_DSL_MS_RG);
+ 4e6:	8c e1       	ldi	r24, 0x1C	; 28
+ 4e8:	0e 94 90 01 	call	0x320	; 0x320 <Desloca_Mensagem>
+ 4ec:	2f ef       	ldi	r18, 0xFF	; 255
+ 4ee:	80 e7       	ldi	r24, 0x70	; 112
+ 4f0:	92 e0       	ldi	r25, 0x02	; 2
+ 4f2:	21 50       	subi	r18, 0x01	; 1
+ 4f4:	80 40       	sbci	r24, 0x00	; 0
+ 4f6:	90 40       	sbci	r25, 0x00	; 0
+ 4f8:	e1 f7       	brne	.-8      	; 0x4f2 <main+0xf2>
+ 4fa:	00 c0       	rjmp	.+0      	; 0x4fc <main+0xfc>
+ 4fc:	00 00       	nop
+ 4fe:	c1 50       	subi	r28, 0x01	; 1
+	Posiciona_Cursor(1, 1);
+	Escreve_S_memprogm(mensagem);
+	Posiciona_Cursor(2, 1);
+	Escreve_S_memdados("QRSTUVWXYZ012345");
+	unsigned char i = 40;
+	while(i)
+ 500:	91 f7       	brne	.-28     	; 0x4e6 <main+0xe6>
+ 502:	2f ef       	ldi	r18, 0xFF	; 255
+ 504:	89 e6       	ldi	r24, 0x69	; 105
+ 506:	98 e1       	ldi	r25, 0x18	; 24
+ 508:	21 50       	subi	r18, 0x01	; 1
+ 50a:	80 40       	sbci	r24, 0x00	; 0
+ 50c:	90 40       	sbci	r25, 0x00	; 0
+ 50e:	e1 f7       	brne	.-8      	; 0x508 <main+0x108>
+ 510:	00 c0       	rjmp	.+0      	; 0x512 <main+0x112>
+ 512:	00 00       	nop
+		Desloca_Mensagem(LCD_DSL_MS_RG);
+		_delay_ms(50);
+		i--;
+	}
+	_delay_ms(500);
+	Limpa_Display();
+ 514:	0e 94 7e 01 	call	0x2fc	; 0x2fc <Limpa_Display>
+	Cursor_Home();
+ 518:	0e 94 86 01 	call	0x30c	; 0x30c <Cursor_Home>
+	Escreve_S_memdados("Microcontrolador");
+ 51c:	84 e1       	ldi	r24, 0x14	; 20
+ 51e:	91 e0       	ldi	r25, 0x01	; 1
+ 520:	0e 94 cf 01 	call	0x39e	; 0x39e <Escreve_S_memdados>
+	Posiciona_Cursor(1, 3);
+ 524:	63 e0       	ldi	r22, 0x03	; 3
+ 526:	70 e0       	ldi	r23, 0x00	; 0
+ 528:	81 e0       	ldi	r24, 0x01	; 1
+ 52a:	0e 94 99 01 	call	0x332	; 0x332 <Posiciona_Cursor>
+	unsigned char letra;
+	letra = Leitura_Dado();
+ 52e:	0e 94 72 00 	call	0xe4	; 0xe4 <Leitura_Dado>
+ 532:	c8 2f       	mov	r28, r24
+	Posiciona_Cursor(2, 1);
+ 534:	61 e0       	ldi	r22, 0x01	; 1
+ 536:	70 e0       	ldi	r23, 0x00	; 0
+ 538:	82 e0       	ldi	r24, 0x02	; 2
+ 53a:	0e 94 99 01 	call	0x332	; 0x332 <Posiciona_Cursor>
+	Escreve_S_memdados("POS(1, 3) = ");
+ 53e:	85 e2       	ldi	r24, 0x25	; 37
+ 540:	91 e0       	ldi	r25, 0x01	; 1
+ 542:	0e 94 cf 01 	call	0x39e	; 0x39e <Escreve_S_memdados>
+	Escreve_Dado(letra);
+ 546:	8c 2f       	mov	r24, r28
+ 548:	0e 94 cb 00 	call	0x196	; 0x196 <Escreve_Dado>
+ 54c:	ff cf       	rjmp	.-2      	; 0x54c <main+0x14c>
+
+0000054e <_exit>:
+ 54e:	f8 94       	cli
+
+00000550 <__stop_program>:
+ 550:	ff cf       	rjmp	.-2      	; 0x550 <__stop_program>

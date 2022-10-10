@@ -1,0 +1,740 @@
+
+s05_e23_contador_ate_0x03FF.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000014  00800100  000003d4  00000448  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000003d4  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      00000030  00000000  00000000  0000045c  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  0000048c  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 000000b8  00000000  00000000  000004cc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00001385  00000000  00000000  00000584  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 0000093e  00000000  00000000  00001909  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000964  00000000  00000000  00002247  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  000001fc  00000000  00000000  00002bac  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000005c4  00000000  00000000  00002da8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000e0a  00000000  00000000  0000336c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 000000b0  00000000  00000000  00004176  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 34 00 	jmp	0x68	; 0x68 <__ctors_end>
+   4:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+   8:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+   c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  10:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  14:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  18:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  1c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  20:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  24:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  28:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  2c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  30:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  34:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  38:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  3c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  40:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  44:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  48:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  4c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  50:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  54:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  58:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  5c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  60:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  64:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+
+00000068 <__ctors_end>:
+  68:	11 24       	eor	r1, r1
+  6a:	1f be       	out	0x3f, r1	; 63
+  6c:	cf ef       	ldi	r28, 0xFF	; 255
+  6e:	d8 e0       	ldi	r29, 0x08	; 8
+  70:	de bf       	out	0x3e, r29	; 62
+  72:	cd bf       	out	0x3d, r28	; 61
+
+00000074 <__do_copy_data>:
+  74:	11 e0       	ldi	r17, 0x01	; 1
+  76:	a0 e0       	ldi	r26, 0x00	; 0
+  78:	b1 e0       	ldi	r27, 0x01	; 1
+  7a:	e4 ed       	ldi	r30, 0xD4	; 212
+  7c:	f3 e0       	ldi	r31, 0x03	; 3
+  7e:	02 c0       	rjmp	.+4      	; 0x84 <__do_copy_data+0x10>
+  80:	05 90       	lpm	r0, Z+
+  82:	0d 92       	st	X+, r0
+  84:	a4 31       	cpi	r26, 0x14	; 20
+  86:	b1 07       	cpc	r27, r17
+  88:	d9 f7       	brne	.-10     	; 0x80 <__do_copy_data+0xc>
+  8a:	0e 94 74 01 	call	0x2e8	; 0x2e8 <main>
+  8e:	0c 94 e8 01 	jmp	0x3d0	; 0x3d0 <_exit>
+
+00000092 <__bad_interrupt>:
+  92:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000096 <Status_BF>:
+	clr_bit(PORT_CONT, _EN);
+	_delay_us(45);                            //aguarda tempo de execução da isntrução
+	clr_bit(PORT_CONT, _RS);
+	clr_bit(PORT_CONT, _RW);
+	return leitura;                           //retorna o dado lido
+}
+  96:	2a 98       	cbi	0x05, 2	; 5
+  98:	29 9a       	sbi	0x05, 1	; 5
+  9a:	85 e0       	ldi	r24, 0x05	; 5
+  9c:	8a 95       	dec	r24
+  9e:	f1 f7       	brne	.-4      	; 0x9c <Status_BF+0x6>
+  a0:	00 00       	nop
+  a2:	28 9a       	sbi	0x05, 0	; 5
+  a4:	95 e0       	ldi	r25, 0x05	; 5
+  a6:	9a 95       	dec	r25
+  a8:	f1 f7       	brne	.-4      	; 0xa6 <Status_BF+0x10>
+  aa:	00 00       	nop
+  ac:	89 b1       	in	r24, 0x09	; 9
+  ae:	28 98       	cbi	0x05, 0	; 5
+  b0:	95 e0       	ldi	r25, 0x05	; 5
+  b2:	9a 95       	dec	r25
+  b4:	f1 f7       	brne	.-4      	; 0xb2 <Status_BF+0x1c>
+  b6:	00 00       	nop
+  b8:	28 9a       	sbi	0x05, 0	; 5
+  ba:	95 e0       	ldi	r25, 0x05	; 5
+  bc:	9a 95       	dec	r25
+  be:	f1 f7       	brne	.-4      	; 0xbc <Status_BF+0x26>
+  c0:	00 00       	nop
+  c2:	28 98       	cbi	0x05, 0	; 5
+  c4:	29 98       	cbi	0x05, 1	; 5
+  c6:	87 ff       	sbrs	r24, 7
+  c8:	02 c0       	rjmp	.+4      	; 0xce <Status_BF+0x38>
+  ca:	81 e0       	ldi	r24, 0x01	; 1
+  cc:	08 95       	ret
+  ce:	80 e0       	ldi	r24, 0x00	; 0
+  d0:	08 95       	ret
+
+000000d2 <Pulso_Enable>:
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  d2:	8a e0       	ldi	r24, 0x0A	; 10
+  d4:	8a 95       	dec	r24
+  d6:	f1 f7       	brne	.-4      	; 0xd4 <Pulso_Enable+0x2>
+  d8:	00 c0       	rjmp	.+0      	; 0xda <Pulso_Enable+0x8>
+
+/* Esta função envia um pulso para o pino Enable */
+void Pulso_Enable(void)
+{
+	_delay_us(2);
+	set_bit(PORT_CONT, _EN);
+  da:	28 9a       	sbi	0x05, 0	; 5
+  dc:	8a e0       	ldi	r24, 0x0A	; 10
+  de:	8a 95       	dec	r24
+  e0:	f1 f7       	brne	.-4      	; 0xde <Pulso_Enable+0xc>
+  e2:	00 c0       	rjmp	.+0      	; 0xe4 <Pulso_Enable+0x12>
+	_delay_us(2);
+	clr_bit(PORT_CONT, _EN);
+  e4:	28 98       	cbi	0x05, 0	; 5
+  e6:	08 95       	ret
+
+000000e8 <Escreve_Instrucao>:
+
+//implementação das funções
+
+/* Esta escreve uma instrução para o display */
+void Escreve_Instrucao(unsigned char instrucao)
+{
+  e8:	cf 93       	push	r28
+  ea:	c8 2f       	mov	r28, r24
+    DIR_DADOS |= 0xF0;       //configura o barramento de dados como saída
+  ec:	8a b1       	in	r24, 0x0a	; 10
+  ee:	80 6f       	ori	r24, 0xF0	; 240
+  f0:	8a b9       	out	0x0a, r24	; 10
+	//seleciona operação
+	clr_bit(PORT_CONT, _RS); //instrução
+  f2:	2a 98       	cbi	0x05, 2	; 5
+	clr_bit(PORT_CONT, _RW); //escrita
+  f4:	29 98       	cbi	0x05, 1	; 5
+	PORT_DADOS = ((PORT_DADOS & 0x0F) | (instrucao & 0xF0)); //não altera o valor do nibble menos significativo do PORTD
+  f6:	8b b1       	in	r24, 0x0b	; 11
+  f8:	8f 70       	andi	r24, 0x0F	; 15
+  fa:	9c 2f       	mov	r25, r28
+  fc:	90 7f       	andi	r25, 0xF0	; 240
+  fe:	89 2b       	or	r24, r25
+ 100:	8b b9       	out	0x0b, r24	; 11
+	                         //carrega o nibble mais significativo
+	Pulso_Enable();          //envia o nibble mais significativo
+ 102:	0e 94 69 00 	call	0xd2	; 0xd2 <Pulso_Enable>
+	PORT_DADOS = ((PORT_DADOS & 0x0F) | ((instrucao << 4) & 0xF0));
+ 106:	8b b1       	in	r24, 0x0b	; 11
+ 108:	28 2f       	mov	r18, r24
+ 10a:	2f 70       	andi	r18, 0x0F	; 15
+ 10c:	30 e1       	ldi	r19, 0x10	; 16
+ 10e:	c3 9f       	mul	r28, r19
+ 110:	c0 01       	movw	r24, r0
+ 112:	11 24       	eor	r1, r1
+ 114:	82 2b       	or	r24, r18
+ 116:	8b b9       	out	0x0b, r24	; 11
+	                         //carrega o nibble menos significativo
+	Pulso_Enable();          //envia o nibble mais significativo
+ 118:	0e 94 69 00 	call	0xd2	; 0xd2 <Pulso_Enable>
+ 11c:	80 ef       	ldi	r24, 0xF0	; 240
+ 11e:	8a 95       	dec	r24
+ 120:	f1 f7       	brne	.-4      	; 0x11e <Escreve_Instrucao+0x36>
+	_delay_us(45);           //aguarda o tempo de execução da instrução
+	clr_bit(PORT_CONT, _RW);          
+ 122:	29 98       	cbi	0x05, 1	; 5
+	//configura o barramento de dados como entrada
+	clr_bit(DIR_DADOS, _DB7);
+ 124:	57 98       	cbi	0x0a, 7	; 10
+	clr_bit(DIR_DADOS, _DB6);
+ 126:	56 98       	cbi	0x0a, 6	; 10
+	clr_bit(DIR_DADOS, _DB5);
+ 128:	55 98       	cbi	0x0a, 5	; 10
+	clr_bit(DIR_DADOS, _DB4);
+ 12a:	54 98       	cbi	0x0a, 4	; 10
+}
+ 12c:	cf 91       	pop	r28
+ 12e:	08 95       	ret
+
+00000130 <Escreve_Dado>:
+	}
+}
+
+/* Esta função escreve um dado no display */
+void Escreve_Dado(unsigned char dado)
+{
+ 130:	cf 93       	push	r28
+ 132:	c8 2f       	mov	r28, r24
+	DIR_DADOS |= 0xF0;         //configura o barramento de dados como saída
+ 134:	8a b1       	in	r24, 0x0a	; 10
+ 136:	80 6f       	ori	r24, 0xF0	; 240
+ 138:	8a b9       	out	0x0a, r24	; 10
+	//seleciiona operação
+	set_bit(PORT_CONT, _RS);   //dado
+ 13a:	2a 9a       	sbi	0x05, 2	; 5
+	clr_bit(PORT_CONT, _RW);   //escrita
+ 13c:	29 98       	cbi	0x05, 1	; 5
+	PORT_DADOS = ((PORT_DADOS & 0x0F) | (dado & 0xF0));
+ 13e:	8b b1       	in	r24, 0x0b	; 11
+ 140:	8f 70       	andi	r24, 0x0F	; 15
+ 142:	9c 2f       	mov	r25, r28
+ 144:	90 7f       	andi	r25, 0xF0	; 240
+ 146:	89 2b       	or	r24, r25
+ 148:	8b b9       	out	0x0b, r24	; 11
+	                           //carrega o nibble mais significativo no barramento de dados
+	Pulso_Enable();            //envia o nibble mais significativo
+ 14a:	0e 94 69 00 	call	0xd2	; 0xd2 <Pulso_Enable>
+	PORT_DADOS = ((PORT_DADOS & 0x0F) | ((dado << 4) & 0xF0));
+ 14e:	8b b1       	in	r24, 0x0b	; 11
+ 150:	28 2f       	mov	r18, r24
+ 152:	2f 70       	andi	r18, 0x0F	; 15
+ 154:	30 e1       	ldi	r19, 0x10	; 16
+ 156:	c3 9f       	mul	r28, r19
+ 158:	c0 01       	movw	r24, r0
+ 15a:	11 24       	eor	r1, r1
+ 15c:	82 2b       	or	r24, r18
+ 15e:	8b b9       	out	0x0b, r24	; 11
+	                           //carrega o nibbe menos significativo no barramento de dados
+	Pulso_Enable();            //envia o nibble menos significativo
+ 160:	0e 94 69 00 	call	0xd2	; 0xd2 <Pulso_Enable>
+	clr_bit(PORT_CONT, _RS);
+ 164:	2a 98       	cbi	0x05, 2	; 5
+ 166:	80 ef       	ldi	r24, 0xF0	; 240
+ 168:	8a 95       	dec	r24
+ 16a:	f1 f7       	brne	.-4      	; 0x168 <Escreve_Dado+0x38>
+	_delay_us(45);             //aguarda o tempo de execução da instrução
+	//configura o barramento de dados como entrada
+	clr_bit(DIR_DADOS, _DB7);
+ 16c:	57 98       	cbi	0x0a, 7	; 10
+	clr_bit(DIR_DADOS, _DB6);
+ 16e:	56 98       	cbi	0x0a, 6	; 10
+	clr_bit(DIR_DADOS, _DB5);
+ 170:	55 98       	cbi	0x0a, 5	; 10
+	clr_bit(DIR_DADOS, _DB4);
+ 172:	54 98       	cbi	0x0a, 4	; 10
+}
+ 174:	cf 91       	pop	r28
+ 176:	08 95       	ret
+
+00000178 <Inicializa_LCD>:
+	clr_bit(PORT_CONT, _EN);
+}
+
+/* Esta função inicializa o display com a interface de 4 bits */
+void Inicializa_LCD(unsigned char numero_linhas)
+{
+ 178:	cf 92       	push	r12
+ 17a:	df 92       	push	r13
+ 17c:	ef 92       	push	r14
+ 17e:	ff 92       	push	r15
+ 180:	0f 93       	push	r16
+ 182:	1f 93       	push	r17
+ 184:	cf 93       	push	r28
+ 186:	df 93       	push	r29
+ 188:	00 d0       	rcall	.+0      	; 0x18a <Inicializa_LCD+0x12>
+ 18a:	1f 92       	push	r1
+ 18c:	cd b7       	in	r28, 0x3d	; 61
+ 18e:	de b7       	in	r29, 0x3e	; 62
+ 190:	08 2f       	mov	r16, r24
+	unsigned char i;
+	unsigned char ajuste[3] = {0x0F, 0x01, 0x06};
+ 192:	80 91 11 01 	lds	r24, 0x0111	; 0x800111 <__DATA_REGION_ORIGIN__+0x11>
+ 196:	90 91 12 01 	lds	r25, 0x0112	; 0x800112 <__DATA_REGION_ORIGIN__+0x12>
+ 19a:	a0 91 13 01 	lds	r26, 0x0113	; 0x800113 <__DATA_REGION_ORIGIN__+0x13>
+ 19e:	89 83       	std	Y+1, r24	; 0x01
+ 1a0:	9a 83       	std	Y+2, r25	; 0x02
+ 1a2:	ab 83       	std	Y+3, r26	; 0x03
+                  //display ON e cursor piscante, limpa display e deslocamento para a direita
+	
+	//configuração de hardware
+	clr_bit(PORT_CONT, _RS);
+ 1a4:	2a 98       	cbi	0x05, 2	; 5
+	clr_bit(PORT_CONT, _RW);
+ 1a6:	29 98       	cbi	0x05, 1	; 5
+	clr_bit(PORT_CONT, _EN);
+ 1a8:	28 98       	cbi	0x05, 0	; 5
+	DIR_DADOS |= 0xF0;       //configura o barramento de dados como saída
+ 1aa:	8a b1       	in	r24, 0x0a	; 10
+ 1ac:	80 6f       	ori	r24, 0xF0	; 240
+ 1ae:	8a b9       	out	0x0a, r24	; 10
+	DIR_CONT  |= 0x07;       //configura o barramento de controle como saída
+ 1b0:	84 b1       	in	r24, 0x04	; 4
+ 1b2:	87 60       	ori	r24, 0x07	; 7
+ 1b4:	84 b9       	out	0x04, r24	; 4
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 1b6:	8f e5       	ldi	r24, 0x5F	; 95
+ 1b8:	9a ee       	ldi	r25, 0xEA	; 234
+ 1ba:	01 97       	sbiw	r24, 0x01	; 1
+ 1bc:	f1 f7       	brne	.-4      	; 0x1ba <Inicializa_LCD+0x42>
+ 1be:	00 c0       	rjmp	.+0      	; 0x1c0 <Inicializa_LCD+0x48>
+ 1c0:	00 00       	nop
+ 1c2:	13 e0       	ldi	r17, 0x03	; 3
+	_delay_ms(15);           //aguarda 15ms após Vcc atingir no mínimo 4,5V
+	
+	//ajuste de função
+	for(i = 0; i < 3; i++)
+	{
+		PORT_DADOS = ((PORT_DADOS & 0x0F) | (0x30 & 0xF0));
+ 1c4:	8b b1       	in	r24, 0x0b	; 11
+ 1c6:	8f 70       	andi	r24, 0x0F	; 15
+ 1c8:	80 63       	ori	r24, 0x30	; 48
+ 1ca:	8b b9       	out	0x0b, r24	; 11
+		Pulso_Enable();
+ 1cc:	0e 94 69 00 	call	0xd2	; 0xd2 <Pulso_Enable>
+ 1d0:	ef e1       	ldi	r30, 0x1F	; 31
+ 1d2:	fe e4       	ldi	r31, 0x4E	; 78
+ 1d4:	31 97       	sbiw	r30, 0x01	; 1
+ 1d6:	f1 f7       	brne	.-4      	; 0x1d4 <Inicializa_LCD+0x5c>
+ 1d8:	00 c0       	rjmp	.+0      	; 0x1da <Inicializa_LCD+0x62>
+ 1da:	00 00       	nop
+ 1dc:	11 50       	subi	r17, 0x01	; 1
+	DIR_CONT  |= 0x07;       //configura o barramento de controle como saída
+	
+	_delay_ms(15);           //aguarda 15ms após Vcc atingir no mínimo 4,5V
+	
+	//ajuste de função
+	for(i = 0; i < 3; i++)
+ 1de:	91 f7       	brne	.-28     	; 0x1c4 <Inicializa_LCD+0x4c>
+		Pulso_Enable();
+		_delay_ms(5);
+	}
+	
+	//ajuste de função
+	PORT_DADOS = ((PORT_DADOS & 0x0F) | (0x20 & 0xF0));
+ 1e0:	8b b1       	in	r24, 0x0b	; 11
+ 1e2:	8f 70       	andi	r24, 0x0F	; 15
+ 1e4:	80 62       	ori	r24, 0x20	; 32
+ 1e6:	8b b9       	out	0x0b, r24	; 11
+	Pulso_Enable();
+ 1e8:	0e 94 69 00 	call	0xd2	; 0xd2 <Pulso_Enable>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 1ec:	f5 ed       	ldi	r31, 0xD5	; 213
+ 1ee:	fa 95       	dec	r31
+ 1f0:	f1 f7       	brne	.-4      	; 0x1ee <Inicializa_LCD+0x76>
+ 1f2:	00 00       	nop
+	_delay_us(40);
+	
+	//ajuste de função - 4bits e 5x8 pontos
+	if(numero_linhas) 
+	{
+		PORT_DADOS = ((PORT_DADOS & 0x0F) | (0x28 & 0xF0));
+ 1f4:	8b b1       	in	r24, 0x0b	; 11
+ 1f6:	8f 70       	andi	r24, 0x0F	; 15
+ 1f8:	80 62       	ori	r24, 0x20	; 32
+ 1fa:	8b b9       	out	0x0b, r24	; 11
+	PORT_DADOS = ((PORT_DADOS & 0x0F) | (0x20 & 0xF0));
+	Pulso_Enable();
+	_delay_us(40);
+	
+	//ajuste de função - 4bits e 5x8 pontos
+	if(numero_linhas) 
+ 1fc:	00 23       	and	r16, r16
+ 1fe:	31 f0       	breq	.+12     	; 0x20c <Inicializa_LCD+0x94>
+	{
+		PORT_DADOS = ((PORT_DADOS & 0x0F) | (0x28 & 0xF0));
+		Pulso_Enable();
+ 200:	0e 94 69 00 	call	0xd2	; 0xd2 <Pulso_Enable>
+		PORT_DADOS = ((PORT_DADOS & 0x0F) | ((0x28 << 4) & 0xF0));
+ 204:	8b b1       	in	r24, 0x0b	; 11
+ 206:	8f 70       	andi	r24, 0x0F	; 15
+ 208:	80 68       	ori	r24, 0x80	; 128
+ 20a:	04 c0       	rjmp	.+8      	; 0x214 <Inicializa_LCD+0x9c>
+		Pulso_Enable();
+	}
+	else
+	{
+		PORT_DADOS = ((PORT_DADOS & 0x0F) | (0x20 & 0xF0));
+		Pulso_Enable();
+ 20c:	0e 94 69 00 	call	0xd2	; 0xd2 <Pulso_Enable>
+		PORT_DADOS = ((PORT_DADOS & 0x0F) | ((0x20 << 4) & 0xF0));
+ 210:	8b b1       	in	r24, 0x0b	; 11
+ 212:	8f 70       	andi	r24, 0x0F	; 15
+ 214:	8b b9       	out	0x0b, r24	; 11
+		Pulso_Enable();
+ 216:	0e 94 69 00 	call	0xd2	; 0xd2 <Pulso_Enable>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 21a:	8f e1       	ldi	r24, 0x1F	; 31
+ 21c:	9e e4       	ldi	r25, 0x4E	; 78
+ 21e:	01 97       	sbiw	r24, 0x01	; 1
+ 220:	f1 f7       	brne	.-4      	; 0x21e <Inicializa_LCD+0xa6>
+ 222:	00 c0       	rjmp	.+0      	; 0x224 <Inicializa_LCD+0xac>
+ 224:	00 00       	nop
+ 226:	fe 01       	movw	r30, r28
+ 228:	31 96       	adiw	r30, 0x01	; 1
+ 22a:	7f 01       	movw	r14, r30
+ 22c:	8e 01       	movw	r16, r28
+ 22e:	0c 5f       	subi	r16, 0xFC	; 252
+ 230:	1f 4f       	sbci	r17, 0xFF	; 255
+	_delay_ms(5);
+	
+	//configurações do vetor ajustes
+	for(i = 0; i < 3; i++)
+	{
+		PORT_DADOS = ((PORT_DADOS & 0x0F) | (ajuste[i] & 0xF0));
+ 232:	8b b1       	in	r24, 0x0b	; 11
+ 234:	67 01       	movw	r12, r14
+ 236:	f7 01       	movw	r30, r14
+ 238:	91 91       	ld	r25, Z+
+ 23a:	7f 01       	movw	r14, r30
+ 23c:	90 7f       	andi	r25, 0xF0	; 240
+ 23e:	8f 70       	andi	r24, 0x0F	; 15
+ 240:	89 2b       	or	r24, r25
+ 242:	8b b9       	out	0x0b, r24	; 11
+		Pulso_Enable();
+ 244:	0e 94 69 00 	call	0xd2	; 0xd2 <Pulso_Enable>
+		PORT_DADOS = ((PORT_DADOS & 0x0F) | ((ajuste[i] << 4) & 0xF0));
+ 248:	2b b1       	in	r18, 0x0b	; 11
+ 24a:	f6 01       	movw	r30, r12
+ 24c:	90 81       	ld	r25, Z
+ 24e:	f0 e1       	ldi	r31, 0x10	; 16
+ 250:	9f 9f       	mul	r25, r31
+ 252:	c0 01       	movw	r24, r0
+ 254:	11 24       	eor	r1, r1
+ 256:	92 2f       	mov	r25, r18
+ 258:	9f 70       	andi	r25, 0x0F	; 15
+ 25a:	89 2b       	or	r24, r25
+ 25c:	8b b9       	out	0x0b, r24	; 11
+		Pulso_Enable();
+ 25e:	0e 94 69 00 	call	0xd2	; 0xd2 <Pulso_Enable>
+		clr_bit(PORT_CONT, _EN);
+ 262:	28 98       	cbi	0x05, 0	; 5
+ 264:	8f e3       	ldi	r24, 0x3F	; 63
+ 266:	9f e1       	ldi	r25, 0x1F	; 31
+ 268:	01 97       	sbiw	r24, 0x01	; 1
+ 26a:	f1 f7       	brne	.-4      	; 0x268 <Inicializa_LCD+0xf0>
+ 26c:	00 c0       	rjmp	.+0      	; 0x26e <Inicializa_LCD+0xf6>
+ 26e:	00 00       	nop
+		Pulso_Enable();
+	}
+	_delay_ms(5);
+	
+	//configurações do vetor ajustes
+	for(i = 0; i < 3; i++)
+ 270:	e0 16       	cp	r14, r16
+ 272:	f1 06       	cpc	r15, r17
+ 274:	f1 f6       	brne	.-68     	; 0x232 <Inicializa_LCD+0xba>
+		clr_bit(PORT_CONT, _EN);
+		_delay_ms(2);
+	}
+	
+	//configura o barramento de dados como entrada
+	clr_bit(DIR_DADOS, _DB7);
+ 276:	57 98       	cbi	0x0a, 7	; 10
+	clr_bit(DIR_DADOS, _DB6);
+ 278:	56 98       	cbi	0x0a, 6	; 10
+	clr_bit(DIR_DADOS, _DB5);
+ 27a:	55 98       	cbi	0x0a, 5	; 10
+	clr_bit(DIR_DADOS, _DB4);
+ 27c:	54 98       	cbi	0x0a, 4	; 10
+}
+ 27e:	0f 90       	pop	r0
+ 280:	0f 90       	pop	r0
+ 282:	0f 90       	pop	r0
+ 284:	df 91       	pop	r29
+ 286:	cf 91       	pop	r28
+ 288:	1f 91       	pop	r17
+ 28a:	0f 91       	pop	r16
+ 28c:	ff 90       	pop	r15
+ 28e:	ef 90       	pop	r14
+ 290:	df 90       	pop	r13
+ 292:	cf 90       	pop	r12
+ 294:	08 95       	ret
+
+00000296 <Limpa_Display>:
+
+/* Esta função limpa a tela do display */
+void Limpa_Display(void)
+{
+	Escreve_Instrucao(0x01);
+ 296:	81 e0       	ldi	r24, 0x01	; 1
+ 298:	0e 94 74 00 	call	0xe8	; 0xe8 <Escreve_Instrucao>
+	//_delay_ms(2);
+	while(Status_BF());
+ 29c:	0e 94 4b 00 	call	0x96	; 0x96 <Status_BF>
+ 2a0:	81 11       	cpse	r24, r1
+ 2a2:	fc cf       	rjmp	.-8      	; 0x29c <Limpa_Display+0x6>
+}
+ 2a4:	08 95       	ret
+
+000002a6 <Cursor_Home>:
+
+/* Esta função posiciona o cursor na primeira coluna da primeira linha */
+void Cursor_Home(void)
+{
+	Escreve_Instrucao(0x02);
+ 2a6:	82 e0       	ldi	r24, 0x02	; 2
+ 2a8:	0e 94 74 00 	call	0xe8	; 0xe8 <Escreve_Instrucao>
+ 2ac:	8f e3       	ldi	r24, 0x3F	; 63
+ 2ae:	9f e1       	ldi	r25, 0x1F	; 31
+ 2b0:	01 97       	sbiw	r24, 0x01	; 1
+ 2b2:	f1 f7       	brne	.-4      	; 0x2b0 <Cursor_Home+0xa>
+ 2b4:	00 c0       	rjmp	.+0      	; 0x2b6 <Cursor_Home+0x10>
+ 2b6:	00 00       	nop
+ 2b8:	08 95       	ret
+
+000002ba <Desloca_Mensagem>:
+}
+
+/* Esta função desloca o display/cursor */
+void Desloca_Mensagem(unsigned char deslocamento)
+{
+	Escreve_Instrucao(deslocamento);
+ 2ba:	0e 94 74 00 	call	0xe8	; 0xe8 <Escreve_Instrucao>
+	while(Status_BF());
+ 2be:	0e 94 4b 00 	call	0x96	; 0x96 <Status_BF>
+ 2c2:	81 11       	cpse	r24, r1
+ 2c4:	fc cf       	rjmp	.-8      	; 0x2be <Desloca_Mensagem+0x4>
+}
+ 2c6:	08 95       	ret
+
+000002c8 <Display_Cursor_ON_OFF>:
+ 2c8:	0c 94 5d 01 	jmp	0x2ba	; 0x2ba <Desloca_Mensagem>
+
+000002cc <Posiciona_Cursor>:
+
+/* Esta função posiciona o cursor em uma determinda coluna de determinada linha */
+void Posiciona_Cursor(unsigned char linha, unsigned coluna)
+{
+	switch(linha)
+ 2cc:	81 30       	cpi	r24, 0x01	; 1
+ 2ce:	19 f0       	breq	.+6      	; 0x2d6 <Posiciona_Cursor+0xa>
+ 2d0:	82 30       	cpi	r24, 0x02	; 2
+ 2d2:	29 f0       	breq	.+10     	; 0x2de <Posiciona_Cursor+0x12>
+ 2d4:	08 95       	ret
+	{
+		case 1:                                     //posiciona na primeira linha
+		    Escreve_Instrucao(0x80 | (coluna - 1));
+ 2d6:	8f ef       	ldi	r24, 0xFF	; 255
+ 2d8:	86 0f       	add	r24, r22
+ 2da:	80 68       	ori	r24, 0x80	; 128
+ 2dc:	03 c0       	rjmp	.+6      	; 0x2e4 <Posiciona_Cursor+0x18>
+			break;
+		case 2:			                            //posiciona na segunda linha
+			Escreve_Instrucao(0xC0 | (coluna - 1));
+ 2de:	8f ef       	ldi	r24, 0xFF	; 255
+ 2e0:	86 0f       	add	r24, r22
+ 2e2:	80 6c       	ori	r24, 0xC0	; 192
+ 2e4:	0c 94 74 00 	jmp	0xe8	; 0xe8 <Escreve_Instrucao>
+
+000002e8 <main>:
+
+int main(void) //função principal
+{
+	unsigned int contador; //declaração de variável local
+
+	DDRD = 0xFF; //configura todo o PORTD como saída
+ 2e8:	8f ef       	ldi	r24, 0xFF	; 255
+ 2ea:	8a b9       	out	0x0a, r24	; 10
+	DDRB = 0xFF; //configura todo o PORTB como saída
+ 2ec:	84 b9       	out	0x04, r24	; 4
+	
+	PORTD = 0x00; //coloca todo o PORTD em nível baixo
+ 2ee:	1b b8       	out	0x0b, r1	; 11
+	PORTB = 0x00; //coloca todo o PORTB em nível baixo
+ 2f0:	15 b8       	out	0x05, r1	; 5
+
+	Inicializa_LCD(LCD_1_N);                  //inicialliza o display LCD com uma linha
+ 2f2:	80 e0       	ldi	r24, 0x00	; 0
+ 2f4:	0e 94 bc 00 	call	0x178	; 0x178 <Inicializa_LCD>
+	Limpa_Display();                          //limpa a tela do display
+ 2f8:	0e 94 4b 01 	call	0x296	; 0x296 <Limpa_Display>
+	Cursor_Home();                            //posiciona o cursor na primeira coluna da primeira linha
+ 2fc:	0e 94 53 01 	call	0x2a6	; 0x2a6 <Cursor_Home>
+	Display_Cursor_ON_OFF(LCD_DSP_ON_CS_OFF); //mantém o display ligado e desliga o cursor
+ 300:	8c e0       	ldi	r24, 0x0C	; 12
+ 302:	0e 94 64 01 	call	0x2c8	; 0x2c8 <Display_Cursor_ON_OFF>
+ 306:	00 e0       	ldi	r16, 0x00	; 0
+ 308:	11 e0       	ldi	r17, 0x01	; 1
+
+	while(1) //loop infinito
+	{
+		for(contador = 0; contador < 0x0400; contador++)
+ 30a:	c0 e0       	ldi	r28, 0x00	; 0
+ 30c:	d0 e0       	ldi	r29, 0x00	; 0
+		{
+			Limpa_Display();       //limpa tela do display
+ 30e:	0e 94 4b 01 	call	0x296	; 0x296 <Limpa_Display>
+			if(contador >= 0x0100) //imprime de 0x0100 até 0x03FF
+ 312:	cf 3f       	cpi	r28, 0xFF	; 255
+ 314:	d1 05       	cpc	r29, r1
+ 316:	31 f1       	breq	.+76     	; 0x364 <main+0x7c>
+ 318:	28 f1       	brcs	.+74     	; 0x364 <main+0x7c>
+			{
+				Posiciona_Cursor(1, 14);
+ 31a:	6e e0       	ldi	r22, 0x0E	; 14
+ 31c:	70 e0       	ldi	r23, 0x00	; 0
+ 31e:	81 e0       	ldi	r24, 0x01	; 1
+ 320:	0e 94 66 01 	call	0x2cc	; 0x2cc <Posiciona_Cursor>
+				Escreve_Dado(contador_hex[(contador & 0x0F00) >> 8]);
+ 324:	fe 01       	movw	r30, r28
+ 326:	ee 27       	eor	r30, r30
+ 328:	ff 70       	andi	r31, 0x0F	; 15
+ 32a:	ef 2f       	mov	r30, r31
+ 32c:	ff 27       	eor	r31, r31
+ 32e:	e0 50       	subi	r30, 0x00	; 0
+ 330:	ff 4f       	sbci	r31, 0xFF	; 255
+ 332:	80 81       	ld	r24, Z
+ 334:	0e 94 98 00 	call	0x130	; 0x130 <Escreve_Dado>
+				Escreve_Dado(contador_hex[(contador & 0x00F0) >> 4]);
+ 338:	fe 01       	movw	r30, r28
+ 33a:	e0 7f       	andi	r30, 0xF0	; 240
+ 33c:	ff 27       	eor	r31, r31
+ 33e:	24 e0       	ldi	r18, 0x04	; 4
+ 340:	f6 95       	lsr	r31
+ 342:	e7 95       	ror	r30
+ 344:	2a 95       	dec	r18
+ 346:	e1 f7       	brne	.-8      	; 0x340 <main+0x58>
+ 348:	e0 50       	subi	r30, 0x00	; 0
+ 34a:	ff 4f       	sbci	r31, 0xFF	; 255
+ 34c:	80 81       	ld	r24, Z
+ 34e:	0e 94 98 00 	call	0x130	; 0x130 <Escreve_Dado>
+				Escreve_Dado(contador_hex[contador & 0x000F]);
+ 352:	fe 01       	movw	r30, r28
+ 354:	ef 70       	andi	r30, 0x0F	; 15
+ 356:	ff 27       	eor	r31, r31
+ 358:	e0 50       	subi	r30, 0x00	; 0
+ 35a:	ff 4f       	sbci	r31, 0xFF	; 255
+ 35c:	80 81       	ld	r24, Z
+ 35e:	0e 94 98 00 	call	0x130	; 0x130 <Escreve_Dado>
+ 362:	03 c0       	rjmp	.+6      	; 0x36a <main+0x82>
+			}
+			if(contador >= 0x0010) //imprime de 0x0010 até 0x00FF
+ 364:	c0 31       	cpi	r28, 0x10	; 16
+ 366:	d1 05       	cpc	r29, r1
+ 368:	c0 f0       	brcs	.+48     	; 0x39a <main+0xb2>
+			{
+				Posiciona_Cursor(1, 15);
+ 36a:	6f e0       	ldi	r22, 0x0F	; 15
+ 36c:	70 e0       	ldi	r23, 0x00	; 0
+ 36e:	81 e0       	ldi	r24, 0x01	; 1
+ 370:	0e 94 66 01 	call	0x2cc	; 0x2cc <Posiciona_Cursor>
+				Escreve_Dado(contador_hex[(contador & 0x00F0) >> 4]);
+ 374:	fe 01       	movw	r30, r28
+ 376:	e0 7f       	andi	r30, 0xF0	; 240
+ 378:	ff 27       	eor	r31, r31
+ 37a:	84 e0       	ldi	r24, 0x04	; 4
+ 37c:	f6 95       	lsr	r31
+ 37e:	e7 95       	ror	r30
+ 380:	8a 95       	dec	r24
+ 382:	e1 f7       	brne	.-8      	; 0x37c <main+0x94>
+ 384:	e0 50       	subi	r30, 0x00	; 0
+ 386:	ff 4f       	sbci	r31, 0xFF	; 255
+ 388:	80 81       	ld	r24, Z
+ 38a:	0e 94 98 00 	call	0x130	; 0x130 <Escreve_Dado>
+				Escreve_Dado(contador_hex[contador & 0x000F]);
+ 38e:	fe 01       	movw	r30, r28
+ 390:	ef 70       	andi	r30, 0x0F	; 15
+ 392:	ff 27       	eor	r31, r31
+ 394:	e0 50       	subi	r30, 0x00	; 0
+ 396:	ff 4f       	sbci	r31, 0xFF	; 255
+ 398:	06 c0       	rjmp	.+12     	; 0x3a6 <main+0xbe>
+			}
+			else                   //imprime de 0x0000 até 0x000F(16)
+			{
+				Posiciona_Cursor(1, 16);
+ 39a:	60 e1       	ldi	r22, 0x10	; 16
+ 39c:	70 e0       	ldi	r23, 0x00	; 0
+ 39e:	81 e0       	ldi	r24, 0x01	; 1
+ 3a0:	0e 94 66 01 	call	0x2cc	; 0x2cc <Posiciona_Cursor>
+				Escreve_Dado(contador_hex[contador & 0x000F]);
+ 3a4:	f8 01       	movw	r30, r16
+ 3a6:	80 81       	ld	r24, Z
+ 3a8:	0e 94 98 00 	call	0x130	; 0x130 <Escreve_Dado>
+ 3ac:	ff ef       	ldi	r31, 0xFF	; 255
+ 3ae:	21 ee       	ldi	r18, 0xE1	; 225
+ 3b0:	84 e0       	ldi	r24, 0x04	; 4
+ 3b2:	f1 50       	subi	r31, 0x01	; 1
+ 3b4:	20 40       	sbci	r18, 0x00	; 0
+ 3b6:	80 40       	sbci	r24, 0x00	; 0
+ 3b8:	e1 f7       	brne	.-8      	; 0x3b2 <main+0xca>
+ 3ba:	00 c0       	rjmp	.+0      	; 0x3bc <main+0xd4>
+ 3bc:	00 00       	nop
+	Cursor_Home();                            //posiciona o cursor na primeira coluna da primeira linha
+	Display_Cursor_ON_OFF(LCD_DSP_ON_CS_OFF); //mantém o display ligado e desliga o cursor
+
+	while(1) //loop infinito
+	{
+		for(contador = 0; contador < 0x0400; contador++)
+ 3be:	21 96       	adiw	r28, 0x01	; 1
+ 3c0:	0f 5f       	subi	r16, 0xFF	; 255
+ 3c2:	1f 4f       	sbci	r17, 0xFF	; 255
+ 3c4:	c1 15       	cp	r28, r1
+ 3c6:	94 e0       	ldi	r25, 0x04	; 4
+ 3c8:	d9 07       	cpc	r29, r25
+ 3ca:	09 f0       	breq	.+2      	; 0x3ce <main+0xe6>
+ 3cc:	a0 cf       	rjmp	.-192    	; 0x30e <main+0x26>
+ 3ce:	9b cf       	rjmp	.-202    	; 0x306 <main+0x1e>
+
+000003d0 <_exit>:
+ 3d0:	f8 94       	cli
+
+000003d2 <__stop_program>:
+ 3d2:	ff cf       	rjmp	.-2      	; 0x3d2 <__stop_program>
