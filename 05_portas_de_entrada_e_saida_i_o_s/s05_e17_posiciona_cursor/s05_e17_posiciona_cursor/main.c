@@ -18,13 +18,13 @@
 #define BAIXO    PD3
 
 
-int main() //função principal
+int main(void) //função principal
 {
 	unsigned char posx = 1; //declaração de variáveis inicializada
 	unsigned char posy = 1; //declaração de variáveis inicializada
 
 	DDRD = 0xF0;   //configura os pinos PD0:PD3 como entradas e PD4:PD7 como saídas
-	DDRB = 0xFF;   //configura todo o portd como saída
+	DDRB = 0xFF;   //configura todo o PORTB como saída
 
 	PORTD = 0x0F;  //habilita os resistores de pull-up dos pinos PD0:PD3 e coloca os pinos PD4:PD7 em nível baixo
 	PORTB = 0x00;  //coloca o PORTB em nível baixo
