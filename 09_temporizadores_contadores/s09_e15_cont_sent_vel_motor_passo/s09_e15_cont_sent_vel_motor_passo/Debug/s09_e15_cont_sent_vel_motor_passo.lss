@@ -1,0 +1,444 @@
+
+s09_e15_cont_sent_vel_motor_passo.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000002  00800100  000002be  00000352  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000002be  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000002  00800102  00800102  00000354  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000354  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000384  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000060  00000000  00000000  000003c4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00000892  00000000  00000000  00000424  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000703  00000000  00000000  00000cb6  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   000004a8  00000000  00000000  000013b9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  000000a8  00000000  00000000  00001864  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00000471  00000000  00000000  0000190c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000310  00000000  00000000  00001d7d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000040  00000000  00000000  0000208d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 34 00 	jmp	0x68	; 0x68 <__ctors_end>
+   4:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+   8:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+   c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  10:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  14:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  18:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  1c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  20:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  24:	0c 94 a7 00 	jmp	0x14e	; 0x14e <__vector_9>
+  28:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  2c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  30:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  34:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  38:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  3c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  40:	0c 94 6c 00 	jmp	0xd8	; 0xd8 <__vector_16>
+  44:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  48:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  4c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  50:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  54:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  58:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  5c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  60:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  64:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+
+00000068 <__ctors_end>:
+  68:	11 24       	eor	r1, r1
+  6a:	1f be       	out	0x3f, r1	; 63
+  6c:	cf ef       	ldi	r28, 0xFF	; 255
+  6e:	d8 e0       	ldi	r29, 0x08	; 8
+  70:	de bf       	out	0x3e, r29	; 62
+  72:	cd bf       	out	0x3d, r28	; 61
+
+00000074 <__do_copy_data>:
+  74:	11 e0       	ldi	r17, 0x01	; 1
+  76:	a0 e0       	ldi	r26, 0x00	; 0
+  78:	b1 e0       	ldi	r27, 0x01	; 1
+  7a:	ee eb       	ldi	r30, 0xBE	; 190
+  7c:	f2 e0       	ldi	r31, 0x02	; 2
+  7e:	02 c0       	rjmp	.+4      	; 0x84 <__do_copy_data+0x10>
+  80:	05 90       	lpm	r0, Z+
+  82:	0d 92       	st	X+, r0
+  84:	a2 30       	cpi	r26, 0x02	; 2
+  86:	b1 07       	cpc	r27, r17
+  88:	d9 f7       	brne	.-10     	; 0x80 <__do_copy_data+0xc>
+
+0000008a <__do_clear_bss>:
+  8a:	21 e0       	ldi	r18, 0x01	; 1
+  8c:	a2 e0       	ldi	r26, 0x02	; 2
+  8e:	b1 e0       	ldi	r27, 0x01	; 1
+  90:	01 c0       	rjmp	.+2      	; 0x94 <.do_clear_bss_start>
+
+00000092 <.do_clear_bss_loop>:
+  92:	1d 92       	st	X+, r1
+
+00000094 <.do_clear_bss_start>:
+  94:	a4 30       	cpi	r26, 0x04	; 4
+  96:	b2 07       	cpc	r27, r18
+  98:	e1 f7       	brne	.-8      	; 0x92 <.do_clear_bss_loop>
+  9a:	0e 94 53 00 	call	0xa6	; 0xa6 <main>
+  9e:	0c 94 5d 01 	jmp	0x2ba	; 0x2ba <_exit>
+
+000000a2 <__bad_interrupt>:
+  a2:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000a6 <main>:
+ISR(TIMER0_OVF_vect); //definição da rotina de tratamento do estouro do TCNT0
+ISR(TIMER2_OVF_vect); //definição da rotina de tratamento do estouro do TCNT2
+
+int main(void) //função principal
+{
+    DDRD = 0x33;  //configura os pinos PD3:2 e PD7:6 como entradas e os pinos restantes como saída
+  a6:	83 e3       	ldi	r24, 0x33	; 51
+  a8:	8a b9       	out	0x0a, r24	; 10
+    DDRB = 0xFF;  //configura todo o PORTB como saída
+  aa:	8f ef       	ldi	r24, 0xFF	; 255
+  ac:	84 b9       	out	0x04, r24	; 4
+    PORTD = 0xCC; //habilita os resistores pull-up das entradas
+  ae:	8c ec       	ldi	r24, 0xCC	; 204
+  b0:	8b b9       	out	0x0b, r24	; 11
+    PORTB = 0x00; //coloca todo o PORTB em nível baixo
+  b2:	15 b8       	out	0x05, r1	; 5
+
+    Inicializa_TC0(TC0_modo_normal, TC0_OC0A_normal&TC0_OC0A_normal&TC0_CLK_1024, TC0_TOIE0);
+  b4:	4e ef       	ldi	r20, 0xFE	; 254
+  b6:	6d e3       	ldi	r22, 0x3D	; 61
+  b8:	80 e0       	ldi	r24, 0x00	; 0
+  ba:	0e 94 d4 00 	call	0x1a8	; 0x1a8 <Inicializa_TC0>
+    TCNT0 = 100;
+  be:	84 e6       	ldi	r24, 0x64	; 100
+  c0:	86 bd       	out	0x26, r24	; 38
+    /* modo normal, f_osc igual a 16MHz, prescaler igual a 1024, saídas comparadoras desabilitadas,
+       interrupção por estouro do TCNT0 habilitada, TCNT0 inicializado em 100 para jundo de 
+       conta_tempo igual a 10 gerar um atraso de aproximadamente 100ms para varres as teclas:
+       t_estouro = (1024 * ((255 - 100) + 1) * 10) / 16M = 99,8ms */
+
+    Inicializa_TC2(TC2_modo_normal, TC2_OC2A_normal&TC2_OC2B_normal&TC2_CLK_1024, TC2_TOIE2);
+  c2:	4e ef       	ldi	r20, 0xFE	; 254
+  c4:	6f e0       	ldi	r22, 0x0F	; 15
+  c6:	80 e0       	ldi	r24, 0x00	; 0
+  c8:	0e 94 08 01 	call	0x210	; 0x210 <Inicializa_TC2>
+    TCNT2 = velocidade_motor;
+  cc:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <__data_end>
+  d0:	80 93 b2 00 	sts	0x00B2, r24	; 0x8000b2 <__TEXT_REGION_LENGTH__+0x7f80b2>
+    /* modo normal, f_osc igual a 16MHz, prescaler igual a 1024, saídas comparadoras desabilitadas,
+       interrupção por estouro do TCNT2 habilitada, TCNT2 inicializada em 0 para iniciar o motor
+       com aproximadamente 61 passos por segundo */
+
+    sei(); //habilita todas as fontes de interrupção setando o bit I do registrador SREG
+  d4:	78 94       	sei
+  d6:	ff cf       	rjmp	.-2      	; 0xd6 <main+0x30>
+
+000000d8 <__vector_16>:
+
+    while(1); //loop infinito
+}
+
+ISR(TIMER0_OVF_vect) //implementação da rotina de tratamento do estouro do TCNT0
+{
+  d8:	1f 92       	push	r1
+  da:	0f 92       	push	r0
+  dc:	0f b6       	in	r0, 0x3f	; 63
+  de:	0f 92       	push	r0
+  e0:	11 24       	eor	r1, r1
+  e2:	8f 93       	push	r24
+    conta_tempo++;        //incrmenta a variável de tempo auxiliar
+  e4:	80 91 03 01 	lds	r24, 0x0103	; 0x800103 <conta_tempo>
+  e8:	8f 5f       	subi	r24, 0xFF	; 255
+  ea:	80 93 03 01 	sts	0x0103, r24	; 0x800103 <conta_tempo>
+    TCNT0 = 100;          //reinicia o registrador do T0
+  ee:	84 e6       	ldi	r24, 0x64	; 100
+  f0:	86 bd       	out	0x26, r24	; 38
+    if(conta_tempo == 10) //se a variável auxiliar for igual a 10...
+  f2:	80 91 03 01 	lds	r24, 0x0103	; 0x800103 <conta_tempo>
+  f6:	8a 30       	cpi	r24, 0x0A	; 10
+  f8:	21 f5       	brne	.+72     	; 0x142 <__vector_16+0x6a>
+    {
+        if(!tst_bit(PIND, DIR)) sentido_giro = 1;      //sentido de giro para a direita
+  fa:	4a 99       	sbic	0x09, 2	; 9
+  fc:	04 c0       	rjmp	.+8      	; 0x106 <__vector_16+0x2e>
+  fe:	81 e0       	ldi	r24, 0x01	; 1
+ 100:	80 93 01 01 	sts	0x0101, r24	; 0x800101 <sentido_giro>
+ 104:	1c c0       	rjmp	.+56     	; 0x13e <__vector_16+0x66>
+        else if(!tst_bit(PIND, ESQ)) sentido_giro = 0; //sentido de giro para a esquerda
+ 106:	4b 99       	sbic	0x09, 3	; 9
+ 108:	03 c0       	rjmp	.+6      	; 0x110 <__vector_16+0x38>
+ 10a:	10 92 01 01 	sts	0x0101, r1	; 0x800101 <sentido_giro>
+ 10e:	17 c0       	rjmp	.+46     	; 0x13e <__vector_16+0x66>
+        else if(!tst_bit(PIND, UP) && velocidade_motor < 250) velocidade_motor += 5; //incrementa a velocidade
+ 110:	4e 99       	sbic	0x09, 6	; 9
+ 112:	0a c0       	rjmp	.+20     	; 0x128 <__vector_16+0x50>
+ 114:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <__data_end>
+ 118:	8a 3f       	cpi	r24, 0xFA	; 250
+ 11a:	30 f4       	brcc	.+12     	; 0x128 <__vector_16+0x50>
+ 11c:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <__data_end>
+ 120:	8b 5f       	subi	r24, 0xFB	; 251
+ 122:	80 93 02 01 	sts	0x0102, r24	; 0x800102 <__data_end>
+ 126:	0b c0       	rjmp	.+22     	; 0x13e <__vector_16+0x66>
+        else if(!tst_bit(PIND, DOWN) && velocidade_motor > 0) velocidade_motor -= 5; //decrementa a velocidade
+ 128:	4f 99       	sbic	0x09, 7	; 9
+ 12a:	09 c0       	rjmp	.+18     	; 0x13e <__vector_16+0x66>
+ 12c:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <__data_end>
+ 130:	88 23       	and	r24, r24
+ 132:	29 f0       	breq	.+10     	; 0x13e <__vector_16+0x66>
+ 134:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <__data_end>
+ 138:	85 50       	subi	r24, 0x05	; 5
+ 13a:	80 93 02 01 	sts	0x0102, r24	; 0x800102 <__data_end>
+        conta_tempo = 0;  //reinicia a variável auxiliar
+ 13e:	10 92 03 01 	sts	0x0103, r1	; 0x800103 <conta_tempo>
+    }    
+}
+ 142:	8f 91       	pop	r24
+ 144:	0f 90       	pop	r0
+ 146:	0f be       	out	0x3f, r0	; 63
+ 148:	0f 90       	pop	r0
+ 14a:	1f 90       	pop	r1
+ 14c:	18 95       	reti
+
+0000014e <__vector_9>:
+
+ISR(TIMER2_OVF_vect) //implementação da rotina de tratamento do estouro do TCNT2
+{
+ 14e:	1f 92       	push	r1
+ 150:	0f 92       	push	r0
+ 152:	0f b6       	in	r0, 0x3f	; 63
+ 154:	0f 92       	push	r0
+ 156:	11 24       	eor	r1, r1
+ 158:	8f 93       	push	r24
+    static unsigned char passo_motor = 0x08; //variável que armazena os passos do motor
+    TCNT2 = velocidade_motor; //atualiza a velocidade
+ 15a:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <__data_end>
+ 15e:	80 93 b2 00 	sts	0x00B2, r24	; 0x8000b2 <__TEXT_REGION_LENGTH__+0x7f80b2>
+    MOTOR_PASSO = passo_motor & 0x0F;        //acionamento do motor
+ 162:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 166:	8f 70       	andi	r24, 0x0F	; 15
+ 168:	85 b9       	out	0x05, r24	; 5
+    if(sentido_giro) //se o sentido de giro for para a direita...
+ 16a:	80 91 01 01 	lds	r24, 0x0101	; 0x800101 <sentido_giro>
+ 16e:	88 23       	and	r24, r24
+ 170:	59 f0       	breq	.+22     	; 0x188 <__vector_9+0x3a>
+    {
+        passo_motor >>= 1; //próximo passo
+ 172:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 176:	86 95       	lsr	r24
+ 178:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
+        if(passo_motor == 0x00) passo_motor = 0x08;
+ 17c:	81 11       	cpse	r24, r1
+ 17e:	0e c0       	rjmp	.+28     	; 0x19c <__vector_9+0x4e>
+ 180:	88 e0       	ldi	r24, 0x08	; 8
+ 182:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 186:	0a c0       	rjmp	.+20     	; 0x19c <__vector_9+0x4e>
+    }
+    else             //se o sentido de giro for para a esquerda...
+    {
+        passo_motor <<= 1; //próximo passo
+ 188:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 18c:	88 0f       	add	r24, r24
+ 18e:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
+        if(passo_motor == 0x10) passo_motor = 0x01;    
+ 192:	80 31       	cpi	r24, 0x10	; 16
+ 194:	19 f4       	brne	.+6      	; 0x19c <__vector_9+0x4e>
+ 196:	81 e0       	ldi	r24, 0x01	; 1
+ 198:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
+    }
+ 19c:	8f 91       	pop	r24
+ 19e:	0f 90       	pop	r0
+ 1a0:	0f be       	out	0x3f, r0	; 63
+ 1a2:	0f 90       	pop	r0
+ 1a4:	1f 90       	pop	r1
+ 1a6:	18 95       	reti
+
+000001a8 <Inicializa_TC0>:
+	else
+	{
+		TCCR1A |= ((_TC1_OCAB_N & 0xF0) | (_TC1_modo & 0x03));
+		TCCR1B |= (((_TC1_modo << 1) & 0x18) | (_TC1_OCAB_N & 0x07));
+	}
+	TIMSK1 |= ~(_TC1_INT);
+ 1a8:	14 bc       	out	0x24, r1	; 36
+ 1aa:	15 bc       	out	0x25, r1	; 37
+ 1ac:	ee e6       	ldi	r30, 0x6E	; 110
+ 1ae:	f0 e0       	ldi	r31, 0x00	; 0
+ 1b0:	90 81       	ld	r25, Z
+ 1b2:	97 7f       	andi	r25, 0xF7	; 247
+ 1b4:	90 83       	st	Z, r25
+ 1b6:	81 11       	cpse	r24, r1
+ 1b8:	05 c0       	rjmp	.+10     	; 0x1c4 <Inicializa_TC0+0x1c>
+ 1ba:	85 b5       	in	r24, 0x25	; 37
+ 1bc:	67 70       	andi	r22, 0x07	; 7
+ 1be:	68 2b       	or	r22, r24
+ 1c0:	65 bd       	out	0x25, r22	; 37
+ 1c2:	1f c0       	rjmp	.+62     	; 0x202 <Inicializa_TC0+0x5a>
+ 1c4:	85 30       	cpi	r24, 0x05	; 5
+ 1c6:	60 f4       	brcc	.+24     	; 0x1e0 <Inicializa_TC0+0x38>
+ 1c8:	94 b5       	in	r25, 0x24	; 36
+ 1ca:	26 2f       	mov	r18, r22
+ 1cc:	20 7f       	andi	r18, 0xF0	; 240
+ 1ce:	83 70       	andi	r24, 0x03	; 3
+ 1d0:	82 2b       	or	r24, r18
+ 1d2:	89 2b       	or	r24, r25
+ 1d4:	84 bd       	out	0x24, r24	; 36
+ 1d6:	85 b5       	in	r24, 0x25	; 37
+ 1d8:	67 70       	andi	r22, 0x07	; 7
+ 1da:	68 2b       	or	r22, r24
+ 1dc:	65 bd       	out	0x25, r22	; 37
+ 1de:	11 c0       	rjmp	.+34     	; 0x202 <Inicializa_TC0+0x5a>
+ 1e0:	24 b5       	in	r18, 0x24	; 36
+ 1e2:	36 2f       	mov	r19, r22
+ 1e4:	30 7f       	andi	r19, 0xF0	; 240
+ 1e6:	98 2f       	mov	r25, r24
+ 1e8:	93 70       	andi	r25, 0x03	; 3
+ 1ea:	93 2b       	or	r25, r19
+ 1ec:	92 2b       	or	r25, r18
+ 1ee:	94 bd       	out	0x24, r25	; 36
+ 1f0:	25 b5       	in	r18, 0x25	; 37
+ 1f2:	90 e0       	ldi	r25, 0x00	; 0
+ 1f4:	88 0f       	add	r24, r24
+ 1f6:	99 1f       	adc	r25, r25
+ 1f8:	88 70       	andi	r24, 0x08	; 8
+ 1fa:	67 70       	andi	r22, 0x07	; 7
+ 1fc:	86 2b       	or	r24, r22
+ 1fe:	82 2b       	or	r24, r18
+ 200:	85 bd       	out	0x25, r24	; 37
+ 202:	ee e6       	ldi	r30, 0x6E	; 110
+ 204:	f0 e0       	ldi	r31, 0x00	; 0
+ 206:	80 81       	ld	r24, Z
+ 208:	40 95       	com	r20
+ 20a:	48 2b       	or	r20, r24
+ 20c:	40 83       	st	Z, r20
+ 20e:	08 95       	ret
+
+00000210 <Inicializa_TC2>:
+ * - _TC2_OCAB_N: seleciona o prescaler e configura as saídas de comparação
+ * - _TC2_INT:    configura as interrupções
+ */
+void Inicializa_TC2(unsigned char _TC2_modo, unsigned char _TC2_OCAB_N, unsigned char _TC2_INT)
+{
+	TCCR2A = 0x00;
+ 210:	10 92 b0 00 	sts	0x00B0, r1	; 0x8000b0 <__TEXT_REGION_LENGTH__+0x7f80b0>
+	TCCR2B = 0x00;
+ 214:	10 92 b1 00 	sts	0x00B1, r1	; 0x8000b1 <__TEXT_REGION_LENGTH__+0x7f80b1>
+	ASSR = 0x00;
+ 218:	10 92 b6 00 	sts	0x00B6, r1	; 0x8000b6 <__TEXT_REGION_LENGTH__+0x7f80b6>
+	TIMSK2 &= 0xF7;
+ 21c:	e0 e7       	ldi	r30, 0x70	; 112
+ 21e:	f0 e0       	ldi	r31, 0x00	; 0
+ 220:	90 81       	ld	r25, Z
+ 222:	97 7f       	andi	r25, 0xF7	; 247
+ 224:	90 83       	st	Z, r25
+	if(_TC2_modo == 0) TCCR2B |= (_TC2_OCAB_N & 0x07);
+ 226:	81 11       	cpse	r24, r1
+ 228:	07 c0       	rjmp	.+14     	; 0x238 <Inicializa_TC2+0x28>
+ 22a:	e1 eb       	ldi	r30, 0xB1	; 177
+ 22c:	f0 e0       	ldi	r31, 0x00	; 0
+ 22e:	90 81       	ld	r25, Z
+ 230:	67 70       	andi	r22, 0x07	; 7
+ 232:	69 2b       	or	r22, r25
+ 234:	60 83       	st	Z, r22
+ 236:	3a c0       	rjmp	.+116    	; 0x2ac <Inicializa_TC2+0x9c>
+	else if(_TC2_modo < 5)
+ 238:	85 30       	cpi	r24, 0x05	; 5
+ 23a:	80 f4       	brcc	.+32     	; 0x25c <Inicializa_TC2+0x4c>
+	{		
+		TCCR2A |= ((_TC2_OCAB_N & 0xF0) | (_TC2_modo & 0x03));
+ 23c:	e0 eb       	ldi	r30, 0xB0	; 176
+ 23e:	f0 e0       	ldi	r31, 0x00	; 0
+ 240:	90 81       	ld	r25, Z
+ 242:	26 2f       	mov	r18, r22
+ 244:	20 7f       	andi	r18, 0xF0	; 240
+ 246:	83 70       	andi	r24, 0x03	; 3
+ 248:	82 2b       	or	r24, r18
+ 24a:	89 2b       	or	r24, r25
+ 24c:	80 83       	st	Z, r24
+		TCCR2B |= (_TC2_OCAB_N & 0x07);
+ 24e:	e1 eb       	ldi	r30, 0xB1	; 177
+ 250:	f0 e0       	ldi	r31, 0x00	; 0
+ 252:	90 81       	ld	r25, Z
+ 254:	67 70       	andi	r22, 0x07	; 7
+ 256:	69 2b       	or	r22, r25
+ 258:	60 83       	st	Z, r22
+ 25a:	28 c0       	rjmp	.+80     	; 0x2ac <Inicializa_TC2+0x9c>
+	}
+	else if(_TC2_modo < 8)
+ 25c:	88 30       	cpi	r24, 0x08	; 8
+ 25e:	b0 f4       	brcc	.+44     	; 0x28c <Inicializa_TC2+0x7c>
+	{
+		TCCR2A |= ((_TC2_OCAB_N & 0xF0) | (_TC2_modo & 0x03));
+ 260:	e0 eb       	ldi	r30, 0xB0	; 176
+ 262:	f0 e0       	ldi	r31, 0x00	; 0
+ 264:	20 81       	ld	r18, Z
+ 266:	36 2f       	mov	r19, r22
+ 268:	30 7f       	andi	r19, 0xF0	; 240
+ 26a:	98 2f       	mov	r25, r24
+ 26c:	93 70       	andi	r25, 0x03	; 3
+ 26e:	93 2b       	or	r25, r19
+ 270:	92 2b       	or	r25, r18
+ 272:	90 83       	st	Z, r25
+		TCCR2B |= (((_TC2_modo << 1) & 0x08) | (_TC2_OCAB_N & 0x07));
+ 274:	e1 eb       	ldi	r30, 0xB1	; 177
+ 276:	f0 e0       	ldi	r31, 0x00	; 0
+ 278:	20 81       	ld	r18, Z
+ 27a:	90 e0       	ldi	r25, 0x00	; 0
+ 27c:	88 0f       	add	r24, r24
+ 27e:	99 1f       	adc	r25, r25
+ 280:	88 70       	andi	r24, 0x08	; 8
+ 282:	67 70       	andi	r22, 0x07	; 7
+ 284:	86 2b       	or	r24, r22
+ 286:	82 2b       	or	r24, r18
+ 288:	80 83       	st	Z, r24
+ 28a:	10 c0       	rjmp	.+32     	; 0x2ac <Inicializa_TC2+0x9c>
+		
+	}
+	else
+	{
+	    ASSR = 1 << AS2;
+ 28c:	80 e2       	ldi	r24, 0x20	; 32
+ 28e:	80 93 b6 00 	sts	0x00B6, r24	; 0x8000b6 <__TEXT_REGION_LENGTH__+0x7f80b6>
+	    TCCR2A |= (_TC2_OCAB_N & 0xF0);
+ 292:	e0 eb       	ldi	r30, 0xB0	; 176
+ 294:	f0 e0       	ldi	r31, 0x00	; 0
+ 296:	80 81       	ld	r24, Z
+ 298:	96 2f       	mov	r25, r22
+ 29a:	90 7f       	andi	r25, 0xF0	; 240
+ 29c:	89 2b       	or	r24, r25
+ 29e:	80 83       	st	Z, r24
+	    TCCR2B |= (_TC2_OCAB_N & 0x07);
+ 2a0:	e1 eb       	ldi	r30, 0xB1	; 177
+ 2a2:	f0 e0       	ldi	r31, 0x00	; 0
+ 2a4:	80 81       	ld	r24, Z
+ 2a6:	67 70       	andi	r22, 0x07	; 7
+ 2a8:	68 2b       	or	r22, r24
+ 2aa:	60 83       	st	Z, r22
+	}
+	TIMSK2 |= ~(_TC2_INT);
+ 2ac:	e0 e7       	ldi	r30, 0x70	; 112
+ 2ae:	f0 e0       	ldi	r31, 0x00	; 0
+ 2b0:	80 81       	ld	r24, Z
+ 2b2:	40 95       	com	r20
+ 2b4:	48 2b       	or	r20, r24
+ 2b6:	40 83       	st	Z, r20
+ 2b8:	08 95       	ret
+
+000002ba <_exit>:
+ 2ba:	f8 94       	cli
+
+000002bc <__stop_program>:
+ 2bc:	ff cf       	rjmp	.-2      	; 0x2bc <__stop_program>

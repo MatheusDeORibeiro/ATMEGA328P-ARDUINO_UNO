@@ -1,0 +1,479 @@
+
+s09_e12_motor_ima_256_niveis_vel.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000002  00800100  000002f0  00000384  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000002f0  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000003  00800102  00800102  00000386  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000386  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  000003b8  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 000000a0  00000000  00000000  000003f8  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00000b62  00000000  00000000  00000498  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 000007e6  00000000  00000000  00000ffa  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000674  00000000  00000000  000017e0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  000000d0  00000000  00000000  00001e54  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00000529  00000000  00000000  00001f24  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    000003f4  00000000  00000000  0000244d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000040  00000000  00000000  00002841  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 3c 00 	jmp	0x78	; 0x78 <__ctors_end>
+   4:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+   8:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+   c:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  10:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  14:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  18:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  1c:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  20:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  24:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  28:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  2c:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  30:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  34:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  38:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  3c:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  40:	0c 94 a7 00 	jmp	0x14e	; 0x14e <__vector_16>
+  44:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  48:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  4c:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  50:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  54:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  58:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  5c:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  60:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  64:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+
+00000068 <NumerosDisplays>:
+  68:	3f 06 5b 4f 66 6d 7d 07 7f 6f 77 7c 39 5e 79 71     ?.[Ofm}..ow|9^yq
+
+00000078 <__ctors_end>:
+  78:	11 24       	eor	r1, r1
+  7a:	1f be       	out	0x3f, r1	; 63
+  7c:	cf ef       	ldi	r28, 0xFF	; 255
+  7e:	d8 e0       	ldi	r29, 0x08	; 8
+  80:	de bf       	out	0x3e, r29	; 62
+  82:	cd bf       	out	0x3d, r28	; 61
+
+00000084 <__do_copy_data>:
+  84:	11 e0       	ldi	r17, 0x01	; 1
+  86:	a0 e0       	ldi	r26, 0x00	; 0
+  88:	b1 e0       	ldi	r27, 0x01	; 1
+  8a:	e0 ef       	ldi	r30, 0xF0	; 240
+  8c:	f2 e0       	ldi	r31, 0x02	; 2
+  8e:	02 c0       	rjmp	.+4      	; 0x94 <__do_copy_data+0x10>
+  90:	05 90       	lpm	r0, Z+
+  92:	0d 92       	st	X+, r0
+  94:	a2 30       	cpi	r26, 0x02	; 2
+  96:	b1 07       	cpc	r27, r17
+  98:	d9 f7       	brne	.-10     	; 0x90 <__do_copy_data+0xc>
+
+0000009a <__do_clear_bss>:
+  9a:	21 e0       	ldi	r18, 0x01	; 1
+  9c:	a2 e0       	ldi	r26, 0x02	; 2
+  9e:	b1 e0       	ldi	r27, 0x01	; 1
+  a0:	01 c0       	rjmp	.+2      	; 0xa4 <.do_clear_bss_start>
+
+000000a2 <.do_clear_bss_loop>:
+  a2:	1d 92       	st	X+, r1
+
+000000a4 <.do_clear_bss_start>:
+  a4:	a5 30       	cpi	r26, 0x05	; 5
+  a6:	b2 07       	cpc	r27, r18
+  a8:	e1 f7       	brne	.-8      	; 0xa2 <.do_clear_bss_loop>
+  aa:	0e 94 7b 00 	call	0xf6	; 0xf6 <main>
+  ae:	0c 94 76 01 	jmp	0x2ec	; 0x2ec <_exit>
+
+000000b2 <__bad_interrupt>:
+  b2:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000b6 <decodifica_displays>:
+    }
+}
+
+void decodifica_displays(unsigned char velocidade_motor) //implementação da função que decodifica o valor e mostra no display
+{
+    PORTD = pgm_read_byte(&NumerosDisplays[velocidade_motor & 0x0F]);        //carrega o dado menos significativo
+  b6:	e8 2f       	mov	r30, r24
+  b8:	ef 70       	andi	r30, 0x0F	; 15
+  ba:	f0 e0       	ldi	r31, 0x00	; 0
+  bc:	e8 59       	subi	r30, 0x98	; 152
+  be:	ff 4f       	sbci	r31, 0xFF	; 255
+  c0:	e4 91       	lpm	r30, Z
+  c2:	eb b9       	out	0x0b, r30	; 11
+    set_bit(PORTC, DISPLAY_1); //habilita o display menos significativo
+  c4:	44 9a       	sbi	0x08, 4	; 8
+    clr_bit(PORTC, DISPLAY_2); //desabilita o display meis significativo
+  c6:	45 98       	cbi	0x08, 5	; 8
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  c8:	ef ef       	ldi	r30, 0xFF	; 255
+  ca:	fc e7       	ldi	r31, 0x7C	; 124
+  cc:	31 97       	sbiw	r30, 0x01	; 1
+  ce:	f1 f7       	brne	.-4      	; 0xcc <decodifica_displays+0x16>
+  d0:	00 c0       	rjmp	.+0      	; 0xd2 <decodifica_displays+0x1c>
+  d2:	00 00       	nop
+    _delay_ms(8);              //delay para visualização (60 ^ -1 / 2 = 8ms)
+    PORTD = pgm_read_byte(&NumerosDisplays[(velocidade_motor & 0xF0) >> 4]); //carrega o dado mais significativo
+  d4:	82 95       	swap	r24
+  d6:	8f 70       	andi	r24, 0x0F	; 15
+  d8:	e8 2f       	mov	r30, r24
+  da:	f0 e0       	ldi	r31, 0x00	; 0
+  dc:	e8 59       	subi	r30, 0x98	; 152
+  de:	ff 4f       	sbci	r31, 0xFF	; 255
+  e0:	e4 91       	lpm	r30, Z
+  e2:	eb b9       	out	0x0b, r30	; 11
+    clr_bit(PORTC, DISPLAY_1); //desabilita o display menos significativo
+  e4:	44 98       	cbi	0x08, 4	; 8
+    set_bit(PORTC, DISPLAY_2); //habilita o display mais significativo
+  e6:	45 9a       	sbi	0x08, 5	; 8
+  e8:	8f ef       	ldi	r24, 0xFF	; 255
+  ea:	9c e7       	ldi	r25, 0x7C	; 124
+  ec:	01 97       	sbiw	r24, 0x01	; 1
+  ee:	f1 f7       	brne	.-4      	; 0xec <decodifica_displays+0x36>
+  f0:	00 c0       	rjmp	.+0      	; 0xf2 <decodifica_displays+0x3c>
+  f2:	00 00       	nop
+  f4:	08 95       	ret
+
+000000f6 <main>:
+void decodifica_displays(unsigned char velocidade_motor); //função que decodifica o valor e mostra no display
+ISR(TIMER0_OVF_vect);                                     //declaração do protótipo da rotina de tratemento do estouro do TCNT0
+
+int main(void) //função principal
+{
+    DDRD = 0xFF;   //configura todo o PORTD como saída
+  f6:	8f ef       	ldi	r24, 0xFF	; 255
+  f8:	8a b9       	out	0x0a, r24	; 10
+    DDRB = 0xF3;   //configura os pino PB4:3 como entradas e os pinos restantes do PORTB como saídas
+  fa:	93 ef       	ldi	r25, 0xF3	; 243
+  fc:	94 b9       	out	0x04, r25	; 4
+    DDRC = 0xFF;   //configura todo o PORTC como saída
+  fe:	87 b9       	out	0x07, r24	; 7
+    PORTD = 0x00;  //coloca todo o PORTD em nível baixo
+ 100:	1b b8       	out	0x0b, r1	; 11
+    PORTB = 0x0C;  //habilita os resistores pull-up das entradas e coloca os pinos restantes em nível baixo
+ 102:	8c e0       	ldi	r24, 0x0C	; 12
+ 104:	85 b9       	out	0x05, r24	; 5
+    PORTC = 0x00;  //coloca todo o PORTC em nível baixo
+ 106:	18 b8       	out	0x08, r1	; 8
+    UCSR0B = 0x00; //configura os pinos PD1:0 como IOs(desabilita as funções RX e TX)
+ 108:	10 92 c1 00 	sts	0x00C1, r1	; 0x8000c1 <__TEXT_REGION_LENGTH__+0x7f80c1>
+
+    Inicializa_TC0(TC0_modo_normal, TC0_CLK_1024, TC0_TOIE0); //para a varredura dos botões
+ 10c:	4e ef       	ldi	r20, 0xFE	; 254
+ 10e:	6d ef       	ldi	r22, 0xFD	; 253
+ 110:	80 e0       	ldi	r24, 0x00	; 0
+ 112:	0e 94 03 01 	call	0x206	; 0x206 <Inicializa_TC0>
+    /* modo normal, f_osc igual a 16MHz, prescaler igual a 1024, saídas comparadoras desabilitadas
+       interrupção por estouro do TCNT0 habilitada: t_estouro igual a 16,4ms e f igual a 61Hz */
+    TCNT0 = 100; //inicializando o registrador do TC0
+ 116:	84 e6       	ldi	r24, 0x64	; 100
+ 118:	86 bd       	out	0x26, r24	; 38
+
+    Inicializa_TC1(TC1_modo_PWM_fc_8bit, TC1_OC1A_n_inv&TC1_CLK_256, TC1_INT_OFF); //para gerar o sinal PWM
+ 11a:	4f ef       	ldi	r20, 0xFF	; 255
+ 11c:	6c eb       	ldi	r22, 0xBC	; 188
+ 11e:	81 e0       	ldi	r24, 0x01	; 1
+ 120:	0e 94 2d 01 	call	0x25a	; 0x25a <Inicializa_TC1>
+    /* modo PWM com fase corrigida com valor TOP igual a 255, f_osc igual a 16MHz,
+       prescaler igual a 256: período do sinal igual a 8,2ms e frequência igual a  122Hz, 
+       saída comparadora A não inversora, interrupção desabilitadas */
+
+    __EEGET(velocidade, endereco_EEPROM);     //leitura da memória EEPROM
+ 124:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 128:	90 91 01 01 	lds	r25, 0x0101	; 0x800101 <__DATA_REGION_ORIGIN__+0x1>
+ 12c:	0e 94 60 01 	call	0x2c0	; 0x2c0 <eeprom_read_byte>
+ 130:	80 93 04 01 	sts	0x0104, r24	; 0x800104 <velocidade>
+    OCR1A = velocidade;                       //ciclo ativo do sinal PWM
+ 134:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <velocidade>
+ 138:	90 e0       	ldi	r25, 0x00	; 0
+ 13a:	90 93 89 00 	sts	0x0089, r25	; 0x800089 <__TEXT_REGION_LENGTH__+0x7f8089>
+ 13e:	80 93 88 00 	sts	0x0088, r24	; 0x800088 <__TEXT_REGION_LENGTH__+0x7f8088>
+
+    sei(); //habilita todas as fontes de interrupção setando o bit I do registrador SREG    
+ 142:	78 94       	sei
+
+    while(1) //loop infinito
+    {
+        decodifica_displays(velocidade); //exibindo o nível de velocidade
+ 144:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <velocidade>
+ 148:	0e 94 5b 00 	call	0xb6	; 0xb6 <decodifica_displays>
+ 14c:	fb cf       	rjmp	.-10     	; 0x144 <main+0x4e>
+
+0000014e <__vector_16>:
+    set_bit(PORTC, DISPLAY_2); //habilita o display mais significativo
+    _delay_ms(8);              //delay para visualização (60 ^ -1 / 2 = 8ms)
+}
+
+ISR(TIMER0_OVF_vect) //implementação da rotina de tratemento do estouro do TCNT1
+{
+ 14e:	1f 92       	push	r1
+ 150:	0f 92       	push	r0
+ 152:	0f b6       	in	r0, 0x3f	; 63
+ 154:	0f 92       	push	r0
+ 156:	11 24       	eor	r1, r1
+ 158:	2f 93       	push	r18
+ 15a:	3f 93       	push	r19
+ 15c:	4f 93       	push	r20
+ 15e:	5f 93       	push	r21
+ 160:	6f 93       	push	r22
+ 162:	7f 93       	push	r23
+ 164:	8f 93       	push	r24
+ 166:	9f 93       	push	r25
+ 168:	af 93       	push	r26
+ 16a:	bf 93       	push	r27
+ 16c:	ef 93       	push	r30
+ 16e:	ff 93       	push	r31
+    conta_tempo++;                                  //incrementa a variável auxiliar
+ 170:	80 91 03 01 	lds	r24, 0x0103	; 0x800103 <conta_tempo>
+ 174:	8f 5f       	subi	r24, 0xFF	; 255
+ 176:	80 93 03 01 	sts	0x0103, r24	; 0x800103 <conta_tempo>
+    TCNT0 = 100;                                    //reiniciando o valor do registrador do TCNT0
+ 17a:	84 e6       	ldi	r24, 0x64	; 100
+ 17c:	86 bd       	out	0x26, r24	; 38
+    if(conta_tempo == 10)                           //t_estouro = 10 * 1024 * ((255 - 100) + 1) / 16M = 99,8ms
+ 17e:	80 91 03 01 	lds	r24, 0x0103	; 0x800103 <conta_tempo>
+ 182:	8a 30       	cpi	r24, 0x0A	; 10
+ 184:	79 f5       	brne	.+94     	; 0x1e4 <__vector_16+0x96>
+    {
+        if(!tst_bit(PINB, UP) && velocidade < 255)      //se o botão UP for pressionado...
+ 186:	1a 99       	sbic	0x03, 2	; 3
+ 188:	08 c0       	rjmp	.+16     	; 0x19a <__vector_16+0x4c>
+ 18a:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <velocidade>
+ 18e:	8f 3f       	cpi	r24, 0xFF	; 255
+ 190:	21 f0       	breq	.+8      	; 0x19a <__vector_16+0x4c>
+        {
+            velocidade++;                               //incrementa a velocidade
+ 192:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <velocidade>
+ 196:	8f 5f       	subi	r24, 0xFF	; 255
+ 198:	09 c0       	rjmp	.+18     	; 0x1ac <__vector_16+0x5e>
+            atualiza_vel = 1;                           //o valor da velocidade deve ser atualizado
+        }
+        else if(!tst_bit(PINB, DOWN) && velocidade > 0) //se o botão DOWN for pressionado...
+ 19a:	1b 99       	sbic	0x03, 3	; 3
+ 19c:	0c c0       	rjmp	.+24     	; 0x1b6 <__vector_16+0x68>
+ 19e:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <velocidade>
+ 1a2:	88 23       	and	r24, r24
+ 1a4:	41 f0       	breq	.+16     	; 0x1b6 <__vector_16+0x68>
+        {
+            velocidade--;                               //decrementa a velocidade
+ 1a6:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <velocidade>
+ 1aa:	81 50       	subi	r24, 0x01	; 1
+ 1ac:	80 93 04 01 	sts	0x0104, r24	; 0x800104 <velocidade>
+            atualiza_vel = 1;                           //o valor da velocidade deve ser atualizado
+ 1b0:	81 e0       	ldi	r24, 0x01	; 1
+ 1b2:	80 93 02 01 	sts	0x0102, r24	; 0x800102 <__data_end>
+        }
+        if(atualiza_vel)                                //se a velocidade deve ser atualizada...
+ 1b6:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <__data_end>
+ 1ba:	88 23       	and	r24, r24
+ 1bc:	89 f0       	breq	.+34     	; 0x1e0 <__vector_16+0x92>
+        {
+            OCR1A = velocidade;                         //atualiza o ciclo ativo do sinal PWM
+ 1be:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <velocidade>
+ 1c2:	90 e0       	ldi	r25, 0x00	; 0
+ 1c4:	90 93 89 00 	sts	0x0089, r25	; 0x800089 <__TEXT_REGION_LENGTH__+0x7f8089>
+ 1c8:	80 93 88 00 	sts	0x0088, r24	; 0x800088 <__TEXT_REGION_LENGTH__+0x7f8088>
+            __EEPUT(endereco_EEPROM, velocidade);       //escrita na memória EEPROM
+ 1cc:	60 91 04 01 	lds	r22, 0x0104	; 0x800104 <velocidade>
+ 1d0:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 1d4:	90 91 01 01 	lds	r25, 0x0101	; 0x800101 <__DATA_REGION_ORIGIN__+0x1>
+ 1d8:	0e 94 68 01 	call	0x2d0	; 0x2d0 <eeprom_write_byte>
+            atualiza_vel = 0;                           //o valor da velocidade foi atualizado
+ 1dc:	10 92 02 01 	sts	0x0102, r1	; 0x800102 <__data_end>
+        }
+        conta_tempo = 0;                            //reiniciando o valor da variável auxiliar
+ 1e0:	10 92 03 01 	sts	0x0103, r1	; 0x800103 <conta_tempo>
+    }
+}
+ 1e4:	ff 91       	pop	r31
+ 1e6:	ef 91       	pop	r30
+ 1e8:	bf 91       	pop	r27
+ 1ea:	af 91       	pop	r26
+ 1ec:	9f 91       	pop	r25
+ 1ee:	8f 91       	pop	r24
+ 1f0:	7f 91       	pop	r23
+ 1f2:	6f 91       	pop	r22
+ 1f4:	5f 91       	pop	r21
+ 1f6:	4f 91       	pop	r20
+ 1f8:	3f 91       	pop	r19
+ 1fa:	2f 91       	pop	r18
+ 1fc:	0f 90       	pop	r0
+ 1fe:	0f be       	out	0x3f, r0	; 63
+ 200:	0f 90       	pop	r0
+ 202:	1f 90       	pop	r1
+ 204:	18 95       	reti
+
+00000206 <Inicializa_TC0>:
+ * - _TC0_OCAB_N: seleciona o prescaler e configura as saídas de comparação
+ * - _TC0_INT:    configura as interrupções
+ */
+void Inicializa_TC0(unsigned char _TC0_modo, unsigned char _TC0_OCAB_N, unsigned char _TC0_INT)
+{
+	TCCR0A = 0x00;
+ 206:	14 bc       	out	0x24, r1	; 36
+	TCCR0B = 0x00;
+ 208:	15 bc       	out	0x25, r1	; 37
+	TIMSK0 &= 0xF7;
+ 20a:	90 91 6e 00 	lds	r25, 0x006E	; 0x80006e <__TEXT_REGION_LENGTH__+0x7f806e>
+ 20e:	97 7f       	andi	r25, 0xF7	; 247
+ 210:	90 93 6e 00 	sts	0x006E, r25	; 0x80006e <__TEXT_REGION_LENGTH__+0x7f806e>
+ 214:	36 2f       	mov	r19, r22
+ 216:	37 70       	andi	r19, 0x07	; 7
+	if(_TC0_modo == 0) TCCR0B |= (_TC0_OCAB_N & 0x07);
+ 218:	88 23       	and	r24, r24
+ 21a:	49 f0       	breq	.+18     	; 0x22e <Inicializa_TC0+0x28>
+ 21c:	60 7f       	andi	r22, 0xF0	; 240
+ 21e:	98 2f       	mov	r25, r24
+ 220:	93 70       	andi	r25, 0x03	; 3
+	else if(_TC0_modo < 5)
+ 222:	85 30       	cpi	r24, 0x05	; 5
+ 224:	40 f4       	brcc	.+16     	; 0x236 <Inicializa_TC0+0x30>
+	{		
+		TCCR0A |= ((_TC0_OCAB_N & 0xF0) | (_TC0_modo & 0x03));
+ 226:	84 b5       	in	r24, 0x24	; 36
+ 228:	68 2b       	or	r22, r24
+ 22a:	96 2b       	or	r25, r22
+ 22c:	94 bd       	out	0x24, r25	; 36
+		TCCR0B |= (_TC0_OCAB_N & 0x07);
+ 22e:	95 b5       	in	r25, 0x25	; 37
+ 230:	93 2b       	or	r25, r19
+ 232:	95 bd       	out	0x25, r25	; 37
+ 234:	0b c0       	rjmp	.+22     	; 0x24c <Inicializa_TC0+0x46>
+	}
+	else
+	{
+		TCCR0A |= ((_TC0_OCAB_N & 0xF0) | (_TC0_modo & 0x03));
+ 236:	24 b5       	in	r18, 0x24	; 36
+ 238:	62 2b       	or	r22, r18
+ 23a:	96 2b       	or	r25, r22
+ 23c:	94 bd       	out	0x24, r25	; 36
+		TCCR0B |= (((_TC0_modo << 1) & 0x08) | (_TC0_OCAB_N & 0x07));
+ 23e:	25 b5       	in	r18, 0x25	; 37
+ 240:	88 0f       	add	r24, r24
+ 242:	88 70       	andi	r24, 0x08	; 8
+ 244:	93 2f       	mov	r25, r19
+ 246:	92 2b       	or	r25, r18
+ 248:	89 2b       	or	r24, r25
+ 24a:	85 bd       	out	0x25, r24	; 37
+		
+	}
+	TIMSK0 |= ~(_TC0_INT);
+ 24c:	80 91 6e 00 	lds	r24, 0x006E	; 0x80006e <__TEXT_REGION_LENGTH__+0x7f806e>
+ 250:	40 95       	com	r20
+ 252:	48 2b       	or	r20, r24
+ 254:	40 93 6e 00 	sts	0x006E, r20	; 0x80006e <__TEXT_REGION_LENGTH__+0x7f806e>
+ 258:	08 95       	ret
+
+0000025a <Inicializa_TC1>:
+ * - _TC1_OCAB_N: seleciona o prescaler e configura a entrada de captura e as saídas de comparação
+ * - _TC1_INT:    configura as interrupções
+ */
+void Inicializa_TC1(unsigned char _TC1_modo, unsigned char _TC1_OCAB_N, unsigned char _TC1_INT)
+{
+    TCCR1A = 0x00;
+ 25a:	10 92 80 00 	sts	0x0080, r1	; 0x800080 <__TEXT_REGION_LENGTH__+0x7f8080>
+	TCCR1B = 0x00;
+ 25e:	10 92 81 00 	sts	0x0081, r1	; 0x800081 <__TEXT_REGION_LENGTH__+0x7f8081>
+	TIMSK1 &= 0xD7;
+ 262:	90 91 6f 00 	lds	r25, 0x006F	; 0x80006f <__TEXT_REGION_LENGTH__+0x7f806f>
+ 266:	97 7d       	andi	r25, 0xD7	; 215
+ 268:	90 93 6f 00 	sts	0x006F, r25	; 0x80006f <__TEXT_REGION_LENGTH__+0x7f806f>
+	if(_TC1_INT == 0) TCCR1B |= (_TC1_OCAB_N & 0x47);
+ 26c:	41 11       	cpse	r20, r1
+ 26e:	04 c0       	rjmp	.+8      	; 0x278 <Inicializa_TC1+0x1e>
+ 270:	80 91 81 00 	lds	r24, 0x0081	; 0x800081 <__TEXT_REGION_LENGTH__+0x7f8081>
+ 274:	67 74       	andi	r22, 0x47	; 71
+ 276:	1a c0       	rjmp	.+52     	; 0x2ac <Inicializa_TC1+0x52>
+ 278:	98 2f       	mov	r25, r24
+ 27a:	93 70       	andi	r25, 0x03	; 3
+	else if(_TC1_OCAB_N < 4)
+ 27c:	64 30       	cpi	r22, 0x04	; 4
+ 27e:	40 f4       	brcc	.+16     	; 0x290 <Inicializa_TC1+0x36>
+	{
+		TCCR1A |= ((_TC1_OCAB_N & 0xF0) | (_TC1_modo & 0x03));
+ 280:	80 91 80 00 	lds	r24, 0x0080	; 0x800080 <__TEXT_REGION_LENGTH__+0x7f8080>
+ 284:	98 2b       	or	r25, r24
+ 286:	90 93 80 00 	sts	0x0080, r25	; 0x800080 <__TEXT_REGION_LENGTH__+0x7f8080>
+		TCCR1B |= (_TC1_OCAB_N & 0x07);
+ 28a:	80 91 81 00 	lds	r24, 0x0081	; 0x800081 <__TEXT_REGION_LENGTH__+0x7f8081>
+ 28e:	0e c0       	rjmp	.+28     	; 0x2ac <Inicializa_TC1+0x52>
+	}
+	else
+	{
+		TCCR1A |= ((_TC1_OCAB_N & 0xF0) | (_TC1_modo & 0x03));
+ 290:	20 91 80 00 	lds	r18, 0x0080	; 0x800080 <__TEXT_REGION_LENGTH__+0x7f8080>
+ 294:	92 2b       	or	r25, r18
+ 296:	26 2f       	mov	r18, r22
+ 298:	20 7f       	andi	r18, 0xF0	; 240
+ 29a:	92 2b       	or	r25, r18
+ 29c:	90 93 80 00 	sts	0x0080, r25	; 0x800080 <__TEXT_REGION_LENGTH__+0x7f8080>
+		TCCR1B |= (((_TC1_modo << 1) & 0x18) | (_TC1_OCAB_N & 0x07));
+ 2a0:	90 91 81 00 	lds	r25, 0x0081	; 0x800081 <__TEXT_REGION_LENGTH__+0x7f8081>
+ 2a4:	67 70       	andi	r22, 0x07	; 7
+ 2a6:	69 2b       	or	r22, r25
+ 2a8:	88 0f       	add	r24, r24
+ 2aa:	88 71       	andi	r24, 0x18	; 24
+ 2ac:	68 2b       	or	r22, r24
+ 2ae:	60 93 81 00 	sts	0x0081, r22	; 0x800081 <__TEXT_REGION_LENGTH__+0x7f8081>
+	}
+	TIMSK1 |= ~(_TC1_INT);
+ 2b2:	80 91 6f 00 	lds	r24, 0x006F	; 0x80006f <__TEXT_REGION_LENGTH__+0x7f806f>
+ 2b6:	40 95       	com	r20
+ 2b8:	48 2b       	or	r20, r24
+ 2ba:	40 93 6f 00 	sts	0x006F, r20	; 0x80006f <__TEXT_REGION_LENGTH__+0x7f806f>
+ 2be:	08 95       	ret
+
+000002c0 <eeprom_read_byte>:
+ 2c0:	f9 99       	sbic	0x1f, 1	; 31
+ 2c2:	fe cf       	rjmp	.-4      	; 0x2c0 <eeprom_read_byte>
+ 2c4:	92 bd       	out	0x22, r25	; 34
+ 2c6:	81 bd       	out	0x21, r24	; 33
+ 2c8:	f8 9a       	sbi	0x1f, 0	; 31
+ 2ca:	99 27       	eor	r25, r25
+ 2cc:	80 b5       	in	r24, 0x20	; 32
+ 2ce:	08 95       	ret
+
+000002d0 <eeprom_write_byte>:
+ 2d0:	26 2f       	mov	r18, r22
+
+000002d2 <eeprom_write_r18>:
+ 2d2:	f9 99       	sbic	0x1f, 1	; 31
+ 2d4:	fe cf       	rjmp	.-4      	; 0x2d2 <eeprom_write_r18>
+ 2d6:	1f ba       	out	0x1f, r1	; 31
+ 2d8:	92 bd       	out	0x22, r25	; 34
+ 2da:	81 bd       	out	0x21, r24	; 33
+ 2dc:	20 bd       	out	0x20, r18	; 32
+ 2de:	0f b6       	in	r0, 0x3f	; 63
+ 2e0:	f8 94       	cli
+ 2e2:	fa 9a       	sbi	0x1f, 2	; 31
+ 2e4:	f9 9a       	sbi	0x1f, 1	; 31
+ 2e6:	0f be       	out	0x3f, r0	; 63
+ 2e8:	01 96       	adiw	r24, 0x01	; 1
+ 2ea:	08 95       	ret
+
+000002ec <_exit>:
+ 2ec:	f8 94       	cli
+
+000002ee <__stop_program>:
+ 2ee:	ff cf       	rjmp	.-2      	; 0x2ee <__stop_program>
