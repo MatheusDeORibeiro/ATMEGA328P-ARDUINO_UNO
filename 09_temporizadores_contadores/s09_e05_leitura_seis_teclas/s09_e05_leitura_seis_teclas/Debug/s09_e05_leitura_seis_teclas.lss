@@ -1,0 +1,334 @@
+
+s09_e05_leitura_seis_teclas.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  00800100  00000212  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000001be  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      00000030  00000000  00000000  00000212  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000244  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000050  00000000  00000000  00000284  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   0000080a  00000000  00000000  000002d4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 0000071b  00000000  00000000  00000ade  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000438  00000000  00000000  000011f9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000094  00000000  00000000  00001634  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    0000041e  00000000  00000000  000016c8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000164  00000000  00000000  00001ae6  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000030  00000000  00000000  00001c4a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 34 00 	jmp	0x68	; 0x68 <__ctors_end>
+   4:	0c 94 58 00 	jmp	0xb0	; 0xb0 <__vector_1>
+   8:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+   c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  10:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  14:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  18:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  1c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  20:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  24:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  28:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  2c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  30:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  34:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  38:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  3c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  40:	0c 94 9c 00 	jmp	0x138	; 0x138 <__vector_16>
+  44:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  48:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  4c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  50:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  54:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  58:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  5c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  60:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  64:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+
+00000068 <__ctors_end>:
+  68:	11 24       	eor	r1, r1
+  6a:	1f be       	out	0x3f, r1	; 63
+  6c:	cf ef       	ldi	r28, 0xFF	; 255
+  6e:	d8 e0       	ldi	r29, 0x08	; 8
+  70:	de bf       	out	0x3e, r29	; 62
+  72:	cd bf       	out	0x3d, r28	; 61
+  74:	0e 94 40 00 	call	0x80	; 0x80 <main>
+  78:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <_exit>
+
+0000007c <__bad_interrupt>:
+  7c:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000080 <main>:
+ISR(INT0_vect);
+ISR(TIMER0_OVF_vect);
+
+int main(void) //função principal
+{
+    DDRB = 0xFF; //configura todo o PORTB como saída
+  80:	8f ef       	ldi	r24, 0xFF	; 255
+  82:	84 b9       	out	0x04, r24	; 4
+    DDRC = 0xFF; //configura todo o PORTC como saída
+  84:	87 b9       	out	0x07, r24	; 7
+    DDRD = 0xFB; //configura PD2 como entrada e os pinos do PORTD como restantes como saída
+  86:	8b ef       	ldi	r24, 0xFB	; 251
+  88:	8a b9       	out	0x0a, r24	; 10
+    PORTB = 0x00; //coloca todo o PORTB em nível baixo
+  8a:	15 b8       	out	0x05, r1	; 5
+    PORTC = 0xFE; //coloca PC0 em nível baixo e o restante do PORTC em nível alto
+  8c:	8e ef       	ldi	r24, 0xFE	; 254
+  8e:	88 b9       	out	0x08, r24	; 8
+    PORTD = 0x04; //habilita o resistor pull-up da entrada e coloca os pinos restantes em nível baixo
+  90:	84 e0       	ldi	r24, 0x04	; 4
+  92:	8b b9       	out	0x0b, r24	; 11
+
+    //configurando INT0
+    EICRA = 1 << ISC01; //uma borda de descida em PD2(INT0) gera uma solicitação de interrupção
+  94:	82 e0       	ldi	r24, 0x02	; 2
+  96:	80 93 69 00 	sts	0x0069, r24	; 0x800069 <__TEXT_REGION_LENGTH__+0x7f8069>
+    EIMSK = 1 << INT0;  //habilita a interrupção externa do pino PD2
+  9a:	81 e0       	ldi	r24, 0x01	; 1
+  9c:	8d bb       	out	0x1d, r24	; 29
+
+    //configurando o TC0
+    Inicializa_TC0(TC0_modo_normal, TC0_OC0A_normal&TC0_OC0B_normal&TC0_CLK_1024, TC0_TOIE0);
+  9e:	4e ef       	ldi	r20, 0xFE	; 254
+  a0:	6d e0       	ldi	r22, 0x0D	; 13
+  a2:	80 e0       	ldi	r24, 0x00	; 0
+  a4:	0e 94 b3 00 	call	0x166	; 0x166 <Inicializa_TC0>
+    /* para um t_estouro de 10ms -> TOP = 155 -> TCNT0 = 100 */
+    /* t_estouro = 9,984ms ~= 10ms */
+    TCNT0 = 100; //inicializa o registrador do TC0
+  a8:	84 e6       	ldi	r24, 0x64	; 100
+  aa:	86 bd       	out	0x26, r24	; 38
+    /* modo normal, f_osc igual a 16MHz, TOP igual a 156, prescaler igual a 1024,
+       saída de comparação desabilitadas, interrupção do estouro do TC0 habilitada: */
+
+    sei(); //seta o bit I do registrador SREG habilitando as interrupção globais
+  ac:	78 94       	sei
+  ae:	ff cf       	rjmp	.-2      	; 0xae <main+0x2e>
+
+000000b0 <__vector_1>:
+}
+
+//implementando as rotinas de tratamento de interrupção
+
+ISR(INT0_vect) //verifica se alguma tecla foi pressionada
+{
+  b0:	1f 92       	push	r1
+  b2:	0f 92       	push	r0
+  b4:	0f b6       	in	r0, 0x3f	; 63
+  b6:	0f 92       	push	r0
+  b8:	11 24       	eor	r1, r1
+  ba:	2f 93       	push	r18
+  bc:	8f 93       	push	r24
+  be:	9f 93       	push	r25
+	if(!tst_bit(PINC, BT_1))        //testa botão 1
+  c0:	30 99       	sbic	0x06, 0	; 6
+  c2:	05 c0       	rjmp	.+10     	; 0xce <__vector_1+0x1e>
+	{
+		while(tst_bit(PINC, BT_1)); //aguarda botão 1 ser liberado
+  c4:	30 99       	sbic	0x06, 0	; 6
+  c6:	fe cf       	rjmp	.-4      	; 0xc4 <__vector_1+0x14>
+		cpl_bit(PORTB, LED_1);      //muda o estado do LED 1
+  c8:	95 b1       	in	r25, 0x05	; 5
+  ca:	81 e0       	ldi	r24, 0x01	; 1
+  cc:	22 c0       	rjmp	.+68     	; 0x112 <__vector_1+0x62>
+	}
+	else if(!tst_bit(PINC, BT_2))   //testa botão 2
+  ce:	31 99       	sbic	0x06, 1	; 6
+  d0:	05 c0       	rjmp	.+10     	; 0xdc <__vector_1+0x2c>
+	{
+		while(tst_bit(PINC, BT_2)); //aguarda botão 2 ser liberado
+  d2:	31 99       	sbic	0x06, 1	; 6
+  d4:	fe cf       	rjmp	.-4      	; 0xd2 <__vector_1+0x22>
+		cpl_bit(PORTB, LED_2);      //muda o estado do LED 2
+  d6:	95 b1       	in	r25, 0x05	; 5
+  d8:	82 e0       	ldi	r24, 0x02	; 2
+  da:	1b c0       	rjmp	.+54     	; 0x112 <__vector_1+0x62>
+	}
+	else if(!tst_bit(PINC, BT_3))   //testa botão 3
+  dc:	32 99       	sbic	0x06, 2	; 6
+  de:	05 c0       	rjmp	.+10     	; 0xea <__vector_1+0x3a>
+	{
+		while(tst_bit(PINC, BT_3)); //aguarda botão 3 ser liberado
+  e0:	32 99       	sbic	0x06, 2	; 6
+  e2:	fe cf       	rjmp	.-4      	; 0xe0 <__vector_1+0x30>
+		cpl_bit(PORTB, LED_3);      //muda o estado do LED 3
+  e4:	95 b1       	in	r25, 0x05	; 5
+  e6:	84 e0       	ldi	r24, 0x04	; 4
+  e8:	14 c0       	rjmp	.+40     	; 0x112 <__vector_1+0x62>
+	}
+	else if(!tst_bit(PINC, BT_4))   //testa botão 5
+  ea:	33 99       	sbic	0x06, 3	; 6
+  ec:	05 c0       	rjmp	.+10     	; 0xf8 <__vector_1+0x48>
+	{
+		while(tst_bit(PINC, BT_4)); //aguarda botão 4 ser liberado
+  ee:	33 99       	sbic	0x06, 3	; 6
+  f0:	fe cf       	rjmp	.-4      	; 0xee <__vector_1+0x3e>
+		cpl_bit(PORTB, LED_4);      //muda o estado do LED 4
+  f2:	95 b1       	in	r25, 0x05	; 5
+  f4:	88 e0       	ldi	r24, 0x08	; 8
+  f6:	0d c0       	rjmp	.+26     	; 0x112 <__vector_1+0x62>
+	}
+	else if(!tst_bit(PINC, BT_5))   //testa botão 5
+  f8:	34 99       	sbic	0x06, 4	; 6
+  fa:	05 c0       	rjmp	.+10     	; 0x106 <__vector_1+0x56>
+	{
+		while(tst_bit(PINC, BT_5)); //aguarda botão 5 ser liberado
+  fc:	34 99       	sbic	0x06, 4	; 6
+  fe:	fe cf       	rjmp	.-4      	; 0xfc <__vector_1+0x4c>
+		cpl_bit(PORTB, LED_5);      //muda o estado do LED 5
+ 100:	95 b1       	in	r25, 0x05	; 5
+ 102:	80 e1       	ldi	r24, 0x10	; 16
+ 104:	06 c0       	rjmp	.+12     	; 0x112 <__vector_1+0x62>
+	}
+	else if(!tst_bit(PINC, BT_6))   //testa botão 6
+ 106:	35 99       	sbic	0x06, 5	; 6
+ 108:	06 c0       	rjmp	.+12     	; 0x116 <__vector_1+0x66>
+	{
+		while(tst_bit(PINC, BT_6)); //aguarda botão 6 ser liberado
+ 10a:	35 99       	sbic	0x06, 5	; 6
+ 10c:	fe cf       	rjmp	.-4      	; 0x10a <__vector_1+0x5a>
+		cpl_bit(PORTB, LED_6);      //muda o estado do LED 6
+ 10e:	95 b1       	in	r25, 0x05	; 5
+ 110:	80 e2       	ldi	r24, 0x20	; 32
+ 112:	89 27       	eor	r24, r25
+ 114:	85 b9       	out	0x05, r24	; 5
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 116:	2f ef       	ldi	r18, 0xFF	; 255
+ 118:	82 e5       	ldi	r24, 0x52	; 82
+ 11a:	97 e0       	ldi	r25, 0x07	; 7
+ 11c:	21 50       	subi	r18, 0x01	; 1
+ 11e:	80 40       	sbci	r24, 0x00	; 0
+ 120:	90 40       	sbci	r25, 0x00	; 0
+ 122:	e1 f7       	brne	.-8      	; 0x11c <__vector_1+0x6c>
+ 124:	00 c0       	rjmp	.+0      	; 0x126 <__vector_1+0x76>
+ 126:	00 00       	nop
+	}
+	_delay_ms(150);
+}
+ 128:	9f 91       	pop	r25
+ 12a:	8f 91       	pop	r24
+ 12c:	2f 91       	pop	r18
+ 12e:	0f 90       	pop	r0
+ 130:	0f be       	out	0x3f, r0	; 63
+ 132:	0f 90       	pop	r0
+ 134:	1f 90       	pop	r1
+ 136:	18 95       	reti
+
+00000138 <__vector_16>:
+
+ISR(TIMER0_OVF_vect) //varredura do teclado
+{
+ 138:	1f 92       	push	r1
+ 13a:	0f 92       	push	r0
+ 13c:	0f b6       	in	r0, 0x3f	; 63
+ 13e:	0f 92       	push	r0
+ 140:	11 24       	eor	r1, r1
+ 142:	8f 93       	push	r24
+    TCNT0 = 100; //reiniciando o valor do registrador do TC0
+ 144:	84 e6       	ldi	r24, 0x64	; 100
+ 146:	86 bd       	out	0x26, r24	; 38
+    PORTC = (PORTC << 1) + 1;                //deslocamento lógico para a esquerda
+ 148:	88 b1       	in	r24, 0x08	; 8
+ 14a:	88 0f       	add	r24, r24
+ 14c:	8f 5f       	subi	r24, 0xFF	; 255
+ 14e:	88 b9       	out	0x08, r24	; 8
+    if(PORTC == 0xBF) PORTC = (0xFE & 0x3F); //coloca o pino PC0 em nível lógico 1
+ 150:	88 b1       	in	r24, 0x08	; 8
+ 152:	8f 3b       	cpi	r24, 0xBF	; 191
+ 154:	11 f4       	brne	.+4      	; 0x15a <__vector_16+0x22>
+ 156:	8e e3       	ldi	r24, 0x3E	; 62
+ 158:	88 b9       	out	0x08, r24	; 8
+}
+ 15a:	8f 91       	pop	r24
+ 15c:	0f 90       	pop	r0
+ 15e:	0f be       	out	0x3f, r0	; 63
+ 160:	0f 90       	pop	r0
+ 162:	1f 90       	pop	r1
+ 164:	18 95       	reti
+
+00000166 <Inicializa_TC0>:
+ * - _TC0_N:    seleciona o prescaler e configura as saídas de comparação
+ * - _TC0_INT:  configura as interrupções
+ */
+void Inicializa_TC0(unsigned char _TC0_modo, unsigned char _TC0_OCAB_N, unsigned char _TC0_INT)
+{
+	TCCR0A = 0x00;
+ 166:	14 bc       	out	0x24, r1	; 36
+	TCCR0B = 0x00;
+ 168:	15 bc       	out	0x25, r1	; 37
+	TIMSK0 &= 0xF7;
+ 16a:	90 91 6e 00 	lds	r25, 0x006E	; 0x80006e <__TEXT_REGION_LENGTH__+0x7f806e>
+ 16e:	97 7f       	andi	r25, 0xF7	; 247
+ 170:	90 93 6e 00 	sts	0x006E, r25	; 0x80006e <__TEXT_REGION_LENGTH__+0x7f806e>
+ 174:	36 2f       	mov	r19, r22
+ 176:	37 70       	andi	r19, 0x07	; 7
+	if(_TC0_modo == 0) TCCR0B |= (_TC0_OCAB_N & 0x07);
+ 178:	88 23       	and	r24, r24
+ 17a:	49 f0       	breq	.+18     	; 0x18e <Inicializa_TC0+0x28>
+ 17c:	60 7f       	andi	r22, 0xF0	; 240
+ 17e:	98 2f       	mov	r25, r24
+ 180:	93 70       	andi	r25, 0x03	; 3
+	else if(_TC0_modo < 5)
+ 182:	85 30       	cpi	r24, 0x05	; 5
+ 184:	40 f4       	brcc	.+16     	; 0x196 <Inicializa_TC0+0x30>
+	{		
+		TCCR0A |= ((_TC0_OCAB_N & 0xF0) | (_TC0_modo & 0x03));
+ 186:	84 b5       	in	r24, 0x24	; 36
+ 188:	68 2b       	or	r22, r24
+ 18a:	96 2b       	or	r25, r22
+ 18c:	94 bd       	out	0x24, r25	; 36
+		TCCR0B |= (_TC0_OCAB_N & 0x07);
+ 18e:	95 b5       	in	r25, 0x25	; 37
+ 190:	93 2b       	or	r25, r19
+ 192:	95 bd       	out	0x25, r25	; 37
+ 194:	0b c0       	rjmp	.+22     	; 0x1ac <Inicializa_TC0+0x46>
+	}
+	else
+	{
+		TCCR0A |= ((_TC0_OCAB_N & 0xF0) | (_TC0_modo & 0x03));
+ 196:	24 b5       	in	r18, 0x24	; 36
+ 198:	62 2b       	or	r22, r18
+ 19a:	96 2b       	or	r25, r22
+ 19c:	94 bd       	out	0x24, r25	; 36
+		TCCR0B |= (((_TC0_modo << 1) & 0x08) | (_TC0_OCAB_N & 0x07));
+ 19e:	25 b5       	in	r18, 0x25	; 37
+ 1a0:	88 0f       	add	r24, r24
+ 1a2:	88 70       	andi	r24, 0x08	; 8
+ 1a4:	93 2f       	mov	r25, r19
+ 1a6:	92 2b       	or	r25, r18
+ 1a8:	89 2b       	or	r24, r25
+ 1aa:	85 bd       	out	0x25, r24	; 37
+		
+	}
+	TIMSK0 |= ~(_TC0_INT);
+ 1ac:	80 91 6e 00 	lds	r24, 0x006E	; 0x80006e <__TEXT_REGION_LENGTH__+0x7f806e>
+ 1b0:	40 95       	com	r20
+ 1b2:	48 2b       	or	r20, r24
+ 1b4:	40 93 6e 00 	sts	0x006E, r20	; 0x80006e <__TEXT_REGION_LENGTH__+0x7f806e>
+ 1b8:	08 95       	ret
+
+000001ba <_exit>:
+ 1ba:	f8 94       	cli
+
+000001bc <__stop_program>:
+ 1bc:	ff cf       	rjmp	.-2      	; 0x1bc <__stop_program>
