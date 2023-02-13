@@ -1,0 +1,548 @@
+
+s11_e02_sorteio_mega_sena.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000002  00800100  00000338  000003cc  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000338  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000009  00800102  00800102  000003ce  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  000003ce  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000400  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000060  00000000  00000000  00000440  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00000991  00000000  00000000  000004a0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 0000074c  00000000  00000000  00000e31  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   000004b7  00000000  00000000  0000157d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  000000e0  00000000  00000000  00001a34  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00000483  00000000  00000000  00001b14  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    000003cb  00000000  00000000  00001f97  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000058  00000000  00000000  00002362  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 39 00 	jmp	0x72	; 0x72 <__ctors_end>
+   4:	0c 94 56 00 	jmp	0xac	; 0xac <__bad_interrupt>
+   8:	0c 94 56 00 	jmp	0xac	; 0xac <__bad_interrupt>
+   c:	0c 94 56 00 	jmp	0xac	; 0xac <__bad_interrupt>
+  10:	0c 94 56 00 	jmp	0xac	; 0xac <__bad_interrupt>
+  14:	0c 94 56 00 	jmp	0xac	; 0xac <__bad_interrupt>
+  18:	0c 94 56 00 	jmp	0xac	; 0xac <__bad_interrupt>
+  1c:	0c 94 56 00 	jmp	0xac	; 0xac <__bad_interrupt>
+  20:	0c 94 56 00 	jmp	0xac	; 0xac <__bad_interrupt>
+  24:	0c 94 d5 00 	jmp	0x1aa	; 0x1aa <__vector_9>
+  28:	0c 94 56 00 	jmp	0xac	; 0xac <__bad_interrupt>
+  2c:	0c 94 56 00 	jmp	0xac	; 0xac <__bad_interrupt>
+  30:	0c 94 56 00 	jmp	0xac	; 0xac <__bad_interrupt>
+  34:	0c 94 56 00 	jmp	0xac	; 0xac <__bad_interrupt>
+  38:	0c 94 56 00 	jmp	0xac	; 0xac <__bad_interrupt>
+  3c:	0c 94 56 00 	jmp	0xac	; 0xac <__bad_interrupt>
+  40:	0c 94 95 00 	jmp	0x12a	; 0x12a <__vector_16>
+  44:	0c 94 56 00 	jmp	0xac	; 0xac <__bad_interrupt>
+  48:	0c 94 56 00 	jmp	0xac	; 0xac <__bad_interrupt>
+  4c:	0c 94 56 00 	jmp	0xac	; 0xac <__bad_interrupt>
+  50:	0c 94 56 00 	jmp	0xac	; 0xac <__bad_interrupt>
+  54:	0c 94 56 00 	jmp	0xac	; 0xac <__bad_interrupt>
+  58:	0c 94 56 00 	jmp	0xac	; 0xac <__bad_interrupt>
+  5c:	0c 94 56 00 	jmp	0xac	; 0xac <__bad_interrupt>
+  60:	0c 94 56 00 	jmp	0xac	; 0xac <__bad_interrupt>
+  64:	0c 94 56 00 	jmp	0xac	; 0xac <__bad_interrupt>
+
+00000068 <__trampolines_end>:
+  68:	3f 06       	cpc	r3, r31
+  6a:	5b 4f       	sbci	r21, 0xFB	; 251
+  6c:	66 6d       	ori	r22, 0xD6	; 214
+  6e:	7d 07       	cpc	r23, r29
+  70:	7f 6f       	ori	r23, 0xFF	; 255
+
+00000072 <__ctors_end>:
+  72:	11 24       	eor	r1, r1
+  74:	1f be       	out	0x3f, r1	; 63
+  76:	cf ef       	ldi	r28, 0xFF	; 255
+  78:	d8 e0       	ldi	r29, 0x08	; 8
+  7a:	de bf       	out	0x3e, r29	; 62
+  7c:	cd bf       	out	0x3d, r28	; 61
+
+0000007e <__do_copy_data>:
+  7e:	11 e0       	ldi	r17, 0x01	; 1
+  80:	a0 e0       	ldi	r26, 0x00	; 0
+  82:	b1 e0       	ldi	r27, 0x01	; 1
+  84:	e8 e3       	ldi	r30, 0x38	; 56
+  86:	f3 e0       	ldi	r31, 0x03	; 3
+  88:	02 c0       	rjmp	.+4      	; 0x8e <__do_copy_data+0x10>
+  8a:	05 90       	lpm	r0, Z+
+  8c:	0d 92       	st	X+, r0
+  8e:	a2 30       	cpi	r26, 0x02	; 2
+  90:	b1 07       	cpc	r27, r17
+  92:	d9 f7       	brne	.-10     	; 0x8a <__do_copy_data+0xc>
+
+00000094 <__do_clear_bss>:
+  94:	21 e0       	ldi	r18, 0x01	; 1
+  96:	a2 e0       	ldi	r26, 0x02	; 2
+  98:	b1 e0       	ldi	r27, 0x01	; 1
+  9a:	01 c0       	rjmp	.+2      	; 0x9e <.do_clear_bss_start>
+
+0000009c <.do_clear_bss_loop>:
+  9c:	1d 92       	st	X+, r1
+
+0000009e <.do_clear_bss_start>:
+  9e:	ab 30       	cpi	r26, 0x0B	; 11
+  a0:	b2 07       	cpc	r27, r18
+  a2:	e1 f7       	brne	.-8      	; 0x9c <.do_clear_bss_loop>
+  a4:	0e 94 58 00 	call	0xb0	; 0xb0 <main>
+  a8:	0c 94 9a 01 	jmp	0x334	; 0x334 <_exit>
+
+000000ac <__bad_interrupt>:
+  ac:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000b0 <main>:
+ISR(TIMER0_OVF_vect);
+ISR(TIMER2_OVF_vect);
+
+int main(void) //função principal
+{
+    DDRD = 0xFF;  //configura todo o PORTD como saída
+  b0:	8f ef       	ldi	r24, 0xFF	; 255
+  b2:	8a b9       	out	0x0a, r24	; 10
+    PORTD = 0x40; //inicializa o PORTD em 0x40(segmento 'g' emitindo)
+  b4:	80 e4       	ldi	r24, 0x40	; 64
+  b6:	8b b9       	out	0x0b, r24	; 11
+    DDRB = 0xEF;  //configura PB4 como entrada e os pinos restantes do PORTB como saídas
+  b8:	8f ee       	ldi	r24, 0xEF	; 239
+  ba:	84 b9       	out	0x04, r24	; 4
+    PORTB = 0x10; //habilita o resistor pull-up da entrada e inicializa os pinos restantes em nível baixo
+  bc:	80 e1       	ldi	r24, 0x10	; 16
+  be:	85 b9       	out	0x05, r24	; 5
+    UCSR0B = 0x00; //configura os pinos PD1:0 como I/Os digitais
+  c0:	10 92 c1 00 	sts	0x00C1, r1	; 0x8000c1 <__TEXT_REGION_LENGTH__+0x7f80c1>
+    
+    Inicializa_TC0(TC0_modo_normal, TC0_OC0A_normal&TC0_OC0B_normal&TC0_CLK_1024, TC0_TOIE0);
+  c4:	4e ef       	ldi	r20, 0xFE	; 254
+  c6:	6d e0       	ldi	r22, 0x0D	; 13
+  c8:	80 e0       	ldi	r24, 0x00	; 0
+  ca:	0e 94 29 01 	call	0x252	; 0x252 <Inicializa_TC0>
+    TCNT0 = 100;
+  ce:	84 e6       	ldi	r24, 0x64	; 100
+  d0:	86 bd       	out	0x26, r24	; 38
+    /* modo normal, f_osc igual a 16MHz, prescaler igual a 1024, saídas comparadoras desabilitadas,
+       t_estouro = N * (255 - TCNT0 + 1) * conta_tempo / 16M -> 100m = 1024 * (255 - TCNT0 + 1) * 10 / 16M
+       TCNT0 = */
+    Inicializa_TC2(TC2_modo_normal, TC2_OC2A_normal&TC2_OC2B_normal&TC2_CLK_1024, TC2_TOIE2);
+  d2:	4e ef       	ldi	r20, 0xFE	; 254
+  d4:	6f e0       	ldi	r22, 0x0F	; 15
+  d6:	80 e0       	ldi	r24, 0x00	; 0
+  d8:	0e 94 53 01 	call	0x2a6	; 0x2a6 <Inicializa_TC2>
+    TCNT2 = 126;
+  dc:	8e e7       	ldi	r24, 0x7E	; 126
+  de:	80 93 b2 00 	sts	0x00B2, r24	; 0x8000b2 <__TEXT_REGION_LENGTH__+0x7f80b2>
+    /* modo normal, f_osc igual a 16MHz, prescaler igual a 1024, saídas comparadoras desabilitadas,
+       interrupção por estouro do TCNT2 habilitada:
+       t_estouro = (f ^ -1) / n_disp = (60 ^ -1) / 2 = 8,33ms -> t_estouro = 8ms
+       t_estouro = N * (255 - TCNT2 + 1) / f_osc -> 8m = 1024 * (255 - TCNT2 + 1) / 16M 
+       TCNT2 = 126 */
+    sei(); //habilita todas as fontes de interrupção setando o bit I do registrador SREG
+  e2:	78 94       	sei
+    while(1) //loop infinito
+    {
+        while(quant <= 6)               //enquanto não forem sorteados os 6 números...
+        {
+            numero++;                   //incrementa o número que será sorteado
+            if(numero > 60) numero = 1; //gera números de 1 até 60
+  e4:	91 e0       	ldi	r25, 0x01	; 1
+       TCNT2 = 126 */
+    sei(); //habilita todas as fontes de interrupção setando o bit I do registrador SREG
+
+    while(1) //loop infinito
+    {
+        while(quant <= 6)               //enquanto não forem sorteados os 6 números...
+  e6:	80 91 0a 01 	lds	r24, 0x010A	; 0x80010a <quant>
+  ea:	87 30       	cpi	r24, 0x07	; 7
+  ec:	58 f4       	brcc	.+22     	; 0x104 <main+0x54>
+        {
+            numero++;                   //incrementa o número que será sorteado
+  ee:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+  f2:	8f 5f       	subi	r24, 0xFF	; 255
+            if(numero > 60) numero = 1; //gera números de 1 até 60
+  f4:	8d 33       	cpi	r24, 0x3D	; 61
+  f6:	18 f4       	brcc	.+6      	; 0xfe <main+0x4e>
+
+    while(1) //loop infinito
+    {
+        while(quant <= 6)               //enquanto não forem sorteados os 6 números...
+        {
+            numero++;                   //incrementa o número que será sorteado
+  f8:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__data_start>
+  fc:	f4 cf       	rjmp	.-24     	; 0xe6 <main+0x36>
+            if(numero > 60) numero = 1; //gera números de 1 até 60
+  fe:	90 93 00 01 	sts	0x0100, r25	; 0x800100 <__data_start>
+ 102:	f1 cf       	rjmp	.-30     	; 0xe6 <main+0x36>
+			//_delay_ms(150);
+        }
+        PORTB &= 0xFC;                  //desabilita os transistores dos displays
+ 104:	85 b1       	in	r24, 0x05	; 5
+ 106:	8c 7f       	andi	r24, 0xFC	; 252
+ 108:	85 b9       	out	0x05, r24	; 5
+        PORTD = 0x00;                   //carrega '0x00' no barramento de dados
+ 10a:	1b b8       	out	0x0b, r1	; 11
+        quant = 0;                      //reinicia a variável que armazena a quantidade de números sorteados
+ 10c:	10 92 0a 01 	sts	0x010A, r1	; 0x80010a <quant>
+        for(unsigned char i = 0; i < 6; i++) //estrutura de repetição para limpar 'sorteio'
+            sorteio[i] = 0;
+ 110:	10 92 04 01 	sts	0x0104, r1	; 0x800104 <sorteio>
+ 114:	10 92 05 01 	sts	0x0105, r1	; 0x800105 <sorteio+0x1>
+ 118:	10 92 06 01 	sts	0x0106, r1	; 0x800106 <sorteio+0x2>
+ 11c:	10 92 07 01 	sts	0x0107, r1	; 0x800107 <sorteio+0x3>
+ 120:	10 92 08 01 	sts	0x0108, r1	; 0x800108 <sorteio+0x4>
+ 124:	10 92 09 01 	sts	0x0109, r1	; 0x800109 <sorteio+0x5>
+ 128:	de cf       	rjmp	.-68     	; 0xe6 <main+0x36>
+
+0000012a <__vector_16>:
+    }
+}
+
+ISR(TIMER0_OVF_vect) //implementando rotina de tratamento do estouro do TCNT0 - varredura botão
+{
+ 12a:	1f 92       	push	r1
+ 12c:	0f 92       	push	r0
+ 12e:	0f b6       	in	r0, 0x3f	; 63
+ 130:	0f 92       	push	r0
+ 132:	11 24       	eor	r1, r1
+ 134:	2f 93       	push	r18
+ 136:	3f 93       	push	r19
+ 138:	8f 93       	push	r24
+ 13a:	9f 93       	push	r25
+ 13c:	ef 93       	push	r30
+ 13e:	ff 93       	push	r31
+    static unsigned char conta_tempo = 0; //variável auxiliar de contagem de tempo
+    conta_tempo++;                        //incrementa a variável auxiliar
+ 140:	80 91 03 01 	lds	r24, 0x0103	; 0x800103 <conta_tempo.1927>
+ 144:	8f 5f       	subi	r24, 0xFF	; 255
+ 146:	80 93 03 01 	sts	0x0103, r24	; 0x800103 <conta_tempo.1927>
+    if(conta_tempo == 10)                 //se passou 98,8ms?...
+ 14a:	8a 30       	cpi	r24, 0x0A	; 10
+ 14c:	19 f5       	brne	.+70     	; 0x194 <__vector_16+0x6a>
+    {
+        if(!tst_bit(PINB, BOTAO))         //o botão foi pressionado?...
+ 14e:	1c 99       	sbic	0x03, 4	; 3
+ 150:	1f c0       	rjmp	.+62     	; 0x190 <__vector_16+0x66>
+        {
+            unsigned char repet = 0;        //variável auxiliar
+            for(unsigned char i = 0; i <= quant; i++) //varre o vetor 'sorteio'
+                if(sorteio[i] == numero) repet = 1;   //verifica se 'sorteio' já contém 'numero'
+ 152:	90 91 00 01 	lds	r25, 0x0100	; 0x800100 <__data_start>
+ 156:	80 e0       	ldi	r24, 0x00	; 0
+ 158:	20 e0       	ldi	r18, 0x00	; 0
+    if(conta_tempo == 10)                 //se passou 98,8ms?...
+    {
+        if(!tst_bit(PINB, BOTAO))         //o botão foi pressionado?...
+        {
+            unsigned char repet = 0;        //variável auxiliar
+            for(unsigned char i = 0; i <= quant; i++) //varre o vetor 'sorteio'
+ 15a:	30 91 0a 01 	lds	r19, 0x010A	; 0x80010a <quant>
+ 15e:	38 17       	cp	r19, r24
+ 160:	50 f0       	brcs	.+20     	; 0x176 <__vector_16+0x4c>
+                if(sorteio[i] == numero) repet = 1;   //verifica se 'sorteio' já contém 'numero'
+ 162:	e8 2f       	mov	r30, r24
+ 164:	f0 e0       	ldi	r31, 0x00	; 0
+ 166:	ec 5f       	subi	r30, 0xFC	; 252
+ 168:	fe 4f       	sbci	r31, 0xFE	; 254
+ 16a:	30 81       	ld	r19, Z
+ 16c:	39 13       	cpse	r19, r25
+ 16e:	01 c0       	rjmp	.+2      	; 0x172 <__vector_16+0x48>
+ 170:	21 e0       	ldi	r18, 0x01	; 1
+    if(conta_tempo == 10)                 //se passou 98,8ms?...
+    {
+        if(!tst_bit(PINB, BOTAO))         //o botão foi pressionado?...
+        {
+            unsigned char repet = 0;        //variável auxiliar
+            for(unsigned char i = 0; i <= quant; i++) //varre o vetor 'sorteio'
+ 172:	8f 5f       	subi	r24, 0xFF	; 255
+ 174:	f2 cf       	rjmp	.-28     	; 0x15a <__vector_16+0x30>
+                if(sorteio[i] == numero) repet = 1;   //verifica se 'sorteio' já contém 'numero'
+            if(repet == 0)                //não ocorreu repetição?...
+ 176:	21 11       	cpse	r18, r1
+ 178:	0b c0       	rjmp	.+22     	; 0x190 <__vector_16+0x66>
+            {
+                sorteio[quant] = numero;  //armazena 'numero' em 'sorteio'
+ 17a:	e0 91 0a 01 	lds	r30, 0x010A	; 0x80010a <quant>
+ 17e:	f0 e0       	ldi	r31, 0x00	; 0
+ 180:	ec 5f       	subi	r30, 0xFC	; 252
+ 182:	fe 4f       	sbci	r31, 0xFE	; 254
+ 184:	90 83       	st	Z, r25
+                quant++;                  //sorteia o próximo número
+ 186:	80 91 0a 01 	lds	r24, 0x010A	; 0x80010a <quant>
+ 18a:	8f 5f       	subi	r24, 0xFF	; 255
+ 18c:	80 93 0a 01 	sts	0x010A, r24	; 0x80010a <quant>
+            }
+        }
+        conta_tempo = 0;                  //reinicia a variável auxiliar
+ 190:	10 92 03 01 	sts	0x0103, r1	; 0x800103 <conta_tempo.1927>
+    }
+}
+ 194:	ff 91       	pop	r31
+ 196:	ef 91       	pop	r30
+ 198:	9f 91       	pop	r25
+ 19a:	8f 91       	pop	r24
+ 19c:	3f 91       	pop	r19
+ 19e:	2f 91       	pop	r18
+ 1a0:	0f 90       	pop	r0
+ 1a2:	0f be       	out	0x3f, r0	; 63
+ 1a4:	0f 90       	pop	r0
+ 1a6:	1f 90       	pop	r1
+ 1a8:	18 95       	reti
+
+000001aa <__vector_9>:
+
+ISR(TIMER2_OVF_vect) //implementando rotina de tratamento do estouro do TCNT2 - acionamento dos displays
+{
+ 1aa:	1f 92       	push	r1
+ 1ac:	0f 92       	push	r0
+ 1ae:	0f b6       	in	r0, 0x3f	; 63
+ 1b0:	0f 92       	push	r0
+ 1b2:	11 24       	eor	r1, r1
+ 1b4:	2f 93       	push	r18
+ 1b6:	6f 93       	push	r22
+ 1b8:	7f 93       	push	r23
+ 1ba:	8f 93       	push	r24
+ 1bc:	9f 93       	push	r25
+ 1be:	ef 93       	push	r30
+ 1c0:	ff 93       	push	r31
+    static unsigned char disp = 0; //variável auxiliar de acionamento dos displays
+    TCNT2 = 126;                   //reinicia o registrador do TC2
+ 1c2:	8e e7       	ldi	r24, 0x7E	; 126
+ 1c4:	80 93 b2 00 	sts	0x00B2, r24	; 0x8000b2 <__TEXT_REGION_LENGTH__+0x7f80b2>
+    PORTB &= 0xFC;                 //desabilita todos os displays
+ 1c8:	85 b1       	in	r24, 0x05	; 5
+ 1ca:	8c 7f       	andi	r24, 0xFC	; 252
+ 1cc:	85 b9       	out	0x05, r24	; 5
+    if(quant == 0)                 //algum número já foi sorteado?...
+ 1ce:	80 91 0a 01 	lds	r24, 0x010A	; 0x80010a <quant>
+ 1d2:	81 11       	cpse	r24, r1
+ 1d4:	03 c0       	rjmp	.+6      	; 0x1dc <__vector_9+0x32>
+    {
+        PORTD = 0x40;              //se nenhum número foi sorteado, apenas o segmento 'g' emite
+ 1d6:	80 e4       	ldi	r24, 0x40	; 64
+ 1d8:	8b b9       	out	0x0b, r24	; 11
+ 1da:	19 c0       	rjmp	.+50     	; 0x20e <__vector_9+0x64>
+    }
+    else                           //se algum número ja foi sorteado...
+    {
+	    if(disp == 0) PORTD = pgm_read_byte(&display[(sorteio[quant - 1] % 10)]); //exibe a unidade
+ 1dc:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <__data_end>
+ 1e0:	e0 91 0a 01 	lds	r30, 0x010A	; 0x80010a <quant>
+ 1e4:	f0 e0       	ldi	r31, 0x00	; 0
+ 1e6:	ed 5f       	subi	r30, 0xFD	; 253
+ 1e8:	fe 4f       	sbci	r31, 0xFE	; 254
+ 1ea:	81 11       	cpse	r24, r1
+ 1ec:	06 c0       	rjmp	.+12     	; 0x1fa <__vector_9+0x50>
+ 1ee:	80 81       	ld	r24, Z
+ 1f0:	6a e0       	ldi	r22, 0x0A	; 10
+ 1f2:	0e 94 8e 01 	call	0x31c	; 0x31c <__udivmodqi4>
+ 1f6:	e9 2f       	mov	r30, r25
+ 1f8:	05 c0       	rjmp	.+10     	; 0x204 <__vector_9+0x5a>
+        else          PORTD = pgm_read_byte(&display[(sorteio[quant - 1] / 10)]); //exibe a dezena
+ 1fa:	80 81       	ld	r24, Z
+ 1fc:	6a e0       	ldi	r22, 0x0A	; 10
+ 1fe:	0e 94 8e 01 	call	0x31c	; 0x31c <__udivmodqi4>
+ 202:	e8 2f       	mov	r30, r24
+ 204:	f0 e0       	ldi	r31, 0x00	; 0
+ 206:	e8 59       	subi	r30, 0x98	; 152
+ 208:	ff 4f       	sbci	r31, 0xFF	; 255
+ 20a:	e4 91       	lpm	r30, Z
+ 20c:	eb b9       	out	0x0b, r30	; 11
+    }
+    set_bit(PORTB, disp);          //aciona o display 'disp'
+ 20e:	25 b1       	in	r18, 0x05	; 5
+ 210:	81 e0       	ldi	r24, 0x01	; 1
+ 212:	90 e0       	ldi	r25, 0x00	; 0
+ 214:	00 90 02 01 	lds	r0, 0x0102	; 0x800102 <__data_end>
+ 218:	02 c0       	rjmp	.+4      	; 0x21e <__vector_9+0x74>
+ 21a:	88 0f       	add	r24, r24
+ 21c:	99 1f       	adc	r25, r25
+ 21e:	0a 94       	dec	r0
+ 220:	e2 f7       	brpl	.-8      	; 0x21a <__vector_9+0x70>
+ 222:	82 2b       	or	r24, r18
+ 224:	85 b9       	out	0x05, r24	; 5
+    disp++;                        //o próximo display que será acionado
+ 226:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <__data_end>
+ 22a:	8f 5f       	subi	r24, 0xFF	; 255
+    if(disp == 2) disp = 0;        //volta para o primeiro display
+ 22c:	82 30       	cpi	r24, 0x02	; 2
+ 22e:	19 f0       	breq	.+6      	; 0x236 <__vector_9+0x8c>
+    {
+	    if(disp == 0) PORTD = pgm_read_byte(&display[(sorteio[quant - 1] % 10)]); //exibe a unidade
+        else          PORTD = pgm_read_byte(&display[(sorteio[quant - 1] / 10)]); //exibe a dezena
+    }
+    set_bit(PORTB, disp);          //aciona o display 'disp'
+    disp++;                        //o próximo display que será acionado
+ 230:	80 93 02 01 	sts	0x0102, r24	; 0x800102 <__data_end>
+ 234:	02 c0       	rjmp	.+4      	; 0x23a <__vector_9+0x90>
+    if(disp == 2) disp = 0;        //volta para o primeiro display
+ 236:	10 92 02 01 	sts	0x0102, r1	; 0x800102 <__data_end>
+}
+ 23a:	ff 91       	pop	r31
+ 23c:	ef 91       	pop	r30
+ 23e:	9f 91       	pop	r25
+ 240:	8f 91       	pop	r24
+ 242:	7f 91       	pop	r23
+ 244:	6f 91       	pop	r22
+ 246:	2f 91       	pop	r18
+ 248:	0f 90       	pop	r0
+ 24a:	0f be       	out	0x3f, r0	; 63
+ 24c:	0f 90       	pop	r0
+ 24e:	1f 90       	pop	r1
+ 250:	18 95       	reti
+
+00000252 <Inicializa_TC0>:
+	else
+	{
+		TCCR1A |= ((_TC1_OCAB_N & 0xF0) | (_TC1_modo & 0x03));
+		TCCR1B |= (((_TC1_modo << 1) & 0x18) | (_TC1_OCAB_N & 0x07));
+	}
+	TIMSK1 |= ~(_TC1_INT);
+ 252:	14 bc       	out	0x24, r1	; 36
+ 254:	15 bc       	out	0x25, r1	; 37
+ 256:	90 91 6e 00 	lds	r25, 0x006E	; 0x80006e <__TEXT_REGION_LENGTH__+0x7f806e>
+ 25a:	97 7f       	andi	r25, 0xF7	; 247
+ 25c:	90 93 6e 00 	sts	0x006E, r25	; 0x80006e <__TEXT_REGION_LENGTH__+0x7f806e>
+ 260:	36 2f       	mov	r19, r22
+ 262:	37 70       	andi	r19, 0x07	; 7
+ 264:	88 23       	and	r24, r24
+ 266:	49 f0       	breq	.+18     	; 0x27a <Inicializa_TC0+0x28>
+ 268:	60 7f       	andi	r22, 0xF0	; 240
+ 26a:	98 2f       	mov	r25, r24
+ 26c:	93 70       	andi	r25, 0x03	; 3
+ 26e:	85 30       	cpi	r24, 0x05	; 5
+ 270:	40 f4       	brcc	.+16     	; 0x282 <Inicializa_TC0+0x30>
+ 272:	84 b5       	in	r24, 0x24	; 36
+ 274:	68 2b       	or	r22, r24
+ 276:	96 2b       	or	r25, r22
+ 278:	94 bd       	out	0x24, r25	; 36
+ 27a:	95 b5       	in	r25, 0x25	; 37
+ 27c:	93 2b       	or	r25, r19
+ 27e:	95 bd       	out	0x25, r25	; 37
+ 280:	0b c0       	rjmp	.+22     	; 0x298 <Inicializa_TC0+0x46>
+ 282:	24 b5       	in	r18, 0x24	; 36
+ 284:	62 2b       	or	r22, r18
+ 286:	96 2b       	or	r25, r22
+ 288:	94 bd       	out	0x24, r25	; 36
+ 28a:	25 b5       	in	r18, 0x25	; 37
+ 28c:	88 0f       	add	r24, r24
+ 28e:	88 70       	andi	r24, 0x08	; 8
+ 290:	93 2f       	mov	r25, r19
+ 292:	92 2b       	or	r25, r18
+ 294:	89 2b       	or	r24, r25
+ 296:	85 bd       	out	0x25, r24	; 37
+ 298:	80 91 6e 00 	lds	r24, 0x006E	; 0x80006e <__TEXT_REGION_LENGTH__+0x7f806e>
+ 29c:	40 95       	com	r20
+ 29e:	48 2b       	or	r20, r24
+ 2a0:	40 93 6e 00 	sts	0x006E, r20	; 0x80006e <__TEXT_REGION_LENGTH__+0x7f806e>
+ 2a4:	08 95       	ret
+
+000002a6 <Inicializa_TC2>:
+ * - _TC2_OCAB_N: seleciona o prescaler e configura as saídas de comparação
+ * - _TC2_INT:    configura as interrupções
+ */
+void Inicializa_TC2(unsigned char _TC2_modo, unsigned char _TC2_OCAB_N, unsigned char _TC2_INT)
+{
+	TCCR2A = 0x00;
+ 2a6:	10 92 b0 00 	sts	0x00B0, r1	; 0x8000b0 <__TEXT_REGION_LENGTH__+0x7f80b0>
+	TCCR2B = 0x00;
+ 2aa:	10 92 b1 00 	sts	0x00B1, r1	; 0x8000b1 <__TEXT_REGION_LENGTH__+0x7f80b1>
+	ASSR = 0x00;
+ 2ae:	10 92 b6 00 	sts	0x00B6, r1	; 0x8000b6 <__TEXT_REGION_LENGTH__+0x7f80b6>
+	TIMSK2 &= 0xF7;
+ 2b2:	90 91 70 00 	lds	r25, 0x0070	; 0x800070 <__TEXT_REGION_LENGTH__+0x7f8070>
+ 2b6:	97 7f       	andi	r25, 0xF7	; 247
+ 2b8:	90 93 70 00 	sts	0x0070, r25	; 0x800070 <__TEXT_REGION_LENGTH__+0x7f8070>
+ 2bc:	96 2f       	mov	r25, r22
+ 2be:	97 70       	andi	r25, 0x07	; 7
+	if(_TC2_modo == 0) TCCR2B |= (_TC2_OCAB_N & 0x07);
+ 2c0:	88 23       	and	r24, r24
+ 2c2:	01 f1       	breq	.+64     	; 0x304 <Inicializa_TC2+0x5e>
+ 2c4:	60 7f       	andi	r22, 0xF0	; 240
+	else if(_TC2_modo < 5)
+ 2c6:	85 30       	cpi	r24, 0x05	; 5
+ 2c8:	40 f4       	brcc	.+16     	; 0x2da <Inicializa_TC2+0x34>
+	{		
+		TCCR2A |= ((_TC2_OCAB_N & 0xF0) | (_TC2_modo & 0x03));
+ 2ca:	20 91 b0 00 	lds	r18, 0x00B0	; 0x8000b0 <__TEXT_REGION_LENGTH__+0x7f80b0>
+ 2ce:	62 2b       	or	r22, r18
+ 2d0:	83 70       	andi	r24, 0x03	; 3
+ 2d2:	86 2b       	or	r24, r22
+ 2d4:	80 93 b0 00 	sts	0x00B0, r24	; 0x8000b0 <__TEXT_REGION_LENGTH__+0x7f80b0>
+ 2d8:	15 c0       	rjmp	.+42     	; 0x304 <Inicializa_TC2+0x5e>
+		TCCR2B |= (_TC2_OCAB_N & 0x07);
+	}
+	else if(_TC2_modo < 8)
+ 2da:	88 30       	cpi	r24, 0x08	; 8
+ 2dc:	58 f4       	brcc	.+22     	; 0x2f4 <Inicializa_TC2+0x4e>
+	{
+		TCCR2A |= ((_TC2_OCAB_N & 0xF0) | (_TC2_modo & 0x03));
+ 2de:	20 91 b0 00 	lds	r18, 0x00B0	; 0x8000b0 <__TEXT_REGION_LENGTH__+0x7f80b0>
+ 2e2:	62 2b       	or	r22, r18
+ 2e4:	83 70       	andi	r24, 0x03	; 3
+ 2e6:	86 2b       	or	r24, r22
+ 2e8:	80 93 b0 00 	sts	0x00B0, r24	; 0x8000b0 <__TEXT_REGION_LENGTH__+0x7f80b0>
+		TCCR2B |= (((_TC2_modo << 1) & 0x08) | (_TC2_OCAB_N & 0x07));
+ 2ec:	80 91 b1 00 	lds	r24, 0x00B1	; 0x8000b1 <__TEXT_REGION_LENGTH__+0x7f80b1>
+ 2f0:	88 60       	ori	r24, 0x08	; 8
+ 2f2:	0a c0       	rjmp	.+20     	; 0x308 <Inicializa_TC2+0x62>
+		
+	}
+	else
+	{
+	    ASSR = 1 << AS2;
+ 2f4:	80 e2       	ldi	r24, 0x20	; 32
+ 2f6:	80 93 b6 00 	sts	0x00B6, r24	; 0x8000b6 <__TEXT_REGION_LENGTH__+0x7f80b6>
+	    TCCR2A |= (_TC2_OCAB_N & 0xF0);
+ 2fa:	80 91 b0 00 	lds	r24, 0x00B0	; 0x8000b0 <__TEXT_REGION_LENGTH__+0x7f80b0>
+ 2fe:	68 2b       	or	r22, r24
+ 300:	60 93 b0 00 	sts	0x00B0, r22	; 0x8000b0 <__TEXT_REGION_LENGTH__+0x7f80b0>
+	    TCCR2B |= (_TC2_OCAB_N & 0x07);
+ 304:	80 91 b1 00 	lds	r24, 0x00B1	; 0x8000b1 <__TEXT_REGION_LENGTH__+0x7f80b1>
+ 308:	98 2b       	or	r25, r24
+ 30a:	90 93 b1 00 	sts	0x00B1, r25	; 0x8000b1 <__TEXT_REGION_LENGTH__+0x7f80b1>
+	}
+	TIMSK2 |= ~(_TC2_INT);
+ 30e:	80 91 70 00 	lds	r24, 0x0070	; 0x800070 <__TEXT_REGION_LENGTH__+0x7f8070>
+ 312:	40 95       	com	r20
+ 314:	48 2b       	or	r20, r24
+ 316:	40 93 70 00 	sts	0x0070, r20	; 0x800070 <__TEXT_REGION_LENGTH__+0x7f8070>
+ 31a:	08 95       	ret
+
+0000031c <__udivmodqi4>:
+ 31c:	99 1b       	sub	r25, r25
+ 31e:	79 e0       	ldi	r23, 0x09	; 9
+ 320:	04 c0       	rjmp	.+8      	; 0x32a <__udivmodqi4_ep>
+
+00000322 <__udivmodqi4_loop>:
+ 322:	99 1f       	adc	r25, r25
+ 324:	96 17       	cp	r25, r22
+ 326:	08 f0       	brcs	.+2      	; 0x32a <__udivmodqi4_ep>
+ 328:	96 1b       	sub	r25, r22
+
+0000032a <__udivmodqi4_ep>:
+ 32a:	88 1f       	adc	r24, r24
+ 32c:	7a 95       	dec	r23
+ 32e:	c9 f7       	brne	.-14     	; 0x322 <__udivmodqi4_loop>
+ 330:	80 95       	com	r24
+ 332:	08 95       	ret
+
+00000334 <_exit>:
+ 334:	f8 94       	cli
+
+00000336 <__stop_program>:
+ 336:	ff cf       	rjmp	.-2      	; 0x336 <__stop_program>
